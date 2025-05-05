@@ -102,7 +102,7 @@ export default class TabManager {
       initWaiting(this.tabContentContainer);
       const spinnerContainer = this.tabContentContainer.querySelector(".speen");
       spinnerContainer?.appendChild(
-        document.createTextNode("Loading wiki pages"),
+        document.createTextNode("Загружаем страницы"),
       );
     } else {
       document.getElementById("app")!.classList.remove("waiting");

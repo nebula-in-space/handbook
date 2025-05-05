@@ -45,7 +45,6 @@ const pages = [
   "Guide_to_malfunction",
   "Xenos",
   "Abductor",
-  "Families",
   "Heretic",
   "Rules",
   "AI_modules",
@@ -55,7 +54,6 @@ const pages = [
   "Paper_Markdown",
   "Songs",
   "Guide_to_Space_Exploration",
-  "Mafia",
 ];
 
 export default pages;

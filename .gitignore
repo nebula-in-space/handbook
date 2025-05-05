@@ -4,5 +4,3 @@ dist
 .parcel-cache
 yarn-error.log
 *.ts.js
-.vscode
-dev-dist

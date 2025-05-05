@@ -47,7 +47,6 @@ import combat from "@assets/images/tab-icons/combat.svg";
 import access from "@assets/images/tab-icons/access.svg";
 import xmorph from "@assets/images/tab-icons/xmorph.svg";
 import abduction from "@assets/images/tab-icons/abduction.svg";
-import mafia from "@assets/images/tab-icons/mafia.svg";
 import cyto from "@assets/images/tab-icons/cyto.svg";
 import circuits from "@assets/images/tab-icons/circuit.svg";
 import tourist from "@assets/images/tab-icons/tourist.svg";
@@ -100,7 +99,6 @@ import Nuclear_Operative from "@pages/Nuclear_Operative.json";
 import Guide_to_malfunction from "@pages/Guide_to_malfunction.json";
 import Xenos from "@pages/Xenos.json";
 import Abductor from "@pages/Abductor.json";
-import Families from "@pages/Families.json";
 import Heretic from "@pages/Heretic.json";
 import Rules from "@pages/Rules.json";
 import AI_modules from "@pages/AI_modules.json";
@@ -110,7 +108,6 @@ import Guide_to_races from "@pages/Guide_to_races.json";
 import Paper_Markdown from "@pages/Paper_Markdown.json";
 import Songs from "@pages/Songs.json";
 import Guide_to_Space_Exploration from "@pages/Guide_to_Space_Exploration.json";
-import Mafia from "@pages/Mafia.json";
 
 export interface SectionInfo {
   name: string;
@@ -128,230 +125,97 @@ export const META = "$META";
 
 const sections: SectionInfo[] = [
   {
-    name: "Medical",
+    name: "Медицина",
     tabs: [
-      { page: "Guide_to_medicine", icon: medicine, data: Guide_to_medicine },
-      { page: "Guide_to_chemistry", icon: chemistry, data: Guide_to_chemistry },
-      { page: "Guide_to_plumbing", icon: plumbing, data: Guide_to_plumbing },
-      { page: "Grenade", text: "nade", icon: grenade, data: Grenade },
-      { page: "Infections", text: "virus", icon: virus, data: Infections },
-      { page: "Surgery", icon: surgery, data: Surgery },
-      {
-        page: "Guide_to_Traumas",
-        text: "trauma",
-        icon: trauma,
-        data: Guide_to_Traumas,
-      },
-      {
-        page: "Guide_to_Wounds",
-        text: "wound",
-        icon: wound,
-        data: Guide_to_Wounds,
-      },
-      {
-        page: "Guide_to_Ghetto_Chemistry",
-        text: "ghetto",
-        icon: ghetto,
-        data: Guide_to_Ghetto_Chemistry,
-      },
+      { page: "Guide_to_medicine", text: "Медицина", icon: medicine, data: Guide_to_medicine },
+      { page: "Guide_to_chemistry", text: "Химия", icon: chemistry, data: Guide_to_chemistry },
+      { page: "Guide_to_plumbing", text: "Пламбинг", icon: plumbing, data: Guide_to_plumbing },
+      { page: "Grenade", text: "Гранаты", icon: grenade, data: Grenade },
+      { page: "Infections", text: "Вирусы", icon: virus, data: Infections },
+      { page: "Surgery", text: "Хирургия", icon: surgery, data: Surgery },
+      { page: "Guide_to_Traumas", text: "Травмы", icon: trauma, data: Guide_to_Traumas},
+      { page: "Guide_to_Wounds", text: "Ранения", icon: wound, data: Guide_to_Wounds},
+      { page: "Guide_to_Ghetto_Chemistry", text: "Гетто", icon: ghetto, data: Guide_to_Ghetto_Chemistry},
     ],
   },
   {
-    name: "Engineering",
+    name: "Инженерия",
     tabs: [
-      {
-        page: "Guide_to_construction",
-        icon: construction,
-        data: Guide_to_construction,
-      },
-      { page: "Machines", icon: machines, data: Machines },
-      {
-        page: "Guide_to_power",
-        text: "power",
-        icon: power,
-        data: Guide_to_power,
-      },
-      {
-        page: "Solars",
-        text: "solar",
-        icon: solar,
-        data: Solars,
-      },
-      {
-        page: "Guide_to_the_Supermatter",
-        text: "smatt",
-        icon: supermatter,
-        data: Guide_to_the_Supermatter,
-      },
-      {
-        page: "Guide_to_disposals",
-        text: "DISP",
-        icon: null, // TODO: add icon
-        data: Guide_to_disposals,
-      },
-      { page: "Gas_turbine", text: "TURB", icon: turbine, data: Gas_turbine },
-      {
-        page: "Guide_to_Atmospherics",
-        text: "atmos",
-        icon: atmos,
-        data: Guide_to_Atmospherics,
-      },
-      {
-        page: "Guide_to_Telecommunications",
-        icon: tcomm,
-        text: "tcomm",
-        data: Guide_to_Telecommunications,
-      },
+      { page: "Guide_to_construction", text: "Строительство", icon: construction, data: Guide_to_construction},
+      { page: "Machines", text: "Машины", icon: machines, data: Machines },
+      { page: "Guide_to_power", text: "Энергия", icon: power, data: Guide_to_power},
+      { page: "Solars", text: "Панели", icon: solar, data: Solars },
+      { page: "Guide_to_the_Supermatter", text: "Материя", icon: supermatter, data: Guide_to_the_Supermatter },
+      { page: "Guide_to_disposals", text: "Трубы", icon: null }, // TODO: add icon data: Guide_to_disposals
+      { page: "Gas_turbine", text: "Турбина", icon: turbine, data: Gas_turbine },
+      { page: "Guide_to_Atmospherics", text: "Атмос", icon: atmos, data: Guide_to_Atmospherics },
+      { page: "Guide_to_Telecommunications", text: "Телекомы", icon: tcomm, data: Guide_to_Telecommunications },
     ],
   },
   {
-    name: "Science",
+    name: "Наука",
     tabs: [
-      {
-        page: "Guide_to_Research_and_Development",
-        text: "R&D",
-        icon: rnd,
-        data: Guide_to_Research_and_Development,
-      },
-      { page: "Guide_to_robotics", icon: robo, data: Guide_to_robotics },
-      {
-        page: "Guide_to_toxins",
-        text: "toxin",
-        icon: toxins,
-        data: Guide_to_toxins,
-      },
-      {
-        page: "Guide_to_xenobiology",
-        text: "XBIO",
-        icon: xeno,
-        data: Guide_to_xenobiology,
-      },
-      { page: "Guide_to_genetics", icon: genetics, data: Guide_to_genetics },
-      {
-        page: "Guide_to_cytology",
-        text: "cyto",
-        icon: cyto,
-        data: Guide_to_cytology,
-      },
-      {
-        page: "Guide_to_Circuits",
-        text: "circ",
-        icon: circuits,
-        data: Guide_to_Circuits,
-      },
+      { page: "Guide_to_Research_and_Development", text: "R&D", icon: rnd, data: Guide_to_Research_and_Development},
+      { page: "Guide_to_robotics", text: "Роботика", icon: robo, data: Guide_to_robotics },
+      { page: "Guide_to_toxins", text: "Токсиы", icon: toxins, data: Guide_to_toxins},
+      { page: "Guide_to_xenobiology", text: "Ксено", icon: xeno, data: Guide_to_xenobiology},
+      { page: "Guide_to_genetics", text: "Генетика", icon: genetics, data: Guide_to_genetics },
+      { page: "Guide_to_cytology", text: "Криптология", icon: cyto, data: Guide_to_cytology},
+      { page: "Guide_to_Circuits", text: "Циркуиты", icon: circuits, data: Guide_to_Circuits},
       // { page: "Guide_to_Nanites", text: "nanite", icon: nanites },
     ],
   },
   {
-    name: "Service",
+    name: "Сервис",
     tabs: [
-      { page: "Guide_to_food", text: "food", icon: food, data: Guide_to_food },
-      {
-        page: "Guide_to_drinks",
-        text: "drnk",
-        icon: drink,
-        data: Guide_to_drinks,
-      },
-      {
-        page: "Guide_to_Restaurant",
-        text: "TOUR",
-        icon: tourist,
-        data: Guide_to_Restaurant,
-      },
-      { page: "Guide_to_hydroponics", icon: hydro, data: Guide_to_hydroponics },
+      { page: "Guide_to_food", text: "Еда", icon: food, data: Guide_to_food },
+      { page: "Guide_to_drinks", text: "Напитки", icon: drink, data: Guide_to_drinks},
+      { page: "Guide_to_Restaurant", text: "TOUR", icon: tourist, data: Guide_to_Restaurant},
+      { page: "Guide_to_hydroponics", text: "Гидропоника", icon: hydro, data: Guide_to_hydroponics },
       { page: "Supply_crates", icon: crate, data: Supply_crates },
-      {
-        page: "Auxiliary_Base_Construction_Area",
-        text: "aux",
-        icon: aux,
-        data: Auxiliary_Base_Construction_Area,
-      },
+      { page: "Auxiliary_Base_Construction_Area", text: "Дроппод", icon: aux, data: Auxiliary_Base_Construction_Area},
     ],
   },
   {
-    name: "Security",
+    name: "Охрана",
     tabs: [
-      {
-        page: "Guide_to_security",
-        text: "security",
-        icon: security,
-        data: Guide_to_security,
-      },
-      { page: "Space_Law", text: "space law", icon: law, data: Space_Law },
-      {
-        page: "Standard_Operating_Procedure",
-        text: "S.O.P.",
-        icon: sop,
-        data: Standard_Operating_Procedure,
-      },
-      {
-        page: "Guide_to_trials",
-        text: "trials",
-        icon: trial,
-        data: Guide_to_trials,
-      },
-      { page: "Guide_to_Combat", icon: combat, data: Guide_to_Combat },
+      { page: "Guide_to_security", text: "Охрана", icon: security, data: Guide_to_security},
+      { page: "Space_Law", text: "Законы", icon: law, data: Space_Law },
+      { page: "Standard_Operating_Procedure", text: "С.О.П.", icon: sop, data: Standard_Operating_Procedure},
+      { page: "Guide_to_trials", text: "Суды", icon: trial, data: Guide_to_trials},
+      { page: "Guide_to_Combat", text: "Боевка", icon: combat, data: Guide_to_Combat },
     ],
   },
   {
-    name: "Antag",
+    name: "Антаги",
     tabs: [
-      { page: "Traitor", icon: traitor, data: Traitor },
-      { page: "Makeshift_weapons", icon: weapons, data: Makeshift_weapons },
-      {
-        page: "Syndicate_Items",
-        text: "uplk",
-        icon: uplink,
-        data: Syndicate_Items,
-      },
-      { page: "Illicit_Access", icon: access, data: Illicit_Access },
-      { page: "Revolutionary", text: "rev", icon: rev, data: Revolutionary },
-      { page: "Blood_Cult", text: "cult", icon: cult, data: Blood_Cult },
-      {
-        page: "Nuclear_Operative",
-        text: "nuke",
-        icon: nuke,
-        data: Nuclear_Operative,
-      },
-      { page: "Guide_to_malfunction", icon: malf, data: Guide_to_malfunction },
-      { page: "Xenos", text: "XENO", icon: xmorph, data: Xenos },
-      { page: "Abductor", icon: abduction, data: Abductor },
-      { page: "Families", icon: mafia, data: Families },
-      {
-        page: "Heretic",
-        icon: null, // TODO: add icon
-        data: Heretic,
-      },
+      { page: "Traitor", text: "Предатель", icon: traitor, data: Traitor },
+      { page: "Makeshift_weapons", text: "Самоделки", icon: weapons, data: Makeshift_weapons },
+      { page: "Syndicate_Items", text: "Аплинк", icon: uplink, data: Syndicate_Items},
+      { page: "Illicit_Access", text: "Проникновение", icon: access, data: Illicit_Access },
+      { page: "Revolutionary",text: "Революция", icon: rev, data: Revolutionary },
+      { page: "Blood_Cult", text: "Культ", icon: cult, data: Blood_Cult },
+      { page: "Nuclear_Operative", text: "Нюка", icon: nuke, data: Nuclear_Operative},
+      { page: "Guide_to_malfunction", text: "Малф", icon: malf, data: Guide_to_malfunction },
+      { page: "Xenos", text: "Ксеносы", icon: xmorph, data: Xenos },
+      { page: "Abductor", text: "Абдукторы", icon: abduction, data: Abductor },
+      { page: "Heretic", text: "Еретик", icon: null, data: Heretic },
     ],
   },
   {
-    name: "Other",
+    name: "Другое",
     tabs: [
-      { page: "Rules", text: "rules", icon: rules, data: Rules },
-      { page: "AI_modules", text: "aimo", icon: aimod, data: AI_modules },
+      { page: "Rules", text: "Правила", icon: rules, data: Rules },
+      { page: "AI_modules", text: "Модули ИИ", icon: aimod, data: AI_modules },
       /*
-      {
-        page: "Guide_to_Awesome_Miscellaneous_Stuff",
-        text: "misc",
-        icon: tips,
-      },
+      { page: "Guide_to_Awesome_Miscellaneous_Stuff", text: "misc", icon: tips},
       */
-      { page: "Hacking", icon: hacking, data: Hacking },
-      { page: "Critters", icon: critter, data: Critters },
-      { page: "Guide_to_races", icon: races, data: Guide_to_races },
-      {
-        page: "Paper_Markdown",
-        text: "PAPER",
-        icon: null, // TODO: add icon
-        data: Paper_Markdown,
-      },
-      { page: "Songs", icon: song, data: Songs },
-      {
-        page: "Guide_to_Space_Exploration",
-        icon: space,
-        data: Guide_to_Space_Exploration,
-      },
-      { page: "Mafia", text: "mfia", icon: mafia, data: Mafia },
+      { page: "Hacking", text: "Взлом", icon: hacking, data: Hacking },
+      { page: "Critters", text: "Существа", icon: critter, data: Critters },
+      { page: "Guide_to_races", text: "Мутанты", icon: races, data: Guide_to_races },
+      { page: "Paper_Markdown", text: "Документы", icon: null, data: Paper_Markdown },
+      { page: "Songs", text: "Музыка", icon: song, data: Songs },
+      { page: "Guide_to_Space_Exploration", text: "Иследование", icon: space, data: Guide_to_Space_Exploration},
     ],
   },
   {

@@ -7,7 +7,6 @@ import "./pages/virology";
 import "./pages/food";
 import "./pages/drinks";
 import "./pages/ghettochem";
-import "./pages/mafia";
 import "./pages/critters";
 import "./pages/tourist";
 
