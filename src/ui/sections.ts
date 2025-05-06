@@ -80,7 +80,6 @@ import Guide_to_cytology from "@pages/Guide_to_cytology.json";
 import Guide_to_Circuits from "@pages/Guide_to_Circuits.json";
 import Guide_to_food from "@pages/Guide_to_food.json";
 import Guide_to_drinks from "@pages/Guide_to_drinks.json";
-import Guide_to_Restaurant from "@pages/Guide_to_Restaurant.json";
 import Guide_to_hydroponics from "@pages/Guide_to_hydroponics.json";
 import Supply_crates from "@pages/Supply_crates.json";
 import Auxiliary_Base_Construction_Area from "@pages/Auxiliary_Base_Construction_Area.json";
@@ -170,7 +169,6 @@ const sections: SectionInfo[] = [
     tabs: [
       { page: "Guide_to_food", text: "Еда", icon: food, data: Guide_to_food },
       { page: "Guide_to_drinks", text: "Напитки", icon: drink, data: Guide_to_drinks},
-      { page: "Guide_to_Restaurant", text: "TOUR", icon: tourist, data: Guide_to_Restaurant},
       { page: "Guide_to_hydroponics", text: "Гидропоника", icon: hydro, data: Guide_to_hydroponics },
       { page: "Supply_crates", icon: crate, data: Supply_crates },
       { page: "Auxiliary_Base_Construction_Area", text: "Дроппод", icon: aux, data: Auxiliary_Base_Construction_Area},

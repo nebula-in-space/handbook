@@ -8,7 +8,6 @@ import "./pages/food";
 import "./pages/drinks";
 import "./pages/ghettochem";
 import "./pages/critters";
-import "./pages/tourist";
 
 // Meta pages scripts
 import "./pages/welcome";
