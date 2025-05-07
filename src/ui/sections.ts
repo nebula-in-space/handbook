@@ -76,8 +76,6 @@ import Guide_to_robotics from "@pages/Guide_to_robotics.json";
 import Guide_to_toxins from "@pages/Guide_to_toxins.json";
 import Guide_to_xenobiology from "@pages/Guide_to_xenobiology.json";
 import Guide_to_genetics from "@pages/Guide_to_genetics.json";
-import Guide_to_cytology from "@pages/Guide_to_cytology.json";
-import Guide_to_Circuits from "@pages/Guide_to_Circuits.json";
 import Guide_to_food from "@pages/Guide_to_food.json";
 import Guide_to_drinks from "@pages/Guide_to_drinks.json";
 import Guide_to_hydroponics from "@pages/Guide_to_hydroponics.json";
@@ -159,8 +157,6 @@ const sections: SectionInfo[] = [
       { page: "Guide_to_toxins", text: "Токсиы", icon: toxins, data: Guide_to_toxins},
       { page: "Guide_to_xenobiology", text: "Ксено", icon: xeno, data: Guide_to_xenobiology},
       { page: "Guide_to_genetics", text: "Генетика", icon: genetics, data: Guide_to_genetics },
-      { page: "Guide_to_cytology", text: "Криптология", icon: cyto, data: Guide_to_cytology},
-      { page: "Guide_to_Circuits", text: "Циркуиты", icon: circuits, data: Guide_to_Circuits},
       // { page: "Guide_to_Nanites", text: "nanite", icon: nanites },
     ],
   },

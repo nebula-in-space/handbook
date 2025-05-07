@@ -22,8 +22,6 @@ const pages = [
   "Guide_to_toxins",
   "Guide_to_xenobiology",
   "Guide_to_genetics",
-  "Guide_to_cytology",
-  "Guide_to_Circuits",
   "Guide_to_food",
   "Guide_to_drinks",
   "Guide_to_hydroponics",
