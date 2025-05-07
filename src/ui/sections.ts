@@ -80,7 +80,6 @@ import Guide_to_food from "@pages/Guide_to_food.json";
 import Guide_to_drinks from "@pages/Guide_to_drinks.json";
 import Guide_to_hydroponics from "@pages/Guide_to_hydroponics.json";
 import Supply_crates from "@pages/Supply_crates.json";
-import Auxiliary_Base_Construction_Area from "@pages/Auxiliary_Base_Construction_Area.json";
 import Guide_to_security from "@pages/Guide_to_security.json";
 import Space_Law from "@pages/Space_Law.json";
 import Standard_Operating_Procedure from "@pages/Standard_Operating_Procedure.json";
@@ -166,8 +165,7 @@ const sections: SectionInfo[] = [
       { page: "Guide_to_food", text: "Еда", icon: food, data: Guide_to_food },
       { page: "Guide_to_drinks", text: "Напитки", icon: drink, data: Guide_to_drinks},
       { page: "Guide_to_hydroponics", text: "Гидропоника", icon: hydro, data: Guide_to_hydroponics },
-      { page: "Supply_crates", icon: crate, data: Supply_crates },
-      { page: "Auxiliary_Base_Construction_Area", text: "Дроппод", icon: aux, data: Auxiliary_Base_Construction_Area},
+      { page: "Supply_crates", text: "Карго Ящики", icon: crate, data: Supply_crates },
     ],
   },
   {

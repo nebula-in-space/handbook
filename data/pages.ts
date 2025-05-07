@@ -26,7 +26,6 @@ const pages = [
   "Guide_to_drinks",
   "Guide_to_hydroponics",
   "Supply_crates",
-  "Auxiliary_Base_Construction_Area",
   "Guide_to_security",
   "Space_Law",
   "Standard_Operating_Procedure",
