@@ -72,9 +72,9 @@ async function getChangelog(): Promise<string> {
       .get(
         {
           host: "api.github.com",
-          path: "/repos/Hamcha/tghandbook/commits?sha=master",
+          path: "/repos/nebula-in-space/handbook/commits?sha=master",
           headers: {
-            "User-Agent": "tghandbook",
+            "User-Agent": "handbook",
           },
         },
         (resp) => {

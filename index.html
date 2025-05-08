@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="A prettier client for the /tg/station Wiki"
-    />
+    <meta name="description" content="Более привлекательный клиент для вики-сайта /tg/station"/>
     <meta name="theme-color" content="#141c26" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="/tg/station handbook" />
+    <meta name="apple-mobile-web-app-title" content="shiptest handbook" />
 
     <link
       rel="apple-touch-icon"
@@ -39,7 +36,7 @@
     <link rel="preload" href="./src/index.ts" as="script" />
     <link rel="stylesheet" href="./assets/fonts/iosevka/iosevka-aile.css" />
     <link rel="stylesheet" href="./style/main.scss" />
-    <title>/tg/station Handbook</title>
+    <title>shiptest Handbook</title>
   </head>
   <body>
     <div class="bgimage">
@@ -61,13 +58,9 @@
               </p>
               <p>Учтите, что:</p>
               <ul>
-                <li>
-                  Этот путеводитель предназначен для устройств с небольшим экраном, но
-                  возможно скоро будет версия и для больших (мне не на чем тестить).
-                </li>
-                <li>
-                  Я всё ещё работаю над ним, так что что-то может быть сломано.
-                </li>
+                <li>Этот путеводитель предназначен для устройств с небольшим экраном.</li>
+                <li>Я всё ещё работаю над ним, так что что-то может быть сломано.</li>
+                <li>Есть предложение? Писать сюда discord: @KOCMOHABT</li>
               </ul>
               <p>
                 Прочитал? Можешь кликать по вкладкам сверху, либо продолжить ознакомление со следующим:
@@ -123,18 +116,17 @@
         </div>
         <div class="page special" data-tab="$Changelog">
           <div class="wrapper">
-            <h1 class="pageheader">/tg/handbook Changelog</h1>
+            <h1 class="pageheader">Список изменений shiptest handbook</h1>
             <p>
-              Latest changes to the handbook, this does not include wiki
-              contents.
+              Последние главные изменения сборника shiptest handbook.
             </p>
             <div class="tgh-changes"></div>
             <p class="tgh-changes-end">
-              Older changes omitted, you can check them out by seeing the
+              Все мелкие изменения не описаны, но если есть желание с ними ознакомиться то вот
               <a
-                href="https://github.com/Hamcha/tghandbook/commits/"
+                href="https://github.com/nebula-in-space/handbook/commits/"
                 target="_blank"
-                >full commit history</a
+                >полная история изменений</a
               >.
             </p>
           </div>
@@ -142,11 +134,9 @@
       </section>
     </main>
     <noscript>
-      <h1>JavaScript is required for this tool</h1>
+      <h1>JavaScript, су+ка?</h1>
       <h2>
-        This tools runs completely in your browser, therefore it needs
-        JavaScript to download all the pages, parse them and add all the spicy
-        extras.
+        Вруби гребанный JavaScript для просмотра всех страниц, скачай/обнови его, иначе страницы не будут грузить.
       </h2>
     </noscript>
     <script src="./src/index.ts" async type="module"></script>

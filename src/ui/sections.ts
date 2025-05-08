@@ -29,7 +29,7 @@ import hydro from "@assets/images/tab-icons/hydro.svg";
 import song from "@assets/images/tab-icons/song.svg";
 import crate from "@assets/images/tab-icons/crate.svg";
 import space from "@assets/images/tab-icons/space.svg";
-import aux from "@assets/images/tab-icons/auxbase.svg";
+//import aux from "@assets/images/tab-icons/auxbase.svg";
 import robo from "@assets/images/tab-icons/robo.svg";
 import security from "@assets/images/tab-icons/security.svg";
 import law from "@assets/images/tab-icons/law.svg";
@@ -47,9 +47,9 @@ import combat from "@assets/images/tab-icons/combat.svg";
 import access from "@assets/images/tab-icons/access.svg";
 import xmorph from "@assets/images/tab-icons/xmorph.svg";
 import abduction from "@assets/images/tab-icons/abduction.svg";
-import cyto from "@assets/images/tab-icons/cyto.svg";
-import circuits from "@assets/images/tab-icons/circuit.svg";
-import tourist from "@assets/images/tab-icons/tourist.svg";
+//import cyto from "@assets/images/tab-icons/cyto.svg";
+//import circuits from "@assets/images/tab-icons/circuit.svg";
+//import tourist from "@assets/images/tab-icons/tourist.svg";
 import drink from "@assets/images/tab-icons/drink.svg";
 
 /* Pages */
@@ -142,7 +142,7 @@ const sections: SectionInfo[] = [
       { page: "Guide_to_power", text: "Энергия", icon: power, data: Guide_to_power},
       { page: "Solars", text: "Панели", icon: solar, data: Solars },
       { page: "Guide_to_the_Supermatter", text: "Материя", icon: supermatter, data: Guide_to_the_Supermatter },
-      { page: "Guide_to_disposals", text: "Трубы", icon: null }, // TODO: add icon data: Guide_to_disposals
+      { page: "Guide_to_disposals", text: "Трубы", icon: null, data: Guide_to_disposals }, // TODO: add icon data: Guide_to_disposals
       { page: "Gas_turbine", text: "Турбина", icon: turbine, data: Gas_turbine },
       { page: "Guide_to_Atmospherics", text: "Атмос", icon: atmos, data: Guide_to_Atmospherics },
       { page: "Guide_to_Telecommunications", text: "Телекомы", icon: tcomm, data: Guide_to_Telecommunications },
