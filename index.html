@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="A prettier client for the /tg/station Wiki"
-    />
+    <meta name="description" content="Более привлекательный клиент для вики-сайта /tg/station"/>
     <meta name="theme-color" content="#141c26" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="/tg/station handbook" />
+    <meta name="apple-mobile-web-app-title" content="shiptest handbook" />
 
     <link
       rel="apple-touch-icon"
@@ -31,8 +28,8 @@
       href="./assets/icon16-BtrlYjT4.png"
     />
     <link rel="preload" href="data:video/mp2t;base64,aW1wb3J0IFRhYk1hbmFnZXIgZnJvbSAiLi91aS9UYWJNYW5hZ2VyLnRzIjsKaW1wb3J0IHNlY3Rpb25zIGZyb20gIi4vdWkvc2VjdGlvbnMudHMiOwppbXBvcnQgeyBuZXh0QW5pbWF0aW9uRnJhbWUgfSBmcm9tICIuL3V0aWxzLnRzIjsKaW1wb3J0IHsgZ290b1BhZ2UsIHNlYXJjaEJveCB9IGZyb20gIi4vc2NyaXB0cy9zZWFyY2gudHMiOwppbXBvcnQgeyBnZXRDdXJyZW50UGFnZSB9IGZyb20gIi4vc2NyaXB0cy9oaXN0b3J5LnRzIjsKCmFzeW5jIGZ1bmN0aW9uIGxvYWQoKSB7CiAgY29uc3Qgc2VjdGlvbkxpc3RDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgic2VjdGlvbi1saXN0IikhOwogIGNvbnN0IHRhYkxpc3RDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgidGFiLWxpc3QiKSE7CiAgY29uc3QgdGFiQ29udGVudENvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJ0YWJzIikhOwogIGNvbnN0IG1hbmFnZXIgPSBuZXcgVGFiTWFuYWdlcigKICAgIHNlY3Rpb25MaXN0Q29udGFpbmVyLAogICAgdGFiTGlzdENvbnRhaW5lciwKICAgIHRhYkNvbnRlbnRDb250YWluZXIsCiAgKTsKICBtYW5hZ2VyLnNldExvYWRpbmcodHJ1ZSk7CgogIGF3YWl0IG5leHRBbmltYXRpb25GcmFtZSgpOwoKICBjb25zdCBwcm9taXNlcyA9IHNlY3Rpb25zLmZsYXRNYXAoKHNlY3Rpb24pID0+IHsKICAgIG1hbmFnZXIuY3JlYXRlU2VjdGlvbihzZWN0aW9uLm5hbWUpOwoKICAgIHJldHVybiBzZWN0aW9uLnRhYnMubWFwKGFzeW5jICh0YWIpID0+IHsKICAgICAgLy8gTG9hZCBwYWdlCiAgICAgIGF3YWl0IG1hbmFnZXIub3BlblRhYihzZWN0aW9uLm5hbWUsIHRhYiwge30pOwogICAgfSk7CiAgfSk7CgogIFByb21pc2UuYWxsKHByb21pc2VzKS50aGVuKCgpID0+IHsKICAgIC8vIFJlbW92ZSBhcHAtd2lkZSBsb2FkaW5nCiAgICBtYW5hZ2VyLnNldExvYWRpbmcoZmFsc2UpOwoKICAgIGNvbnN0IHsgcGF0aCwgaGFzaCB9ID0gZ2V0Q3VycmVudFBhZ2UoKTsKCiAgICAvLyBUcnkgdG8gb3BlbiBwYWdlIGZyb20gVVJMLCBvcGVuIGxhbmRpbmcgcGFnZSBpZiBmYWlsCiAgICBpZiAoIWdvdG9QYWdlKHBhdGgsIGhhc2gpKSB7CiAgICAgIG1hbmFnZXIuc2V0QWN0aXZlKCIkV2VsY29tZSIpOwogICAgICBtYW5hZ2VyLnNob3dTZWN0aW9uKCJNZWRpY2FsIik7CiAgICB9CiAgfSk7Cn0KCmlmICgic2VydmljZVdvcmtlciIgaW4gbmF2aWdhdG9yKSB7CiAgY29uc3QgeCA9IGltcG9ydC5tZXRhLmVudi5WSVRFX1NVQkRJUgogICAgPyBgJHtpbXBvcnQubWV0YS5lbnYuVklURV9TVUJESVJ9L3N3LmpzYAogICAgOiAic3cuanMiOwogIG5hdmlnYXRvci5zZXJ2aWNlV29ya2VyCiAgICAucmVnaXN0ZXIoeCkKICAgIC50aGVuKChyZWdpc3RyYXRpb24pID0+IHsKICAgICAgY29uc29sZS5sb2coIlJlZ2lzdHJhdGlvbiBzdWNjZXNzZnVsLCBzY29wZSBpczoiLCByZWdpc3RyYXRpb24uc2NvcGUpOwogICAgfSkKICAgIC5jYXRjaCgoZXJyb3IpID0+IHsKICAgICAgY29uc29sZS5sb2coIlNlcnZpY2Ugd29ya2VyIHJlZ2lzdHJhdGlvbiBmYWlsZWQsIGVycm9yOiIsIGVycm9yKTsKICAgIH0pOwp9CgovLyBTdGFydCBsb2FkaW5nIHBhZ2VzCmxvYWQoKTsKCi8vIEFkZCBzZWFyY2ggYm94CmRvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQoc2VhcmNoQm94KCkpOwoKLy8gQWRkIHJldmlzaW9uIGluZm8KZG9jdW1lbnQKICAuZ2V0RWxlbWVudEJ5SWQoInRnaC12ZXJzaW9uIikKICA/LmFwcGVuZENoaWxkKAogICAgZG9jdW1lbnQuY3JlYXRlVGV4dE5vZGUoaW1wb3J0Lm1ldGEuZW52LlZJVEVfQVBQX1JFVklTSU9OIHx8ICJ1bmtub3duIiksCiAgKTsK" as="script" />
-    <title>/tg/station Handbook</title>
-    <script async type="module" crossorigin src="./assets/index-DxhMgKr0.js"></script>
+    <title>shiptest Handbook</title>
+    <script async type="module" crossorigin src="./assets/index-Z3RHoA6G.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-rENAFlxu.css">
   </head>
   <body>
@@ -55,13 +52,9 @@
               </p>
               <p>Учтите, что:</p>
               <ul>
-                <li>
-                  Этот путеводитель предназначен для устройств с небольшим экраном, но
-                  возможно скоро будет версия и для больших (мне не на чем тестить).
-                </li>
-                <li>
-                  Я всё ещё работаю над ним, так что что-то может быть сломано.
-                </li>
+                <li>Этот путеводитель предназначен для устройств с небольшим экраном.</li>
+                <li>Я всё ещё работаю над ним, так что что-то может быть сломано.</li>
+                <li>Есть предложение? Писать сюда discord: @KOCMOHABT</li>
               </ul>
               <p>
                 Прочитал? Можешь кликать по вкладкам сверху, либо продолжить ознакомление со следующим:
@@ -117,18 +110,17 @@
         </div>
         <div class="page special" data-tab="$Changelog">
           <div class="wrapper">
-            <h1 class="pageheader">/tg/handbook Changelog</h1>
+            <h1 class="pageheader">Список изменений shiptest handbook</h1>
             <p>
-              Latest changes to the handbook, this does not include wiki
-              contents.
+              Последние главные изменения сборника shiptest handbook.
             </p>
             <div class="tgh-changes"></div>
             <p class="tgh-changes-end">
-              Older changes omitted, you can check them out by seeing the
+              Все мелкие изменения не описаны, но если есть желание с ними ознакомиться то вот
               <a
-                href="https://github.com/Hamcha/tghandbook/commits/"
+                href="https://github.com/nebula-in-space/handbook/commits/"
                 target="_blank"
-                >full commit history</a
+                >полная история изменений</a
               >.
             </p>
           </div>
@@ -136,11 +128,9 @@
       </section>
     </main>
     <noscript>
-      <h1>JavaScript is required for this tool</h1>
+      <h1>JavaScript, су+ка?</h1>
       <h2>
-        This tools runs completely in your browser, therefore it needs
-        JavaScript to download all the pages, parse them and add all the spicy
-        extras.
+        Вруби гребанный JavaScript для просмотра всех страниц, скачай/обнови его, иначе страницы не будут грузить.
       </h2>
     </noscript>
   </body>
