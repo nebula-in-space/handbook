@@ -113,7 +113,7 @@ const sections: SectionInfo[] = [
       { page: "Гайд_на_пламбинг", text: "Пламбинг", icon: plumbing, data: Guide_to_plumbing },
       { page: "Гранаты", text: "Гранаты", icon: grenade, data: Grenade },
       { page: "Хирургия", text: "Хирургия", icon: surgery, data: Surgery },
-      { page: "Гайд_на_травмы", text: "Травмы", icon: trauma, data: Guide_to_Traumas},
+      { page: "Церебральные_Травмы", text: "Церебралки", icon: trauma, data: Guide_to_Traumas},
     ],
   },
   {
@@ -166,7 +166,7 @@ const sections: SectionInfo[] = [
       { page: "Правила", text: "Правила", icon: rules, data: Rules },
       { page: "Взлом", text: "Взлом", icon: hacking, data: Hacking },
       { page: "Существа", text: "Существа", icon: critter, data: Critters },
-      { page: "Гайд_на_расы", text: "Мутанты", icon: races, data: Guide_to_races },
+      { page: "Путеводитель_по расам", text: "Расы", icon: races, data: Guide_to_races },
       { page: "Бумажная_работа", text: "Документы", icon: law, data: Paper_Markdown },
       //{ page: "Музыка", text: "Музыка", icon: song, data: Songs },
       //{ page: "Иследование", text: "Иследование", icon: space, data: Guide_to_Space_Exploration},
