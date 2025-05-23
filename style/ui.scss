@@ -246,6 +246,10 @@ noscript {
   margin: -0.2rem -1rem;
 }
 
+#section-list .section[data-section="Bonus"] {
+  display: none;
+}
+
 #section-list .section[data-section="$META"] {
   max-width: 0.5rem;
 

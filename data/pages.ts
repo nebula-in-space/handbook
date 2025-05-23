@@ -23,6 +23,7 @@ const pages = [
   "Guide_to_hydroponics",
   "Supply_crates",
   "Guide_to_Combat",
+  "Guide_to_Arsenal",
   "Makeshift_weapons",
   "Syndicate_Items",
   "Illicit_Access",

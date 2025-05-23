@@ -88,6 +88,7 @@ import Hacking from "@pages/Hacking.json";
 import Critters from "@pages/Critters.json";
 import Guide_to_races from "@pages/Guide_to_races.json";
 import Paper_Markdown from "@pages/Paper_Markdown.json";
+import Arsenal from "@pages/Arsenal.json";
 
 export interface SectionInfo {
   name: string;
@@ -174,6 +175,12 @@ const sections: SectionInfo[] = [
       { page: "Syndicate_Items", text: "Аплинк", icon: uplink, data: Syndicate_Items},
       { page: "Illicit_Access", text: "Проникновение", icon: access, data: Illicit_Access },
       { page: "Guide_to_Combat", text: "Боевка", icon: combat, data: Guide_to_Combat },
+    ],
+  },
+  {
+    name: "Bonus",
+    tabs: [
+      { page: "Arsenal", text: "Арсенал", icon: combat, data: Arsenal },
     ],
   },
   {
