@@ -39,6 +39,7 @@ async function loadPage(
 
   // Convert relative links to absolute
   html = html.replace(/"\/wiki/gi, '"https://tgstation13.org/wiki');
+  html = html.replace(/"\/files/gi, '"https://raw.githubusercontent.com/nebula-in-space/handbook/refs/heads/master');
 
   await nextAnimationFrame();
 
