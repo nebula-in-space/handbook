@@ -33,7 +33,7 @@ import crate from "@assets/images/tab-icons/crate.svg";
 import robo from "@assets/images/tab-icons/robo.svg";
 //import security from "@assets/images/tab-icons/security.svg";
 import law from "@assets/images/tab-icons/law.svg";
-//import sop from "@assets/images/tab-icons/sop.svg";
+import sop from "@assets/images/tab-icons/sop.svg";
 //import trial from "@assets/images/tab-icons/trial.svg";
 //import traitor from "@assets/images/tab-icons/traitor.svg";
 import hacking from "@assets/images/tab-icons/hacking.svg";
@@ -51,6 +51,7 @@ import access from "@assets/images/tab-icons/access.svg";
 //import circuits from "@assets/images/tab-icons/circuit.svg";
 //import tourist from "@assets/images/tab-icons/tourist.svg";
 import drink from "@assets/images/tab-icons/drink.svg";
+import arsenal from "@assets/images/tab-icons/arsenal.svg";
 
 /* Pages */
 import Guide_to_medicine from "@pages/Guide_to_medicine.json";
@@ -88,6 +89,7 @@ import Hacking from "@pages/Hacking.json";
 import Critters from "@pages/Critters.json";
 import Guide_to_races from "@pages/Guide_to_races.json";
 import Paper_Markdown from "@pages/Paper_Markdown.json";
+import Golosary from "@pages/Golosary.json";
 import Arsenal from "@pages/Arsenal.json";
 
 export interface SectionInfo {
@@ -180,7 +182,8 @@ const sections: SectionInfo[] = [
   {
     name: "Bonus",
     tabs: [
-      { page: "Arsenal", text: "Арсенал", icon: combat, data: Arsenal },
+      { page: "Golosary", text: "Голосарий", icon: sop, data: Golosary },
+      { page: "Arsenal", text: "Арсенал", icon: arsenal, data: Arsenal },
     ],
   },
   {
