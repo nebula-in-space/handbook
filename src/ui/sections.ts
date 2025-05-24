@@ -52,6 +52,7 @@ import access from "@assets/images/tab-icons/access.svg";
 //import tourist from "@assets/images/tab-icons/tourist.svg";
 import drink from "@assets/images/tab-icons/drink.svg";
 import arsenal from "@assets/images/tab-icons/arsenal.svg";
+import armor from "@assets/images/tab-icons/armor.svg";
 
 /* Pages */
 import Guide_to_medicine from "@pages/Guide_to_medicine.json";
@@ -91,6 +92,7 @@ import Guide_to_races from "@pages/Guide_to_races.json";
 import Paper_Markdown from "@pages/Paper_Markdown.json";
 import Golosary from "@pages/Golosary.json";
 import Arsenal from "@pages/Arsenal.json";
+import Armor from "@pages/Armor.json";
 
 export interface SectionInfo {
   name: string;
@@ -184,6 +186,7 @@ const sections: SectionInfo[] = [
     tabs: [
       { page: "Golosary", text: "Голосарий", icon: sop, data: Golosary },
       { page: "Arsenal", text: "Арсенал", icon: arsenal, data: Arsenal },
+      { page: "Armor", text: "Броня", icon: armor, data: Armor },
     ],
   },
   {
