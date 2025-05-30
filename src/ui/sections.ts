@@ -93,6 +93,7 @@ import Guide_to_races from "@pages/Guide_to_races.json";
 import Golosary from "@pages/Golosary.json";
 import Arsenal from "@pages/Arsenal.json";
 import Armor from "@pages/Armor.json";
+import Mood from "@pages/Mood.json";
 
 export interface SectionInfo {
   name: string;
@@ -183,6 +184,7 @@ const sections: SectionInfo[] = [
       //{ page: "Syndicate_Items", text: "Аплинк", icon: uplink, data: Syndicate_Items},
       //{ page: "Illicit_Access", text: "Проникновение", icon: access, data: Illicit_Access },
       { page: "Arsenal", text: "Арсенал", icon: arsenal, data: Arsenal },
+      { page: "Mood", text: "Настроение", icon: null, data: Mood },
     ],
   },
   {
