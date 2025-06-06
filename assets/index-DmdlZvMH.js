@@ -1,48 +1,48 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))i(r);new MutationObserver(r=>{for(const d of r)if(d.type==="childList")for(const n of d.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function a(r){const d={};return r.integrity&&(d.integrity=r.integrity),r.referrerPolicy&&(d.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?d.credentials="include":r.crossOrigin==="anonymous"?d.credentials="omit":d.credentials="same-origin",d}function i(r){if(r.ep)return;r.ep=!0;const d=a(r);fetch(r.href,d)}})();const E="_GLOBAL",P="_GENERIC",C={},S={};function D(t,e){C[t]=e}function _(t,e){S[t]=e}function ot(t,e){E in C&&C[E](e,t),t in C?C[t](e,t):P in C&&C[P](e,t)}function J(t,e){E in S&&S[E](e,t),t in S?S[t](e,t):P in S&&S[P](e,t)}function A(t,e){let a=t.parentElement;for(;a!=null&&!e(a);)a=a.parentElement;return a}function F(t){const[e,...a]=Array.from(t.querySelectorAll("tr")),i=Array.from(e.querySelectorAll("th")).map(r=>r.textContent.trim());return a.map(r=>{const d={};return r.querySelectorAll("td,th").forEach((n,s)=>{d[i[s]]=n,d[`$row${s}`]=n}),d})}function k(t,e,a){const i=document.createElement("table");if(e.length<1)return i;const r=document.createElement("tr");return t.forEach(d=>{const n=document.createElement("th");n.appendChild(document.createTextNode(d)),r.appendChild(n)}),i.appendChild(r),e.forEach(d=>{const n=document.createElement("tr");t.forEach((s,o)=>{let l=null;d[s].tagName==="TD"||d[s].tagName==="TH"?l=d[s]:(l=document.createElement("td"),o===0&&l.classList.add("btab-name"),l.appendChild(d[s])),n.appendChild(l)}),a&&a(d,n),i.appendChild(n)}),i}const $={aliceblue:"#f0f8ff",antiquewhite:"#faebd7",aqua:"#00ffff",aquamarine:"#7fffd4",azure:"#f0ffff",beige:"#f5f5dc",bisque:"#ffe4c4",black:"#000000",blanchedalmond:"#ffebcd",blue:"#0000ff",blueviolet:"#8a2be2",brown:"#a52a2a",burlywood:"#deb887",cadetblue:"#5f9ea0",chartreuse:"#7fff00",chocolate:"#d2691e",coral:"#ff7f50",cornflowerblue:"#6495ed",cornsilk:"#fff8dc",crimson:"#dc143c",cyan:"#00ffff",darkblue:"#00008b",darkcyan:"#008b8b",darkgoldenrod:"#b8860b",darkgray:"#a9a9a9",darkgreen:"#006400",darkgrey:"#a9a9a9",darkkhaki:"#bdb76b",darkmagenta:"#8b008b",darkolivegreen:"#556b2f",darkorange:"#ff8c00",darkorchid:"#9932cc",darkred:"#8b0000",darksalmon:"#e9967a",darkseagreen:"#8fbc8f",darkslateblue:"#483d8b",darkslategray:"#2f4f4f",darkslategrey:"#2f4f4f",darkturquoise:"#00ced1",darkviolet:"#9400d3",deeppink:"#ff1493",deepskyblue:"#00bfff",dimgray:"#696969",dimgrey:"#696969",dodgerblue:"#1e90ff",firebrick:"#b22222",floralwhite:"#fffaf0",forestgreen:"#228b22",fuchsia:"#ff00ff",gainsboro:"#dcdcdc",ghostwhite:"#f8f8ff",gold:"#ffd700",goldenrod:"#daa520",gray:"#808080",green:"#008000",greenyellow:"#adff2f",grey:"#808080",honeydew:"#f0fff0",hotpink:"#ff69b4",indianred:"#cd5c5c",indigo:"#4b0082",ivory:"#fffff0",khaki:"#f0e68c",lavender:"#e6e6fa",lavenderblush:"#fff0f5",lawngreen:"#7cfc00",lemonchiffon:"#fffacd",lightblue:"#add8e6",lightcoral:"#f08080",lightcyan:"#e0ffff",lightgoldenrodyellow:"#fafad2",lightgray:"#d3d3d3",lightgreen:"#90ee90",lightgrey:"#d3d3d3",lightpink:"#ffb6c1",lightsalmon:"#ffa07a",lightseagreen:"#20b2aa",lightskyblue:"#87cefa",lightslategray:"#778899",lightslategrey:"#778899",lightsteelblue:"#b0c4de",lightyellow:"#ffffe0",lime:"#00ff00",limegreen:"#32cd32",linen:"#faf0e6",magenta:"#ff00ff",maroon:"#800000",mediumaquamarine:"#66cdaa",mediumblue:"#0000cd",mediumorchid:"#ba55d3",mediumpurple:"#9370db",mediumseagreen:"#3cb371",mediumslateblue:"#7b68ee",mediumspringgreen:"#00fa9a",mediumturquoise:"#48d1cc",mediumvioletred:"#c71585",midnightblue:"#191970",mintcream:"#f5fffa",mistyrose:"#ffe4e1",moccasin:"#ffe4b5",navajowhite:"#ffdead",navy:"#000080",oldlace:"#fdf5e6",olive:"#808000",olivedrab:"#6b8e23",orange:"#ffa500",orangered:"#ff4500",orchid:"#da70d6",palegoldenrod:"#eee8aa",palegreen:"#98fb98",paleturquoise:"#afeeee",palevioletred:"#db7093",papayawhip:"#ffefd5",peachpuff:"#ffdab9",peru:"#cd853f",pink:"#ffc0cb",plum:"#dda0dd",powderblue:"#b0e0e6",purple:"#800080",rebeccapurple:"#663399",red:"#ff0000",rosybrown:"#bc8f8f",royalblue:"#4169e1",saddlebrown:"#8b4513",salmon:"#fa8072",sandybrown:"#f4a460",seagreen:"#2e8b57",seashell:"#fff5ee",sienna:"#a0522d",silver:"#c0c0c0",skyblue:"#87ceeb",slateblue:"#6a5acd",slategray:"#708090",slategrey:"#708090",snow:"#fffafa",springgreen:"#00ff7f",steelblue:"#4682b4",tan:"#d2b48c",teal:"#008080",thistle:"#d8bfd8",tomato:"#ff6347",turquoise:"#40e0d0",violet:"#ee82ee",wheat:"#f5deb3",white:"#ffffff",whitesmoke:"#f5f5f5",yellow:"#ffff00",yellowgreen:"#9acd32"};var G=(t=>(t[t.RGB=0]="RGB",t[t.HEX=1]="HEX",t))(G||{});function it({h:t,s:e,v:a}){const i=Math.floor(t*6),r=t*6-i,d=a*(1-e),n=a*(1-r*e),s=a*(1-(1-r)*e);switch(i%6){case 0:return{r:a,g:s,b:d};case 1:return{r:n,g:a,b:d};case 2:return{r:d,g:a,b:s};case 3:return{r:d,g:n,b:a};case 4:return{r:s,g:d,b:a};case 5:return{r:a,g:d,b:n};default:throw new Error("unreacheable")}}function rt({r:t,g:e,b:a}){const i=Math.max(t,e,a),r=Math.min(t,e,a),d=i,n=i-r,s=i===0?0:n/i;let o;if(i===r)o=0;else{switch(i){case t:o=(e-a)/n+(e<a?6:0);break;case e:o=(a-t)/n+2;break;case a:o=(t-e)/n+4;break;default:throw new Error("unreacheable")}o/=6}return{h:o,s,v:d}}function ht(t){if($[t])return R($[t]);const e=document.createElement("div");e.style.color=t,document.body.appendChild(e);const i=window.getComputedStyle(e).getPropertyValue("color");return document.body.removeChild(e),R(i)}function R(t){if(t[0]==="#"){const e=(t.length-1)/3,a=[17,1,.062272][e-1];return{r:Math.round(parseInt(t.substr(1,e),16)*a)/256,g:Math.round(parseInt(t.substr(1+e,e),16)*a)/256,b:Math.round(parseInt(t.substr(1+2*e,e),16)*a)/256}}if(t.startsWith("rgb")){const e=t.split("(")[1].split(")")[0].split(",").map(a=>parseInt(a,10)).map(Math.round);return{r:e[0]/256,g:e[1]/256,b:e[2]/256}}return ht(t)}function nt(t,e){const a=Math.round(t.r*255),i=Math.round(t.g*255),r=Math.round(t.b*255);switch(e){case 0:return`rgb(${a}, ${i}, ${r})`;case 1:{const d=`00${a.toString(16)}`.slice(-2),n=`00${i.toString(16)}`.slice(-2),s=`00${r.toString(16)}`.slice(-2);return`#${d}${n}${s}`}default:return"#000"}}function W(t,e){const a=R(t),i=rt(a);i.s<.15?(i.h=.6,i.s=.5,i.v=Math.max(.2,1-i.v)):i.v>.5&&(i.v=.4,i.s>.2&&(i.s=Math.min(1,i.s+.2)));const r=it(i);return nt(r,e)}function ct(t,e){const a=R(t),i=rt(a);i.v<.5&&(i.v=.8),i.s>.7&&(i.s=Math.min(1,i.s-.3),i.v=1),Math.abs(i.h-.666)<.1&&(i.h-=.13,i.v=Math.min(1,i.v+.1));const r=it(i);return nt(r,e)}function O(){return new Promise(t=>{requestAnimationFrame(()=>t())})}function gt(t,e){return t.startsWith(e)?t.slice(e.length):t}function dt(...t){const e=t[0],a=t[1],i=document.createElement(e);let r=1;typeof a=="object"&&a!==null&&!Array.isArray(a)&&(Object.keys(a).forEach(d=>{d.startsWith("@")?i.addEventListener(d.substr(1),a[d]):i[d]=a[d]}),r=2);for(let d=r;d<t.length;d+=1)Array.isArray(t[d])?i.appendChild(dt.apply(this,t[d])):t[d]instanceof Node?i.appendChild(t[d]):i.appendChild(document.createTextNode(t[d]));return i}const Q=dt;function X(t,e){const a={};return t.forEach(i=>{const r=e(i);r in a?a[r].push(i):a[r]=[i]}),a}window.addEventListener("popstate",t=>{var e;(e=t.state)!=null&&e.page&&st(t.state.page,t.state.hash)});function pt(){const{pathname:t,hash:e}=location;let i=t.substring(1+"/handbook".length);return i.startsWith("meta/")&&(i=`$${i.substring(5)}`),{path:i,hash:e.substring(1)}}function N(t,e){let a=`/${t}`;t.startsWith("$")&&(t==="$Welcome"?a="/":a=`/meta/${t.substring(1)}`),history.pushState({page:t,hash:e},"",`/handbook${a}${e?`#${e}`:""}`)}const I=[];function v(t){I.push(...t)}function ut(t,e){return I.find(a=>a.page===t&&a.name===e)}function H(t,e){var a;e&&((a=document.querySelector(".page.active"))==null?void 0:a.dataset.tab)!==t.page&&M.instance.setActive(t.page),t.element.scrollIntoView({block:t.alignment,inline:"nearest",behavior:"auto"}),document.querySelectorAll(".bgus_fz_selected").forEach(i=>i.classList.remove("bgus_fz_selected")),t.element.classList.add("bgus_fz_selected")}function st(t,e){if(!t)return!1;try{if(M.instance.setActive(t),e){const a=ut(t,e);a&&H(a,!1)}return!0}catch{return!1}}function mt(){const t=document.createElement("ul"),e=document.createElement("div");let a=[],i=0,r=!1;const d=l=>{i=l,t.querySelectorAll(".selected").forEach(h=>h.classList.remove("selected")),t.children[l].classList.add("selected"),H(a[l],r)},n=async(l,h)=>{if(!l||l.length<1)return;let m=I;if(r=l[0]==="@",r?l=l.substr(1):m=I.filter(c=>c.page===h),l.length<1)return;const f=l.split("").map(c=>["\\","]","^"].includes(c)?`\\${c}`:c).join("])(.*?)(["),w=new RegExp(`^(.*?)([${f}])(.*?)$`,"i");a=m.map(c=>({...c,matches:(c.name.match(w)||[]).slice(1).reduce((p,g,u,b)=>(u<2?p.push([g]):b[u-1]===""?p[p.length-1].push(g):g!==""&&p.push([g]),p),[]).map(p=>p.join(""))})).filter(c=>c.matches.length>0).sort((c,p)=>{const g=c.id,u=c.matches,b=p.id,y=p.matches;if(u.length===1&&y.length!==1)return-1;if(u.length!==1&&y.length===1)return 1;const B=x=>!/[^a-zA-Z0-9]*$/.test(x),j=u.filter(B).length-y.filter(B).length;if(j!==0)return j;for(let x=0;x<Math.min(u.length,y.length)-1;x+=2){const q=u[x].length-y[x].length;if(q!==0)return q}const U=u.length-y.length;return U!==0?U:g-b}),await O(),t.innerHTML="",a.forEach(c=>{const p=document.createElement("li");if(c.matches.forEach((g,u)=>{const b=document.createElement(u%2?"strong":"span");b.appendChild(document.createTextNode(g)),p.appendChild(b)}),r){const g=document.createElement("span");g.className="source",g.appendChild(document.createTextNode(c.page.replace(/_/g," "))),p.appendChild(g)}p.addEventListener("click",()=>{H(c,r),N(c.page,c.name),e.classList.add("bgus_hidden")}),t.appendChild(p)}),a.length>0&&d(0)},s=document.createElement("input");let o="";return s.addEventListener("keyup",l=>{switch(l.code){case"Escape":e.classList.add("bgus_hidden");return;case"Enter":if(a.length>0){const h=a[i];H(h,r),N(h.page,h.name)}e.classList.add("bgus_hidden");return;case"ArrowDown":i<a.length-1&&d(i+1);return;case"ArrowUp":i>0&&d(i-1);return;default:if(s.value!==o){const h=document.querySelector(".page.active");n(s.value,(h==null?void 0:h.dataset.tab)||""),o=s.value}}}),document.body.addEventListener("keyup",l=>{l.code==="KeyS"&&s.focus()}),document.body.addEventListener("keydown",l=>{if(l.shiftKey)switch(l.code){case"KeyS":{e.classList.remove("bgus_hidden"),s.value="";break}}}),e.id="bgus_fz_searchbox",e.classList.add("bgus_hidden"),e.appendChild(s),e.appendChild(t),e}function ft(t){return t==="H1"||t==="H2"||t==="H3"}D(E,function(t,e){var d;const a=document.createElement("h1");a.className="pageheader",a.appendChild(document.createTextNode(e.replace(/_/g," "))),t.insertBefore(a,t.firstChild),t.querySelectorAll("img").forEach(n=>n.setAttribute("loading","lazy")),t.querySelectorAll(".mw-editsection").forEach(n=>{n.parentElement.removeChild(n)}),t.querySelectorAll("a").forEach(n=>{n.href.includes(e)||(n.target="_blank")}),t.querySelectorAll("*[bgcolor]").forEach(n=>{let s=n.getAttribute("bgcolor")??"";s.length===6&&!Number.isNaN(parseInt(s,16))&&(s=`#${s}`),n.setAttribute("bgcolor",W(s,G.HEX).slice(1))}),t.querySelectorAll("*[style]").forEach(n=>{n.style.backgroundColor!==""&&(n.style.backgroundColor=W(n.style.backgroundColor,G.RGB)),n.style.background!==""&&(n.style.backgroundColor=W(n.style.background,G.RGB))}),t.querySelectorAll("*[color]").forEach(n=>{let s=n.getAttribute("color")??"";s.length===6&&!Number.isNaN(parseInt(s,16))&&(s=`#${s}`),n.setAttribute("color",ct(s,G.HEX).slice(1))}),t.querySelectorAll("table[width]").forEach(n=>{n.setAttribute("width","100%")}),t.querySelectorAll("table[style]").forEach(n=>{n.style.width!==""&&(n.style.width="100%")}),t.querySelectorAll("table .floatright > a > img").forEach(n=>{const s=A(n,l=>l instanceof HTMLTableRowElement),o=document.createElement("td");s==null||s.appendChild(o)});const i=t.querySelector("#toc");if(i){const n=i.querySelector("h2");i.parentNode.insertBefore(n,i);const s=i.querySelector("#toctitle");s!=null&&i.removeChild(s)}t.querySelectorAll("h1,h2,h3").forEach(n=>{const s=n.parentNode,o=document.createElement("div");for(s.insertBefore(o,n);n.nextSibling&&!ft(n.nextSibling.nodeName);){const l=n.nextSibling;s.removeChild(l),o.appendChild(l)}n.remove(),o.insertBefore(n,o.firstChild),o.className="mw-headline-cont"}),t.querySelectorAll("h1 .mw-headline, h2 .mw-headline, h3 .mw-headline").forEach(n=>{const s=A(n,o=>o.classList.contains("mw-headline-cont"));s&&s.querySelectorAll("h1 .mw-headline, h2 .mw-headline, h3 .mw-headline").length===1?(s.id=n.id,n.id+="-span",s.dataset.name=n.textContent||void 0):(n.dataset.name=n.textContent||void 0,n.classList.add("mw-headline-cont"))});const r=t.querySelector(".tabs-tabbox a[title='Labor Camp']");r&&((d=A(r,n=>n.classList.contains("tabs-tabbox")))==null||d.remove())});_(E,(t,e)=>{const a=Array.from(t.querySelectorAll(".mw-headline-cont[id][data-name]"));v(a.map((i,r)=>{var d;return{id:r,page:e,name:((d=i.dataset.name)==null?void 0:d.trim())||"",element:i,alignment:"start"}}))});const z="Guide_to_chemistry";D(z,t=>{t.querySelectorAll("table.wikitable > tbody > tr:not(:first-child) > td:nth-child(2), .tooltiptext").forEach(e=>{const a=e.cloneNode();Array.from(e.childNodes).forEach(i=>{i instanceof HTMLParagraphElement?a.append(...i.childNodes):a.append(i)}),e.parentNode.replaceChild(a,e)}),Array.from(t.querySelectorAll("td")).filter(e=>e.textContent.indexOf(" part")>=0).forEach(e=>{e.innerHTML=e.innerHTML.replace(/((\d+)\s+(?:parts?|units?))(.*?(?:<\/a>|\n|$))/gi,(a,...[i,r,d])=>`<label class="bgus_part ${d.includes("</a>")?"bgus_part_tooltip":""}" data-amount="${r}"><input type="checkbox" class='bgus_checkbox bgus_hidden'/> <span class="bgus_part_label" data-src="${i}">${i}</span></label>${d.replace(/(<a .+?<\/a>)/gi,'<span class="bgus_nobreak bgus_nested_element">$1<span class="bgus_twistie"></span></span>')}`)}),t.querySelectorAll(".bgus_part").forEach(e=>{"parts"in e.parentElement.dataset?e.parentElement.dataset.parts=(parseInt(e.parentElement.dataset.parts||"0",10)+parseInt(e.dataset.amount||"0",10)).toString():e.parentElement.dataset.parts=e.dataset.amount}),t.querySelectorAll("div[data-name] .wikitable.sortable tr").forEach(e=>{const i=A(e,u=>"name"in u.dataset&&u.dataset.name!=="").dataset.name;if(e.querySelector("td")===null){e.querySelectorAll("th").forEach((b,y)=>{if(y<2){b.classList.add("table-head");return}b.parentElement.removeChild(b)});return}const r=Array.from(e.querySelectorAll("td")).slice(1);let d=null,n=null,s=null,o=null,l=null,h=null,m=null,f=null;switch(i){case"Components":[s,l]=r;break;case"Virology Recipes":[l]=r;break;case"Narcotics":[s,l,h,m,f]=r;break;case"Other Reagents":[s,l,h]=r;break;case"Explosive Strength":[d,l,n]=r;break;case"Mutation Toxins":[l,h]=r;break;default:[s,o,l,h,m,f]=r}const w=e.querySelector("th"),c=w.querySelector("p"),p=c==null?void 0:c.innerHTML;c==null||c.remove();let g=`<div class="reagent-header btab-name">${w.innerHTML}</div>`;p&&(g+=`<p class="ph-data">${gt(p,"<br>")}</p>`),o&&(g+=`<p class="treatment">${o.innerHTML}</p>`),h&&(g+=`<p class="metabolism">${h.innerHTML}</p>`),d&&(g+=`<p class="conditions">${d.innerHTML}</p>`),n&&(g+=`<p class="explosive">${n.innerHTML}</p>`),f&&f.innerHTML.trim()!=="N/A"&&(g+=`<p class="addiction">${f.innerHTML}</p>`),m&&m.innerHTML.trim()!=="N/A"&&(g+=`<p class="overdose">${m.innerHTML}</p>`),l&&(g+=`<p>${l.innerHTML}</p>`),s&&(g+=`<div class="ph">${s.innerHTML}</div>`),w.classList.add("reagent-ext"),w.innerHTML=g,l==null||l.remove(),o==null||o.remove(),h==null||h.remove(),d==null||d.remove(),n==null||n.remove(),m==null||m.remove(),f==null||f.remove(),s==null||s.remove()}),t.querySelectorAll(".wikitable.sortable").forEach(e=>{e.classList.add("tgh-btab")})});_(z,t=>{t.querySelectorAll(".bgus_part_tooltip > .bgus_checkbox").forEach(d=>{const n=d.parentElement.nextElementSibling;d.addEventListener("click",()=>{n==null||n.querySelectorAll(".bgus_checkbox").forEach(s=>{s.checked=d.checked})})}),t.querySelectorAll(".bgus_nested_element").forEach(d=>{d.addEventListener("click",()=>{d.classList.toggle("bgus_collapsed")})});const e=(d,n)=>{d.forEach(s=>{var w;const o=s.parentElement,l=parseFloat(o.dataset.amount||"0"),h=parseFloat(o.parentElement.dataset.parts||"0"),m=Math.ceil(n*(l/h));s.innerHTML=`${m} ml`;let f=o.nextElementSibling;for(;f;){if(f.classList.contains("tooltip")){const c=[];(w=f.querySelector(".tooltiptext"))==null||w.childNodes.forEach(p=>{if(p instanceof Element&&p.classList&&p.classList.contains("bgus_part")){const g=p.querySelector(".bgus_part_label");if(!g)return;c.push(g)}}),e(c,m)}if(f.classList.contains("bgus_part"))break;f=f.nextElementSibling}})},a=Array.from(t.querySelectorAll("table.wikitable > tbody > tr:not(:first-child)")),i=Array.from(t.querySelectorAll("table.wikitable > tbody > tr:not(:first-child) th .reagent-header"));v(i.map((d,n)=>({page:z,name:d.textContent.trim().replace(/\n.+$/gm,"").replace("▮",""),element:d.parentElement,alignment:"center",id:n}))),document.body.addEventListener("keydown",d=>{if(d.shiftKey)switch(d.code){case"KeyC":{t.classList.toggle("bgus_cbox"),t.querySelectorAll(".bgus_checkbox:checked").forEach(n=>{n.checked=!1});break}case"KeyB":{const n=parseInt(prompt("Write target ml (0 to reset)","90")||"0",10);if(Number.isNaN(n)||n<=0){t.querySelectorAll(".bgus_part_label").forEach(s=>{s.innerHTML=s.dataset.src||""});return}e(t.querySelectorAll("td > .bgus_part > .bgus_part_label"),+n);break}}});const r=/<b>(.+):<\/b>(.+)/i;a.forEach(d=>{d.querySelectorAll(".ph").forEach(n=>{const s=[],o=document.createElement("table"),l=document.createElement("tr"),h=document.createElement("tr");o.appendChild(l),o.appendChild(h),n.innerHTML.split("<br>").forEach(m=>{if(m.trim()==="N/A")return;const f=r.exec(m);if(!f){s.push(m);return}const[w,c]=f.slice(1).map(u=>u.trim()),p=document.createElement("th");p.appendChild(document.createTextNode(w)),l.appendChild(p);const g=document.createElement("td");g.appendChild(document.createTextNode(c)),h.append(g)}),n.innerHTML="",l.children.length>0&&n.appendChild(o),n.innerHTML+=`<p>${s.join("<br>")}</p>`,n.classList.add("ph-ext")})})});const T="Infections";D(T,t=>{const e=t.querySelector("#Simple_Diseases .wikitable"),a=F(e).map(s=>{const o=document.createElement("td");return o.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const d of n)if(d.type==="childList")for(const r of d.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function a(n){const d={};return n.integrity&&(d.integrity=n.integrity),n.referrerPolicy&&(d.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?d.credentials="include":n.crossOrigin==="anonymous"?d.credentials="omit":d.credentials="same-origin",d}function i(n){if(n.ep)return;n.ep=!0;const d=a(n);fetch(n.href,d)}})();const E="_GLOBAL",P="_GENERIC",C={},S={};function D(t,e){C[t]=e}function F(t,e){S[t]=e}function lt(t,e){E in C&&C[E](e,t),t in C?C[t](e,t):P in C&&C[P](e,t)}function J(t,e){E in S&&S[E](e,t),t in S?S[t](e,t):P in S&&S[P](e,t)}function A(t,e){let a=t.parentElement;for(;a!=null&&!e(a);)a=a.parentElement;return a}function _(t){const[e,...a]=Array.from(t.querySelectorAll("tr")),i=Array.from(e.querySelectorAll("th")).map(n=>n.textContent.trim());return a.map(n=>{const d={};return n.querySelectorAll("td,th").forEach((r,s)=>{d[i[s]]=r,d[`$row${s}`]=r}),d})}function k(t,e,a){const i=document.createElement("table");if(e.length<1)return i;const n=document.createElement("tr");return t.forEach(d=>{const r=document.createElement("th");r.appendChild(document.createTextNode(d)),n.appendChild(r)}),i.appendChild(n),e.forEach(d=>{const r=document.createElement("tr");t.forEach((s,l)=>{let o=null;d[s].tagName==="TD"||d[s].tagName==="TH"?o=d[s]:(o=document.createElement("td"),l===0&&o.classList.add("btab-name"),o.appendChild(d[s])),r.appendChild(o)}),a&&a(d,r),i.appendChild(r)}),i}const $={aliceblue:"#f0f8ff",antiquewhite:"#faebd7",aqua:"#00ffff",aquamarine:"#7fffd4",azure:"#f0ffff",beige:"#f5f5dc",bisque:"#ffe4c4",black:"#000000",blanchedalmond:"#ffebcd",blue:"#0000ff",blueviolet:"#8a2be2",brown:"#a52a2a",burlywood:"#deb887",cadetblue:"#5f9ea0",chartreuse:"#7fff00",chocolate:"#d2691e",coral:"#ff7f50",cornflowerblue:"#6495ed",cornsilk:"#fff8dc",crimson:"#dc143c",cyan:"#00ffff",darkblue:"#00008b",darkcyan:"#008b8b",darkgoldenrod:"#b8860b",darkgray:"#a9a9a9",darkgreen:"#006400",darkgrey:"#a9a9a9",darkkhaki:"#bdb76b",darkmagenta:"#8b008b",darkolivegreen:"#556b2f",darkorange:"#ff8c00",darkorchid:"#9932cc",darkred:"#8b0000",darksalmon:"#e9967a",darkseagreen:"#8fbc8f",darkslateblue:"#483d8b",darkslategray:"#2f4f4f",darkslategrey:"#2f4f4f",darkturquoise:"#00ced1",darkviolet:"#9400d3",deeppink:"#ff1493",deepskyblue:"#00bfff",dimgray:"#696969",dimgrey:"#696969",dodgerblue:"#1e90ff",firebrick:"#b22222",floralwhite:"#fffaf0",forestgreen:"#228b22",fuchsia:"#ff00ff",gainsboro:"#dcdcdc",ghostwhite:"#f8f8ff",gold:"#ffd700",goldenrod:"#daa520",gray:"#808080",green:"#008000",greenyellow:"#adff2f",grey:"#808080",honeydew:"#f0fff0",hotpink:"#ff69b4",indianred:"#cd5c5c",indigo:"#4b0082",ivory:"#fffff0",khaki:"#f0e68c",lavender:"#e6e6fa",lavenderblush:"#fff0f5",lawngreen:"#7cfc00",lemonchiffon:"#fffacd",lightblue:"#add8e6",lightcoral:"#f08080",lightcyan:"#e0ffff",lightgoldenrodyellow:"#fafad2",lightgray:"#d3d3d3",lightgreen:"#90ee90",lightgrey:"#d3d3d3",lightpink:"#ffb6c1",lightsalmon:"#ffa07a",lightseagreen:"#20b2aa",lightskyblue:"#87cefa",lightslategray:"#778899",lightslategrey:"#778899",lightsteelblue:"#b0c4de",lightyellow:"#ffffe0",lime:"#00ff00",limegreen:"#32cd32",linen:"#faf0e6",magenta:"#ff00ff",maroon:"#800000",mediumaquamarine:"#66cdaa",mediumblue:"#0000cd",mediumorchid:"#ba55d3",mediumpurple:"#9370db",mediumseagreen:"#3cb371",mediumslateblue:"#7b68ee",mediumspringgreen:"#00fa9a",mediumturquoise:"#48d1cc",mediumvioletred:"#c71585",midnightblue:"#191970",mintcream:"#f5fffa",mistyrose:"#ffe4e1",moccasin:"#ffe4b5",navajowhite:"#ffdead",navy:"#000080",oldlace:"#fdf5e6",olive:"#808000",olivedrab:"#6b8e23",orange:"#ffa500",orangered:"#ff4500",orchid:"#da70d6",palegoldenrod:"#eee8aa",palegreen:"#98fb98",paleturquoise:"#afeeee",palevioletred:"#db7093",papayawhip:"#ffefd5",peachpuff:"#ffdab9",peru:"#cd853f",pink:"#ffc0cb",plum:"#dda0dd",powderblue:"#b0e0e6",purple:"#800080",rebeccapurple:"#663399",red:"#ff0000",rosybrown:"#bc8f8f",royalblue:"#4169e1",saddlebrown:"#8b4513",salmon:"#fa8072",sandybrown:"#f4a460",seagreen:"#2e8b57",seashell:"#fff5ee",sienna:"#a0522d",silver:"#c0c0c0",skyblue:"#87ceeb",slateblue:"#6a5acd",slategray:"#708090",slategrey:"#708090",snow:"#fffafa",springgreen:"#00ff7f",steelblue:"#4682b4",tan:"#d2b48c",teal:"#008080",thistle:"#d8bfd8",tomato:"#ff6347",turquoise:"#40e0d0",violet:"#ee82ee",wheat:"#f5deb3",white:"#ffffff",whitesmoke:"#f5f5f5",yellow:"#ffff00",yellowgreen:"#9acd32"};var G=(t=>(t[t.RGB=0]="RGB",t[t.HEX=1]="HEX",t))(G||{});function it({h:t,s:e,v:a}){const i=Math.floor(t*6),n=t*6-i,d=a*(1-e),r=a*(1-n*e),s=a*(1-(1-n)*e);switch(i%6){case 0:return{r:a,g:s,b:d};case 1:return{r,g:a,b:d};case 2:return{r:d,g:a,b:s};case 3:return{r:d,g:r,b:a};case 4:return{r:s,g:d,b:a};case 5:return{r:a,g:d,b:r};default:throw new Error("unreacheable")}}function rt({r:t,g:e,b:a}){const i=Math.max(t,e,a),n=Math.min(t,e,a),d=i,r=i-n,s=i===0?0:r/i;let l;if(i===n)l=0;else{switch(i){case t:l=(e-a)/r+(e<a?6:0);break;case e:l=(a-t)/r+2;break;case a:l=(t-e)/r+4;break;default:throw new Error("unreacheable")}l/=6}return{h:l,s,v:d}}function ht(t){if($[t])return R($[t]);const e=document.createElement("div");e.style.color=t,document.body.appendChild(e);const i=window.getComputedStyle(e).getPropertyValue("color");return document.body.removeChild(e),R(i)}function R(t){if(t[0]==="#"){const e=(t.length-1)/3,a=[17,1,.062272][e-1];return{r:Math.round(parseInt(t.substr(1,e),16)*a)/256,g:Math.round(parseInt(t.substr(1+e,e),16)*a)/256,b:Math.round(parseInt(t.substr(1+2*e,e),16)*a)/256}}if(t.startsWith("rgb")){const e=t.split("(")[1].split(")")[0].split(",").map(a=>parseInt(a,10)).map(Math.round);return{r:e[0]/256,g:e[1]/256,b:e[2]/256}}return ht(t)}function nt(t,e){const a=Math.round(t.r*255),i=Math.round(t.g*255),n=Math.round(t.b*255);switch(e){case 0:return`rgb(${a}, ${i}, ${n})`;case 1:{const d=`00${a.toString(16)}`.slice(-2),r=`00${i.toString(16)}`.slice(-2),s=`00${n.toString(16)}`.slice(-2);return`#${d}${r}${s}`}default:return"#000"}}function O(t,e){const a=R(t),i=rt(a);i.s<.15?(i.h=.6,i.s=.5,i.v=Math.max(.2,1-i.v)):i.v>.5&&(i.v=.4,i.s>.2&&(i.s=Math.min(1,i.s+.2)));const n=it(i);return nt(n,e)}function ct(t,e){const a=R(t),i=rt(a);i.v<.5&&(i.v=.8),i.s>.7&&(i.s=Math.min(1,i.s-.3),i.v=1),Math.abs(i.h-.666)<.1&&(i.h-=.13,i.v=Math.min(1,i.v+.1));const n=it(i);return nt(n,e)}function j(){return new Promise(t=>{requestAnimationFrame(()=>t())})}function gt(t,e){return t.startsWith(e)?t.slice(e.length):t}function dt(...t){const e=t[0],a=t[1],i=document.createElement(e);let n=1;typeof a=="object"&&a!==null&&!Array.isArray(a)&&(Object.keys(a).forEach(d=>{d.startsWith("@")?i.addEventListener(d.substr(1),a[d]):i[d]=a[d]}),n=2);for(let d=n;d<t.length;d+=1)Array.isArray(t[d])?i.appendChild(dt.apply(this,t[d])):t[d]instanceof Node?i.appendChild(t[d]):i.appendChild(document.createTextNode(t[d]));return i}const Q=dt;function X(t,e){const a={};return t.forEach(i=>{const n=e(i);n in a?a[n].push(i):a[n]=[i]}),a}window.addEventListener("popstate",t=>{var e;(e=t.state)!=null&&e.page&&st(t.state.page,t.state.hash)});function pt(){const{pathname:t,hash:e}=location;let i=t.substring(1+"/handbook".length);return i.startsWith("meta/")&&(i=`$${i.substring(5)}`),{path:i,hash:e.substring(1)}}function W(t,e){let a=`/${t}`;t.startsWith("$")&&(t==="$Welcome"?a="/":a=`/meta/${t.substring(1)}`),history.pushState({page:t,hash:e},"",`/handbook${a}${e?`#${e}`:""}`)}const I=[];function v(t){I.push(...t)}function ut(t,e){return I.find(a=>a.page===t&&a.name===e)}function H(t,e){var a;e&&((a=document.querySelector(".page.active"))==null?void 0:a.dataset.tab)!==t.page&&M.instance.setActive(t.page),t.element.scrollIntoView({block:t.alignment,inline:"nearest",behavior:"auto"}),document.querySelectorAll(".bgus_fz_selected").forEach(i=>i.classList.remove("bgus_fz_selected")),t.element.classList.add("bgus_fz_selected")}function st(t,e){if(!t)return!1;try{if(M.instance.setActive(t),e){const a=ut(t,e);a&&H(a,!1)}return!0}catch{return!1}}function mt(){const t=document.createElement("ul"),e=document.createElement("div");let a=[],i=0,n=!1;const d=o=>{i=o,t.querySelectorAll(".selected").forEach(h=>h.classList.remove("selected")),t.children[o].classList.add("selected"),H(a[o],n)},r=async(o,h)=>{if(!o||o.length<1)return;let m=I;if(n=o[0]==="@",n?o=o.substr(1):m=I.filter(c=>c.page===h),o.length<1)return;const f=o.split("").map(c=>["\\","]","^"].includes(c)?`\\${c}`:c).join("])(.*?)(["),b=new RegExp(`^(.*?)([${f}])(.*?)$`,"i");a=m.map(c=>({...c,matches:(c.name.match(b)||[]).slice(1).reduce((p,g,u,w)=>(u<2?p.push([g]):w[u-1]===""?p[p.length-1].push(g):g!==""&&p.push([g]),p),[]).map(p=>p.join(""))})).filter(c=>c.matches.length>0).sort((c,p)=>{const g=c.id,u=c.matches,w=p.id,y=p.matches;if(u.length===1&&y.length!==1)return-1;if(u.length!==1&&y.length===1)return 1;const B=x=>!/[^a-zA-Z0-9]*$/.test(x),V=u.filter(B).length-y.filter(B).length;if(V!==0)return V;for(let x=0;x<Math.min(u.length,y.length)-1;x+=2){const q=u[x].length-y[x].length;if(q!==0)return q}const U=u.length-y.length;return U!==0?U:g-w}),await j(),t.innerHTML="",a.forEach(c=>{const p=document.createElement("li");if(c.matches.forEach((g,u)=>{const w=document.createElement(u%2?"strong":"span");w.appendChild(document.createTextNode(g)),p.appendChild(w)}),n){const g=document.createElement("span");g.className="source",g.appendChild(document.createTextNode(c.page.replace(/_/g," "))),p.appendChild(g)}p.addEventListener("click",()=>{H(c,n),W(c.page,c.name),e.classList.add("bgus_hidden")}),t.appendChild(p)}),a.length>0&&d(0)},s=document.createElement("input");let l="";return s.addEventListener("keyup",o=>{switch(o.code){case"Escape":e.classList.add("bgus_hidden");return;case"Enter":if(a.length>0){const h=a[i];H(h,n),W(h.page,h.name)}e.classList.add("bgus_hidden");return;case"ArrowDown":i<a.length-1&&d(i+1);return;case"ArrowUp":i>0&&d(i-1);return;default:if(s.value!==l){const h=document.querySelector(".page.active");r(s.value,(h==null?void 0:h.dataset.tab)||""),l=s.value}}}),document.body.addEventListener("keyup",o=>{o.code==="KeyS"&&s.focus()}),document.body.addEventListener("keydown",o=>{if(o.shiftKey)switch(o.code){case"KeyS":{e.classList.remove("bgus_hidden"),s.value="";break}}}),e.id="bgus_fz_searchbox",e.classList.add("bgus_hidden"),e.appendChild(s),e.appendChild(t),e}function ft(t){return t==="H1"||t==="H2"||t==="H3"}D(E,function(t,e){var d;const a=document.createElement("h1");a.className="pageheader",a.appendChild(document.createTextNode(e.replace(/_/g," "))),t.insertBefore(a,t.firstChild),t.querySelectorAll("img").forEach(r=>r.setAttribute("loading","lazy")),t.querySelectorAll(".mw-editsection").forEach(r=>{r.parentElement.removeChild(r)}),t.querySelectorAll("a").forEach(r=>{r.href.includes(e)||(r.target="_blank")}),t.querySelectorAll("*[bgcolor]").forEach(r=>{let s=r.getAttribute("bgcolor")??"";s.length===6&&!Number.isNaN(parseInt(s,16))&&(s=`#${s}`),r.setAttribute("bgcolor",O(s,G.HEX).slice(1))}),t.querySelectorAll("*[style]").forEach(r=>{r.style.backgroundColor!==""&&(r.style.backgroundColor=O(r.style.backgroundColor,G.RGB)),r.style.background!==""&&(r.style.backgroundColor=O(r.style.background,G.RGB))}),t.querySelectorAll("*[color]").forEach(r=>{let s=r.getAttribute("color")??"";s.length===6&&!Number.isNaN(parseInt(s,16))&&(s=`#${s}`),r.setAttribute("color",ct(s,G.HEX).slice(1))}),t.querySelectorAll("table[width]").forEach(r=>{r.setAttribute("width","100%")}),t.querySelectorAll("table[style]").forEach(r=>{r.style.width!==""&&(r.style.width="100%")}),t.querySelectorAll("table .floatright > a > img").forEach(r=>{const s=A(r,o=>o instanceof HTMLTableRowElement),l=document.createElement("td");s==null||s.appendChild(l)});const i=t.querySelector("#toc");if(i){const r=i.querySelector("h2");i.parentNode.insertBefore(r,i);const s=i.querySelector("#toctitle");s!=null&&i.removeChild(s)}t.querySelectorAll("h1,h2,h3").forEach(r=>{const s=r.parentNode,l=document.createElement("div");for(s.insertBefore(l,r);r.nextSibling&&!ft(r.nextSibling.nodeName);){const o=r.nextSibling;s.removeChild(o),l.appendChild(o)}r.remove(),l.insertBefore(r,l.firstChild),l.className="mw-headline-cont"}),t.querySelectorAll("h1 .mw-headline, h2 .mw-headline, h3 .mw-headline").forEach(r=>{const s=A(r,l=>l.classList.contains("mw-headline-cont"));s&&s.querySelectorAll("h1 .mw-headline, h2 .mw-headline, h3 .mw-headline").length===1?(s.id=r.id,r.id+="-span",s.dataset.name=r.textContent||void 0):(r.dataset.name=r.textContent||void 0,r.classList.add("mw-headline-cont"))});const n=t.querySelector(".tabs-tabbox a[title='Labor Camp']");n&&((d=A(n,r=>r.classList.contains("tabs-tabbox")))==null||d.remove())});F(E,(t,e)=>{const a=Array.from(t.querySelectorAll(".mw-headline-cont[id][data-name]"));v(a.map((i,n)=>{var d;return{id:n,page:e,name:((d=i.dataset.name)==null?void 0:d.trim())||"",element:i,alignment:"start"}}))});const N="Guide_to_chemistry";D(N,t=>{t.querySelectorAll("table.wikitable > tbody > tr:not(:first-child) > td:nth-child(2), .tooltiptext").forEach(e=>{const a=e.cloneNode();Array.from(e.childNodes).forEach(i=>{i instanceof HTMLParagraphElement?a.append(...i.childNodes):a.append(i)}),e.parentNode.replaceChild(a,e)}),Array.from(t.querySelectorAll("td")).filter(e=>e.textContent.indexOf(" part")>=0).forEach(e=>{e.innerHTML=e.innerHTML.replace(/((\d+)\s+(?:parts?|units?))(.*?(?:<\/a>|\n|$))/gi,(a,...[i,n,d])=>`<label class="bgus_part ${d.includes("</a>")?"bgus_part_tooltip":""}" data-amount="${n}"><input type="checkbox" class='bgus_checkbox bgus_hidden'/> <span class="bgus_part_label" data-src="${i}">${i}</span></label>${d.replace(/(<a .+?<\/a>)/gi,'<span class="bgus_nobreak bgus_nested_element">$1<span class="bgus_twistie"></span></span>')}`)}),t.querySelectorAll(".bgus_part").forEach(e=>{"parts"in e.parentElement.dataset?e.parentElement.dataset.parts=(parseInt(e.parentElement.dataset.parts||"0",10)+parseInt(e.dataset.amount||"0",10)).toString():e.parentElement.dataset.parts=e.dataset.amount}),t.querySelectorAll("div[data-name] .wikitable.sortable tr").forEach(e=>{const i=A(e,u=>"name"in u.dataset&&u.dataset.name!=="").dataset.name;if(e.querySelector("td")===null){e.querySelectorAll("th").forEach((w,y)=>{if(y<2){w.classList.add("table-head");return}w.parentElement.removeChild(w)});return}const n=Array.from(e.querySelectorAll("td")).slice(1);let d=null,r=null,s=null,l=null,o=null,h=null,m=null,f=null;switch(i){case"Components":[s,o]=n;break;case"Virology Recipes":[o]=n;break;case"Narcotics":[s,o,h,m,f]=n;break;case"Other Reagents":[s,o,h]=n;break;case"Explosive Strength":[d,o,r]=n;break;case"Mutation Toxins":[o,h]=n;break;default:[s,l,o,h,m,f]=n}const b=e.querySelector("th"),c=b.querySelector("p"),p=c==null?void 0:c.innerHTML;c==null||c.remove();let g=`<div class="reagent-header btab-name">${b.innerHTML}</div>`;p&&(g+=`<p class="ph-data">${gt(p,"<br>")}</p>`),l&&(g+=`<p class="treatment">${l.innerHTML}</p>`),h&&(g+=`<p class="metabolism">${h.innerHTML}</p>`),d&&(g+=`<p class="conditions">${d.innerHTML}</p>`),r&&(g+=`<p class="explosive">${r.innerHTML}</p>`),f&&f.innerHTML.trim()!=="N/A"&&(g+=`<p class="addiction">${f.innerHTML}</p>`),m&&m.innerHTML.trim()!=="N/A"&&(g+=`<p class="overdose">${m.innerHTML}</p>`),o&&(g+=`<p>${o.innerHTML}</p>`),s&&(g+=`<div class="ph">${s.innerHTML}</div>`),b.classList.add("reagent-ext"),b.innerHTML=g,o==null||o.remove(),l==null||l.remove(),h==null||h.remove(),d==null||d.remove(),r==null||r.remove(),m==null||m.remove(),f==null||f.remove(),s==null||s.remove()}),t.querySelectorAll(".wikitable.sortable").forEach(e=>{e.classList.add("tgh-btab")})});F(N,t=>{t.querySelectorAll(".bgus_part_tooltip > .bgus_checkbox").forEach(d=>{const r=d.parentElement.nextElementSibling;d.addEventListener("click",()=>{r==null||r.querySelectorAll(".bgus_checkbox").forEach(s=>{s.checked=d.checked})})}),t.querySelectorAll(".bgus_nested_element").forEach(d=>{d.addEventListener("click",()=>{d.classList.toggle("bgus_collapsed")})});const e=(d,r)=>{d.forEach(s=>{var b;const l=s.parentElement,o=parseFloat(l.dataset.amount||"0"),h=parseFloat(l.parentElement.dataset.parts||"0"),m=Math.ceil(r*(o/h));s.innerHTML=`${m} ml`;let f=l.nextElementSibling;for(;f;){if(f.classList.contains("tooltip")){const c=[];(b=f.querySelector(".tooltiptext"))==null||b.childNodes.forEach(p=>{if(p instanceof Element&&p.classList&&p.classList.contains("bgus_part")){const g=p.querySelector(".bgus_part_label");if(!g)return;c.push(g)}}),e(c,m)}if(f.classList.contains("bgus_part"))break;f=f.nextElementSibling}})},a=Array.from(t.querySelectorAll("table.wikitable > tbody > tr:not(:first-child)")),i=Array.from(t.querySelectorAll("table.wikitable > tbody > tr:not(:first-child) th .reagent-header"));v(i.map((d,r)=>({page:N,name:d.textContent.trim().replace(/\n.+$/gm,"").replace("▮",""),element:d.parentElement,alignment:"center",id:r}))),document.body.addEventListener("keydown",d=>{if(d.shiftKey)switch(d.code){case"KeyC":{t.classList.toggle("bgus_cbox"),t.querySelectorAll(".bgus_checkbox:checked").forEach(r=>{r.checked=!1});break}case"KeyB":{const r=parseInt(prompt("Write target ml (0 to reset)","90")||"0",10);if(Number.isNaN(r)||r<=0){t.querySelectorAll(".bgus_part_label").forEach(s=>{s.innerHTML=s.dataset.src||""});return}e(t.querySelectorAll("td > .bgus_part > .bgus_part_label"),+r);break}}});const n=/<b>(.+):<\/b>(.+)/i;a.forEach(d=>{d.querySelectorAll(".ph").forEach(r=>{const s=[],l=document.createElement("table"),o=document.createElement("tr"),h=document.createElement("tr");l.appendChild(o),l.appendChild(h),r.innerHTML.split("<br>").forEach(m=>{if(m.trim()==="N/A")return;const f=n.exec(m);if(!f){s.push(m);return}const[b,c]=f.slice(1).map(u=>u.trim()),p=document.createElement("th");p.appendChild(document.createTextNode(b)),o.appendChild(p);const g=document.createElement("td");g.appendChild(document.createTextNode(c)),h.append(g)}),r.innerHTML="",o.children.length>0&&r.appendChild(l),r.innerHTML+=`<p>${s.join("<br>")}</p>`,r.classList.add("ph-ext")})})});const T="Infections";D(T,t=>{const e=t.querySelector("#Simple_Diseases .wikitable"),a=_(e).map(s=>{const l=document.createElement("td");return l.innerHTML=`
     <div class="disease-name btab-name">${s["Disease Name"].innerHTML}</div>
     <p class="vector">${s["Vector Name"].innerHTML}</p>
     <p class="source">${s.Source.innerHTML}</p>
     <p class="spread">${s.Spread.innerHTML}</p>
     <p class="description">${s.Description.innerHTML}</p>
-    `,{Disease:o,Cure:s.Cure}}),i=k(["Disease","Cure"],a);i.className="disease-ext tgh-btab wikitable",e.replaceWith(i);const r=t.querySelector("#Symptoms_Table .wikitable"),d=F(r).sort((s,o)=>parseInt(s.Level.textContent||"0",10)-parseInt(o.Level.textContent||"0",10)).map(s=>{const o=document.createElement("td");o.innerHTML=`
+    `,{Disease:l,Cure:s.Cure}}),i=k(["Disease","Cure"],a);i.className="disease-ext tgh-btab wikitable",e.replaceWith(i);const n=t.querySelector("#Symptoms_Table .wikitable"),d=_(n).sort((s,l)=>parseInt(s.Level.textContent||"0",10)-parseInt(l.Level.textContent||"0",10)).map(s=>{const l=document.createElement("td");l.innerHTML=`
     <div class="disease-name btab-name">${s.Symptom.innerHTML}</div>
     <p class="level">${s.Level.innerHTML}</p>
     <p class="chemical">${s["Required Chemical"].innerHTML}</p>
     <p class="description">${s.Effect.innerHTML}</p>
-    `;const l=document.createElement("td");l.innerHTML=`
+    `;const o=document.createElement("td");o.innerHTML=`
     <table class="stats">
       <tr><th>Stealth</th><td>${s.Stealth.innerHTML}</td></tr>
       <tr><th>Resistance</th><td>${s.Resistance.innerHTML}</td></tr>
       <tr><th>Stage speed</th><td>${s["Stage speed"].innerHTML}</td></tr>
       <tr><th>Transmission</th><td>${s.Transmission.innerHTML}</td></tr>
     </table>
-    `;const h=s["Threshold (hover mouse over for details)"];return h.innerHTML=`<ul class="thresholds"><li>${h.innerHTML.split(",").join("</li><li>")}</li></ul>`,{Symptom:o,Stats:l,Thresholds:h}}),n=k(["Symptom","Stats","Thresholds"],d);n.className="symptoms-ext tgh-btab wikitable",r.replaceWith(n)});_(T,t=>{const e=Array.from(t.querySelectorAll(".disease-ext tr:not(:first-child)"));v(e.map((i,r)=>{var d;return{page:T,name:((d=i.querySelector(".disease-name"))==null?void 0:d.textContent.trim())||"",element:i,alignment:"center",id:r}}));const a=Array.from(t.querySelectorAll(".symptoms-ext > tbody > tr:not(:first-child)"));v(a.map((i,r)=>{var d;return{page:T,name:((d=i.querySelector(".disease-name"))==null?void 0:d.textContent.trim())||"",element:i,alignment:"center",id:r}}))});const L="Guide_to_food";D(L,t=>{const e=[],a=[];t.querySelectorAll(".wikitable").forEach(l=>{const h=l.querySelector("tr");h.innerHTML.includes("Picture")&&(h.childElementCount===3&&e.push(l),h.childElementCount>3&&a.push(l))}),e.forEach(l=>{var p;const h=((p=l.querySelector("tr"))==null?void 0:p.querySelectorAll("th,td"))??[],m=h[1].innerText.trim(),f=h[2].innerText.trim(),w=[];l.querySelectorAll("tr:not(:first-child)").forEach(g=>{const u=g.querySelectorAll("th,td"),b=document.createElement("td");b.innerHTML=`<div class="food-block">
+    `;const h=s["Threshold (hover mouse over for details)"];return h.innerHTML=`<ul class="thresholds"><li>${h.innerHTML.split(",").join("</li><li>")}</li></ul>`,{Symptom:l,Stats:o,Thresholds:h}}),r=k(["Symptom","Stats","Thresholds"],d);r.className="symptoms-ext tgh-btab wikitable",n.replaceWith(r)});F(T,t=>{const e=Array.from(t.querySelectorAll(".disease-ext tr:not(:first-child)"));v(e.map((i,n)=>{var d;return{page:T,name:((d=i.querySelector(".disease-name"))==null?void 0:d.textContent.trim())||"",element:i,alignment:"center",id:n}}));const a=Array.from(t.querySelectorAll(".symptoms-ext > tbody > tr:not(:first-child)"));v(a.map((i,n)=>{var d;return{page:T,name:((d=i.querySelector(".disease-name"))==null?void 0:d.textContent.trim())||"",element:i,alignment:"center",id:n}}))});const z="Guide_to_food";D(z,t=>{const e=[],a=[];t.querySelectorAll(".wikitable").forEach(o=>{const h=o.querySelector("tr");h.innerHTML.includes("Picture")&&(h.childElementCount===3&&e.push(o),h.childElementCount>3&&a.push(o))}),e.forEach(o=>{var p;const h=((p=o.querySelector("tr"))==null?void 0:p.querySelectorAll("th,td"))??[],m=h[1].innerText.trim(),f=h[2].innerText.trim(),b=[];o.querySelectorAll("tr:not(:first-child)").forEach(g=>{const u=g.querySelectorAll("th,td"),w=document.createElement("td");w.innerHTML=`<div class="food-block">
 <div class="food-pic btab-pic">${u[0].innerHTML}</div>
 <div class="food-name btab-name">${u[1].innerHTML}</div>
 </div>
-`,w.push({[m]:b,[f]:u[2]})});const c=k([m,f],w);c.className="food-base-ext tgh-btab wikitable",l.replaceWith(c)});const i=t.querySelector("#Recipe_Books .wikitable"),r=F(i).map(l=>{const h=document.createElement("td");return h.innerHTML=`<div class="food-pic btab-pic">${l.Picture.innerHTML}</div>
-<div class="food-name btab-name">${l.Book.innerHTML}</div>
-<p class="unlocks">${l.Unlocks.innerHTML}</p>
-<p class="notes">${l.Notes.innerHTML}</p>
-`,{Book:h,"Where to get":l["Where to get"]}}),d=k(["Book","Where to get"],r);d.className="book-ext wikitable",i.replaceWith(d),a.forEach(l=>{var g;const h=((g=l.querySelector("tr"))==null?void 0:g.querySelectorAll("td,th"))??[],m=h[0].innerText.trim(),f=h[1].innerText.trim(),w=h[2].innerText.trim(),c=F(l).map(u=>{const b=document.createElement("td");b.innerHTML=`
+`,b.push({[m]:w,[f]:u[2]})});const c=k([m,f],b);c.className="food-base-ext tgh-btab wikitable",o.replaceWith(c)});const i=t.querySelector("#Recipe_Books .wikitable"),n=_(i).map(o=>{const h=document.createElement("td");return h.innerHTML=`<div class="food-pic btab-pic">${o.Picture.innerHTML}</div>
+<div class="food-name btab-name">${o.Book.innerHTML}</div>
+<p class="unlocks">${o.Unlocks.innerHTML}</p>
+<p class="notes">${o.Notes.innerHTML}</p>
+`,{Book:h,"Where to get":o["Where to get"]}}),d=k(["Book","Where to get"],n);d.className="book-ext wikitable",i.replaceWith(d),a.forEach(o=>{var g;const h=((g=o.querySelector("tr"))==null?void 0:g.querySelectorAll("td,th"))??[],m=h[0].innerText.trim(),f=h[1].innerText.trim(),b=h[2].innerText.trim(),c=_(o).map(u=>{const w=document.createElement("td");w.innerHTML=`
 <div class="food-pic btab-pic">${u[m].innerHTML}</div>
 <div class="food-name btab-name">${u[f].innerHTML}</div>
 ${"Nutritional Value"in u?`<p class="nutrition">${u["Nutritional Value"].innerHTML}</p>`:""}
 ${"Notes"in u?`<p class="notes">${u.Notes.innerHTML}</p>`:""}
-`;const y=u[w].innerHTML.split(/,|\+/gi).map(B=>`<p>${B.trim()}</p>`);return u[w].innerHTML=y.join(""),{Food:b,Ingredients:u[w]}}),p=k(["Food","Ingredients"],c);p.className="recipe-ext tgh-btab wikitable",l.replaceWith(p)});const n=t.querySelector("#Custom_Recipes .wikitable"),s=F(n).map(l=>(l["Custom food"].innerHTML=`<div class="food-name">${l["Custom food"].innerHTML}</div>`,l)),o=k(Object.keys(s[0]),s);o.className="food-base-ext tgh-btab wikitable",n.replaceWith(o)});_(L,t=>{t.querySelectorAll(".bgus_nested_element").forEach(a=>{a.addEventListener("click",()=>{a.classList.toggle("bgus_collapsed")})});const e=Array.from(t.querySelectorAll(".drink-ext tr:not(:first-child), .food-base-ext tr:not(:first-child), .food-ext tr:not(:first-child), .recipe-ext tr:not(:first-child)"));v(e.map((a,i)=>{var r;return{page:L,name:((r=a.querySelector(".food-name"))==null?void 0:r.textContent.trim())||"",element:a,alignment:"center",id:i}}))});const K="Guide_to_drinks";D(K,t=>{const e=[],a=[];t.querySelectorAll(".wikitable").forEach(i=>{const r=i.querySelector("tr");if(r.innerHTML.includes("Picture")){if(r.childElementCount===3){a.push(i);return}e.push(i)}}),e.forEach(i=>{const r=F(i).map(n=>{const s=document.createElement("td");s.innerHTML=`
-<div class="food-pic btab-pic">${n.Picture.innerHTML}</div>
-<div class="food-name btab-name">${n.Cocktail.innerHTML}</div>
-<p class="strength">${n.Strength.innerHTML}</p>
-<p class="description">${n["Drink Description"].innerHTML}</p>
-${"Notes"in n?`<p class="notes">${n.Notes.innerHTML}</p>`:""}
-`;const o=n.Ingredients.innerHTML.split(/,|\+/gi).map(l=>`<p>${l.trim()}</p>`);return n.Ingredients.innerHTML=o.join(""),{Drink:s,Ingredients:n.Ingredients}}),d=k(["Drink","Ingredients"],r);d.className="drink-ext tgh-btab wikitable",i.replaceWith(d)}),a.forEach(i=>{const r=F(i).map(n=>{const s=document.createElement("td");return s.innerHTML=`<div class="food-pic btab-pic">${n.Picture.innerHTML}</div>
-      <div class="food-name btab-name">${n.Dispenses.innerHTML}</div>`,{Dispenses:s,Description:n.Description}}),d=k(["Dispenses","Description"],r);d.className="junk-ext tgh-btab wikitable",i.replaceWith(d)})});_(K,t=>{const e=Array.from(t.querySelectorAll(".drink-ext tr:not(:first-child), .food-base-ext tr:not(:first-child), .food-ext tr:not(:first-child), .junk-ext tr:not(:first-child)"));v(e.map((a,i)=>{var r;return{page:K,name:((r=a.querySelector(".food-name"))==null?void 0:r.textContent.trim())||"",element:a,alignment:"center",id:i}}))});const Y="Guide_to_Ghetto_Chemistry";D(Y,t=>{const e=t.querySelector("#Grindables .wikitable"),a=F(e).map(r=>{var n;const d=document.createElement("td");return d.innerHTML=`
-    <div class="grindable-name btab-name">${r.Chemical.innerHTML}</div>
-    <p class="notes">${((n=r.Notes)==null?void 0:n.innerHTML)??""}</p>
-    `,{Chemical:d,Sources:r.Sources}}),i=k(["Chemical","Sources"],a);i.className="grindable-ext tgh-btab wikitable",e.replaceWith(i)});_(Y,t=>{const e=Array.from(t.querySelectorAll(".grindable-ext tr:not(:first-child)"));v(e.map((a,i)=>{var r;return{page:Y,name:((r=a.querySelector(".grindable-name"))==null?void 0:r.textContent.trim())||"",element:a,alignment:"center",id:i}}))});const V="Critters";D(V,t=>{const e=t.querySelectorAll(".wikitable");Array.from(e).filter(a=>{var i,r;return(r=(i=a.querySelector("th:nth-child(2)"))==null?void 0:i.textContent)==null?void 0:r.includes("Name")}).forEach(a=>{const i=F(a).map(d=>{const n=document.createElement("td");return n.innerHTML=`
+`;const y=u[b].innerHTML.split(/,|\+/gi).map(B=>`<p>${B.trim()}</p>`);return u[b].innerHTML=y.join(""),{Food:w,Ingredients:u[b]}}),p=k(["Food","Ingredients"],c);p.className="recipe-ext tgh-btab wikitable",o.replaceWith(p)});const r=t.querySelector("#Custom_Recipes .wikitable"),s=_(r).map(o=>(o["Custom food"].innerHTML=`<div class="food-name">${o["Custom food"].innerHTML}</div>`,o)),l=k(Object.keys(s[0]),s);l.className="food-base-ext tgh-btab wikitable",r.replaceWith(l)});F(z,t=>{t.querySelectorAll(".bgus_nested_element").forEach(a=>{a.addEventListener("click",()=>{a.classList.toggle("bgus_collapsed")})});const e=Array.from(t.querySelectorAll(".drink-ext tr:not(:first-child), .food-base-ext tr:not(:first-child), .food-ext tr:not(:first-child), .recipe-ext tr:not(:first-child)"));v(e.map((a,i)=>{var n;return{page:z,name:((n=a.querySelector(".food-name"))==null?void 0:n.textContent.trim())||"",element:a,alignment:"center",id:i}}))});const L="Guide_to_drinks";D(L,t=>{const e=[],a=[];t.querySelectorAll(".wikitable").forEach(i=>{const n=i.querySelector("tr");if(n.innerHTML.includes("Picture")){if(n.childElementCount===3){a.push(i);return}e.push(i)}}),e.forEach(i=>{const n=_(i).map(r=>{const s=document.createElement("td");s.innerHTML=`
+<div class="food-pic btab-pic">${r.Picture.innerHTML}</div>
+<div class="food-name btab-name">${r.Cocktail.innerHTML}</div>
+<p class="strength">${r.Strength.innerHTML}</p>
+<p class="description">${r["Drink Description"].innerHTML}</p>
+${"Notes"in r?`<p class="notes">${r.Notes.innerHTML}</p>`:""}
+`;const l=r.Ingredients.innerHTML.split(/,|\+/gi).map(o=>`<p>${o.trim()}</p>`);return r.Ingredients.innerHTML=l.join(""),{Drink:s,Ingredients:r.Ingredients}}),d=k(["Drink","Ingredients"],n);d.className="drink-ext tgh-btab wikitable",i.replaceWith(d)}),a.forEach(i=>{const n=_(i).map(r=>{const s=document.createElement("td");return s.innerHTML=`<div class="food-pic btab-pic">${r.Picture.innerHTML}</div>
+      <div class="food-name btab-name">${r.Dispenses.innerHTML}</div>`,{Dispenses:s,Description:r.Description}}),d=k(["Dispenses","Description"],n);d.className="junk-ext tgh-btab wikitable",i.replaceWith(d)})});F(L,t=>{const e=Array.from(t.querySelectorAll(".drink-ext tr:not(:first-child), .food-base-ext tr:not(:first-child), .food-ext tr:not(:first-child), .junk-ext tr:not(:first-child)"));v(e.map((a,i)=>{var n;return{page:L,name:((n=a.querySelector(".food-name"))==null?void 0:n.textContent.trim())||"",element:a,alignment:"center",id:i}}))});const K="Guide_to_Ghetto_Chemistry";D(K,t=>{const e=t.querySelector("#Grindables .wikitable"),a=_(e).map(n=>{var r;const d=document.createElement("td");return d.innerHTML=`
+    <div class="grindable-name btab-name">${n.Chemical.innerHTML}</div>
+    <p class="notes">${((r=n.Notes)==null?void 0:r.innerHTML)??""}</p>
+    `,{Chemical:d,Sources:n.Sources}}),i=k(["Chemical","Sources"],a);i.className="grindable-ext tgh-btab wikitable",e.replaceWith(i)});F(K,t=>{const e=Array.from(t.querySelectorAll(".grindable-ext tr:not(:first-child)"));v(e.map((a,i)=>{var n;return{page:K,name:((n=a.querySelector(".grindable-name"))==null?void 0:n.textContent.trim())||"",element:a,alignment:"center",id:i}}))});const Y="Critters";D(Y,t=>{const e=t.querySelectorAll(".wikitable");Array.from(e).filter(a=>{var i,n;return(n=(i=a.querySelector("th:nth-child(2)"))==null?void 0:i.textContent)==null?void 0:n.includes("Name")}).forEach(a=>{const i=_(a).map(d=>{const r=document.createElement("td");return r.innerHTML=`
 	<div class="critter-pic btab-pic">${d.$row0.innerHTML}</div>
 	  <div class="critter-name btab-name">${d.Name.innerHTML}</div>
-	  `,{Critter:n,Description:d.Description}}),r=k(["Critter","Description"],i);r.className="critter-ext tgh-btab wikitable",a.replaceWith(r)})});_(V,t=>{const e=Array.from(t.querySelectorAll(".critter-ext > tbody > tr:not(:first-child)"));v(e.map((a,i)=>{var r;return{page:V,name:((r=a.querySelector(".critter-name"))==null?void 0:r.textContent.trim())||"",element:a,alignment:"center",id:i}}))});function wt(t){t.querySelectorAll("div.hidden").forEach(e=>{e.style.display="block",e.style.opacity="1"}),t.querySelector(".action_buttons").style.display="none",t.classList.remove("center")}_("$Welcome",t=>{const e=t.querySelector(".action_buttons");t.querySelectorAll("div[data-name]").forEach(a=>{const{name:i}=a.dataset;if(!i)return;const r=document.createElement("button");r.className="pretty-button",r.appendChild(document.createTextNode(i)),r.addEventListener("click",async()=>{wt(t),await O(),a.scrollIntoView({block:"start",inline:"nearest",behavior:"smooth"})}),e.appendChild(r)})});_("$Changelog",async t=>{const e=[{date:"2025-05-30T14:12:09.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Страница с Настроением",url:"https://github.com/nebula-in-space/handbook/commit/a712033956767ae722fa44313c556ae0011aff48"},{date:"2025-05-30T14:40:52.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"del: Прячем лишние страницы",url:"https://github.com/nebula-in-space/handbook/commit/3edf7d5f861c9e2db0ea0d63e37ff07626a38bf1"},{date:"2025-05-22T09:04:50.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Полный перевод руководства по медицине",url:"https://github.com/nebula-in-space/handbook/commit/11b5ffd97e461025564b44b7ea82c2d1b7078e79"},{date:"2025-05-14T17:52:50.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Руководство по медицине (часть 4)",url:"https://github.com/nebula-in-space/handbook/commit/2cf273e34b25f661fc0b63ae3bec9315b507646f"},{date:"2025-05-12T15:36:02.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Руководство по медицине (часть 3)",url:"https://github.com/nebula-in-space/handbook/commit/c45ef4e110aba808bac90b17d4e5b408fee17282"},{date:"2025-05-10T15:37:01.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Базовое руководство по медицине (часть 2)",url:"https://github.com/nebula-in-space/handbook/commit/9c6c8bc07feb703379648f645c5ba395a9234286"},{date:"2025-05-10T08:18:09.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"fix: Возвращает на главную при переходе на незагруженную страницу",url:"https://github.com/nebula-in-space/handbook/commit/eade88166a9641f43928401fb0511ace788b10c7"},{date:"2025-05-09T15:40:47.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Базовое руководство по медицине (часть 1)",url:"https://github.com/nebula-in-space/handbook/commit/319c3d012dce174f1c337bb2cc27c4cbcad9e8ff"},{date:"2025-05-09T15:40:47.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"qol: Логотип на главной /TG/shiptest",url:"https://github.com/nebula-in-space/handbook/commit/319c3d012dce174f1c337bb2cc27c4cbcad9e8ff"},{date:"2025-05-09T15:40:47.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"fix: Рефакторинг: Путеводителя по расам",url:"https://github.com/nebula-in-space/handbook/commit/319c3d012dce174f1c337bb2cc27c4cbcad9e8ff"},{date:"2025-05-09T15:34:39.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"fix: Фикс рантаймов на страницах",url:"https://github.com/nebula-in-space/handbook/commit/7f3b2b8e72bbb7f53e18a51d40b369b724194173"},{date:"2025-05-08T12:26:09.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Новый логотип на фоне",url:"https://github.com/nebula-in-space/handbook/commit/236cadb443247b2ce2fae310e03284e0d680e508"},{date:"2025-05-08T12:26:09.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"qol: Переименование в /TG/shiptest",url:"https://github.com/nebula-in-space/handbook/commit/236cadb443247b2ce2fae310e03284e0d680e508"},{date:"2025-05-08T12:26:09.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"del: Руководства: Все ролей антагонистов, и много чего прочего.",url:"https://github.com/nebula-in-space/handbook/commit/236cadb443247b2ce2fae310e03284e0d680e508"},{date:"2025-05-08T06:02:36.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Базовые на расы (Мутанты)",url:"https://github.com/nebula-in-space/handbook/commit/666d81a12eec1620059efc31a9ebb124c18ca7a7"},{date:"2025-05-08T06:02:36.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"del: Удалены руководства: ресторан, мафия, циркуиты, циталогия, дроппод",url:"https://github.com/nebula-in-space/handbook/commit/666d81a12eec1620059efc31a9ebb124c18ca7a7"}],a=t.querySelector(".tgh-changes"),i=X(e,r=>{const d=new Date(r.date).toISOString();return d.substring(0,d.indexOf("T"))});Object.keys(i).sort().reverse().forEach(r=>{const d=Q("h3",{className:"tgh-change-date"},r);a.appendChild(d);const n=X(i[r],s=>s.author.name);Object.keys(n).forEach(s=>{a.appendChild(Q("article",{className:"tgh-change-entry"},["header",["img",{src:n[s][0].author.avatar}],["div",{className:"author"},n[s][0].author.name]],...n[s].map(o=>{const l=o.change.indexOf(":"),h=o.change.substring(0,l).trim(),m=o.change.substring(l+1).trim();return["div",{className:"tgh-change-info"},["div",{className:`tgh-change-tag tag-${h}`},h],m,["a",{href:o.url,className:"tgh-change-more",title:"Go to commit",target:"_blank"},"🔗"]]})))})})});const bt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M12.072%2014.416V4.121a1.455%201.455%200%20011.454-1.454h5.09a1.455%201.455%200%20011.453%201.454v10.295l5.722%2010.449a3.018%203.018%200%2001-2.647%204.468H8.997a3.018%203.018%200%2001-2.648-4.468l5.723-10.449zm6.027-9.779h-4.057v10.031a.99.99%200%2001-.121.473l-5.844%2010.67a1.048%201.048%200%2000.92%201.553l14.147-.001a1.047%201.047%200%2000.92-1.553c-2.207-4.027-5.844-10.669-5.844-10.669a.979.979%200%2001-.12-.473V4.637zm-2.604%2013.402h3.489l3.926%207.628a.556.556%200%2001-.492.807H9.723a.554.554%200%2001-.492-.807l3.926-7.628h1.23l-3.107%206.053a.493.493%200%2000.876.45l3.339-6.503z'%20fill='%23fff'/%3e%3cpath%20d='M59.485%2010.232c0-3.183-2.446-5.767-5.46-5.767h-10.92c-3.014%200-5.461%202.584-5.461%205.767v11.536c0%203.183%202.447%205.767%205.461%205.767h10.92c3.014%200%205.46-2.584%205.46-5.767V10.232z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.97'%20transform='rotate(45%2041.436%2021.869)%20scale(.86333%20.81734)'/%3e%3c/svg%3e",yt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M59.485%2010.232c0-3.183-2.446-5.767-5.46-5.767h-10.92c-3.014%200-5.461%202.584-5.461%205.767v11.536c0%203.183%202.447%205.767%205.461%205.767h10.92c3.014%200%205.46-2.584%205.46-5.767V10.232z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.97'%20transform='rotate(45%2080.063%205.869)%20scale(.86333%20.81734)'/%3e%3cpath%20d='M20.2%2011.8h7.608v8.4H20.2v7.608h-8.4V20.2H4.192v-8.4H11.8V4.192h8.4V11.8z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.9966500000000003'/%3e%3c/svg%3e",kt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M15.789%208.175c5.448-2.716%205.88-3.96%205.876-4.41l-.005-.047.002.022v-.019c-.034-.517.399-.978%201-1.046.63-.071%201.21.316%201.291.863%200%200%20.662%202.228-5.931%205.803%205.476%203.073%205.947%205.724%205.947%206.534l.013.046s.66%203.078-5.901%206.77c6.53%203.557%205.872%205.771%205.872%205.771-.082.547-.661.934-1.291.863-.63-.071-1.076-.573-1.002-1.043%200%200%20.003-.016.005-.047.004-.448-.424-1.686-5.823-4.383-5.4%202.697-5.829%203.935-5.823%204.383l.004.047-.003-.022.003.019c.033.517-.4.978-1.002%201.046-.63.071-1.208-.316-1.29-.863%200%200-.764-2.569%207.512-6.618%205.619-2.734%206.376-4.939%206.444-5.587a.653.653%200%2001-.027-.308s.003-.016.005-.047c.004-.465-.458-2.78-6.45-5.696l.005-.009C7.228%206.225%207.974%203.712%207.974%203.712c.082-.547.66-.934%201.29-.863.63.071%201.076.573%201.003%201.043%200%200-.004.016-.005.047-.004.44.408%201.64%205.527%204.236zm-3.42%201.942l.163.082-.005.007c.738.359%201.392.709%201.97%201.047-3.98%202.324-4.453%204.108-4.476%204.599a.607.607%200%2001.002.199s-.004.016-.004.047c-.004.41.354%202.259%204.551%204.689-.551.327-1.173.664-1.874%201.007h-.04l-.24.12C7.832%2018.986%207.68%2016.572%207.718%2016c-.038-.57.113-2.969%204.652-5.883z'%20fill='%23fff'/%3e%3cpath%20d='M83.785%2048H76.31'%20fill='none'%20stroke='%23fff'%20stroke-width='2.32'%20transform='matrix(.70074%200%200%201%20-40.045%20-32)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='2.46'%20transform='matrix(.56923%200%200%201%20-29.597%20-32)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='1.84'%20transform='matrix(.56923%200%200%201%20-29.597%20-18.667)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='2.46'%20transform='matrix(.56923%200%200%201%20-29.597%20-10.667)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='1.84'%20transform='matrix(.56923%200%200%201%20-29.597%20-24)'/%3e%3cpath%20d='M43.793%2018.242l1.761.958c.061.034.106.09.125.158a.262.262%200%2001-.026.2c-.663%201.191-.12%202.684.122%202.944-1.347%202.65-5.186%206.26-9.254%206.6a.275.275%200%2001-.256-.407c.87-1.58%205.41-9.839%206.076-11.05a.171.171%200%2001.23-.068l.49.267-5.485%2010.086s1.25-.56%201.383-.802l4.834-8.886zm1.502-2.76l2.808%201.528a.577.577%200%2001.23.78l-.718%201.323a.577.577%200%2001-.78.23l-2.81-1.528%201.27-2.334zm6.464-11.884l3.331.05a.574.574%200%2001.497.851c-1.237%202.264-4.67%208.549-6.423%2011.768a.575.575%200%2001-.781.23l-2.81-1.528L51.76%203.598zm-8.465%2013.82l-.134-.073a.579.579%200%2001-.23-.78l.72-1.324a.576.576%200%2001.78-.23l.134.072-1.27%202.335zm1.549-2.847l-.132-.07a.577.577%200%2001-.23-.783l5.407-9.842a.578.578%200%2001.514-.299l.417.006-5.976%2010.988zM41.523%2044.34a5.6%205.6%200%20011.905-.918%205.662%205.662%200%20012.197-.15L44.49%2045.87c-.128.016-.257.041-.384.075l-.28.092-2.302-1.697zm-3.384-2.494a9.342%209.342%200%20014.258-2.477%209.342%209.342%200%20014.927.016l-1.063%202.433a6.682%206.682%200%2000-3.187.075%206.682%206.682%200%2000-2.798%201.528l-2.137-1.575zm-3.472-2.559a13.025%2013.025%200%20016.59-4.171%2013.03%2013.03%200%20017.795.317l-1.05%202.4a10.437%2010.437%200%2000-6.068-.194%2010.437%2010.437%200%2000-5.159%203.202l-2.108-1.554z'%20fill='%23fff'/%3e%3c/svg%3e",Ft="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M11.793%2018.242l1.761.958c.061.034.106.09.125.158a.262.262%200%2001-.026.2c-.663%201.191-.12%202.684.122%202.944-1.347%202.65-5.186%206.26-9.254%206.6a.275.275%200%2001-.256-.407c.87-1.58%205.41-9.839%206.076-11.05a.171.171%200%2001.23-.068l.49.267L5.576%2027.93s1.25-.56%201.383-.802l4.834-8.886zm1.502-2.76l2.808%201.528a.577.577%200%2001.23.78l-.718%201.323a.577.577%200%2001-.78.23l-2.81-1.528%201.27-2.334zm6.464-11.884l3.331.05a.574.574%200%2001.497.851c-1.237%202.264-4.67%208.549-6.423%2011.768a.575.575%200%2001-.781.23l-2.81-1.528L19.76%203.598zm-8.465%2013.82l-.134-.073a.579.579%200%2001-.23-.78l.72-1.324a.576.576%200%2001.78-.23l.134.072-1.27%202.335zm1.549-2.847l-.132-.07a.577.577%200%2001-.23-.783l5.407-9.842a.578.578%200%2001.514-.299l.417.006-5.976%2010.988zM12.812%2029.175s.478-.063%201.171-.114a12.397%2012.397%200%20011.171-.034c1.633.03%203.513.148%203.513.148a.5.5%200%20000-1s-1.88.118-3.513.147a12.639%2012.639%200%2001-1.171-.033c-.693-.051-1.171-.114-1.171-.114a.5.5%200%20000%201zM21.073%2029.175s.478-.063%201.17-.114a12.397%2012.397%200%20011.172-.034c1.633.03%203.513.148%203.513.148a.5.5%200%20000-1s-1.88.118-3.513.147a12.639%2012.639%200%2001-1.171-.033c-.693-.051-1.171-.114-1.171-.114a.5.5%200%20000%201zM46.984-24.02s.147%203.67.147%207.342c0%203.673-.147%207.343-.147%207.343a1%201%200%20002%200s-.146-3.67-.146-7.343c0-3.672.146-7.342.146-7.342a1%201%200%2000-2%200zM9.523%2044.34a5.6%205.6%200%20011.905-.918%205.662%205.662%200%20012.197-.15L12.49%2045.87c-.128.016-.257.041-.384.075l-.28.092-2.302-1.697zm-3.384-2.494a9.342%209.342%200%20014.258-2.477%209.342%209.342%200%20014.927.016l-1.063%202.433a6.682%206.682%200%2000-3.187.075%206.682%206.682%200%2000-2.798%201.528l-2.137-1.575zm-3.472-2.559a13.025%2013.025%200%20016.59-4.171%2013.03%2013.03%200%20017.795.317l-1.05%202.4a10.437%2010.437%200%2000-6.068-.194%2010.437%2010.437%200%2000-5.159%203.202l-2.108-1.554z'%20fill='%23fff'/%3e%3c/svg%3e",_t=""+new URL("trauma-C3Qf18wH.svg",import.meta.url).href,vt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M-5.412%2013.034a1%201%200%2000-1.225-.707l-17.423%204.668c-.534.144-.85.692-.708%201.225l2.784%2010.39a1%201%200%20001.225.707l17.423-4.669a1%201%200%2000.707-1.225l-2.783-10.39zm-13.131%2013.05l3.29-.88c.496-.134.8-.606.68-1.055-.12-.449-.62-.705-1.117-.573l-3.29.882c-.496.133-.801.605-.68%201.054.12.449.62.705%201.117.573zm-1.142-2.915l3.29-.881c.496-.134.8-.606.68-1.055-.12-.449-.62-.705-1.117-.572l-3.29.881c-.496.134-.801.605-.68%201.054.12.449.62.706%201.117.573zm8.76-6.528a3.366%203.366%200%2000-2.38%204.12%203.367%203.367%200%20004.122%202.378%203.367%203.367%200%20002.378-4.12%203.366%203.366%200%2000-4.12-2.378zm-9.817%203.57l3.29-.882c.496-.132.8-.606.68-1.054-.12-.45-.62-.705-1.116-.573l-3.29.882c-.496.133-.802.605-.68%201.054.119.45.62.706%201.116.572zm10.27-1.878a1.614%201.614%200%2001.835%203.116%201.614%201.614%200%2001-.835-3.116zM4.535%207.735l3.242-.868c.007.053.018.106.032.159l1.186%204.425a1.511%201.511%200%20001.85%201.067l7.92-2.122a1.51%201.51%200%20001.067-1.85l-1.185-4.424a1.362%201.362%200%2000-.05-.155l3.24-.868c.087-.023.174-.04.262-.051l.05-.008.022-.002c.116-.012.231-.014.346-.008l.05.004c.035.004.07.008.104.01l.056.01a2.137%202.137%200%20011.729%201.554l.002.004%204.636%2017.302a2.14%202.14%200%2001-1.513%202.62l-.405.109a2.122%202.122%200%2000-.013-1.055l-2.91-10.855a2.139%202.139%200%2000-2.62-1.513l-12.47%203.342a2.14%202.14%200%2000-1.513%202.62l2.909%2010.855c.095.358.277.67.515.92l-.795.214c-.21.056-.424.079-.637.071l-.093-.006-.103-.01-.038-.007a2.175%202.175%200%2001-.753-.262%202.155%202.155%200%2001-.996-1.3L3.023%2010.356a2.138%202.138%200%2001.29-1.745l.038-.056.064-.083.05-.06c.097-.114.206-.218.325-.309l.08-.059c.03-.018.059-.037.088-.057l.04-.023a2.1%202.1%200%2001.537-.228zm8.275%2020.757a2.138%202.138%200%2001-1.558-1.524l-2.467-9.207a2.138%202.138%200%20011.512-2.619l10.644-2.852a2.139%202.139%200%20012.62%201.512l2.467%209.207a2.143%202.143%200%2001-.588%202.1l-12.63%203.383zm10.724-9.02a.968.968%200%2000-1.187-.686l-9.65%202.586a.97.97%200%2000.502%201.873l9.65-2.585a.97.97%200%2000.685-1.187v-.001zm-1.061-3.17a.968.968%200%2000-1.187-.685l-9.65%202.585a.968.968%200%2000.502%201.873l9.65-2.585a.968.968%200%2000.685-1.187v-.001zM17.562%204.245c.236.198.407.464.487.765l.822%203.066a1.51%201.51%200%2001-1.067%201.849l-6.362%201.705a1.511%201.511%200%2001-1.85-1.068l-.82-3.065a1.515%201.515%200%2001.038-.907l8.752-2.345zm-.903%201.438a.47.47%200%2000-.576-.333l-1.23.33a.47.47%200%2000-.333.576l.821%203.065a.47.47%200%2000.577.333l1.23-.33a.47.47%200%2000.333-.576l-.822-3.065z'%20fill='%23fff'/%3e%3c/svg%3e",Ct="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M22.736%2021.334a.705.705%200%2000-.703-.705H9.968a.705.705%200%20100%201.408h12.065a.704.704%200%2000.703-.703zm0-4.156a.704.704%200%2000-.703-.704H9.968a.705.705%200%20100%201.409h12.065a.705.705%200%2000.703-.705zm0-3.845a.704.704%200%2000-.703-.704H9.968a.705.705%200%20100%201.408h12.065a.705.705%200%2000.703-.704zM6.378%208.15a2.745%202.745%200%2001.14-5.485h16.218l.142.005a2.746%202.746%200%20012.603%202.74v18.435h.03v4.63c0%20.048.037.087.084.09a.089.089%200%2000.093-.08l.455-4.56a2.745%202.745%200%2001-.662%205.407H9.263a2.744%202.744%200%2001-2.743-2.707h-.001V9.776L20.967%208.33a.09.09%200%2000.08-.092.087.087%200%2000-.088-.085H6.52l-.141-.003z'%20fill='%23fff'/%3e%3c/svg%3e",St=""+new URL("races-6ppBx9xQ.svg",import.meta.url).href,Dt=""+new URL("food-DT-mtyGi.svg",import.meta.url).href,xt=""+new URL("robo-BweLIRTJ.svg",import.meta.url).href,Et="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M21.755-13.692l7.278%206.013c.237.197.347.51.283.812%200%200-.38%201.737-1.127%202.752-.43.584-.982.942-1.586.962-.413.014-.877-.118-1.372-.535-1.193-1.009-3.883-3.812-5.647-5.679l-.523.618S5.871-18.12%204.68-20.583c-2.842-5.876.655-8.752.655-8.752l16.42%2015.643zM6.165-26.67c-.005-.004-.003-.004-.008.003l.01.01c.022.139-.002%201.22%201.448%203.026%202.07%202.576%206.595%206.533%2012.623%2010.297L6.167-26.657l-.002-.013zm7.978%2016.176c-2.219%202.134-3.937%203.778-4.075%203.893-2.128%201.778-3.12%202.6-4.956%201.428-2.293-1.465-1.834-5.083.125-6.971l.219-.213-.012.45a40.478%2040.478%200%2000-.072%202.62c0%20.515.343.917.768.905.428-.01.781-.433.795-.947l.07-2.563c.047-.725.116-1.45.22-2.171l1.029-.992%201.223.984c-.01.376-.013.754-.013%201.13.002.513.344.915.77.903.392-.01.722-.367.783-.825l.818.629c.298.228.597.456.897.683l1.411%201.057zm5.676-15.72l.008-.009c1.959-1.888%205.137-1.884%206.97.125%201.26%201.38.201%202.982-2.067%205.346-.356.373-1.961%201.935-3.987%203.895l-5.152-4.909.07-.438%202.242-2.162-.037%201.367a40.478%2040.478%200%2000-.072%202.62c0%20.514.343.917.769.905.426-.012.78-.435.793-.949l.072-2.561a26.07%2026.07%200%2001.391-3.23zm.838%2015.575c1.724%201.831%204.446%204.675%205.641%205.685.095.08.168.144.247.145.095.002.152-.094.223-.174.122-.142.229-.315.324-.498a6.96%206.96%200%2000.484-1.254l-6.019-4.973-.9%201.069z'%20fill='%23fff'/%3e%3cg%20fill='%23fff'%3e%3cpath%20d='M13.639%209.265a2.638%202.638%200%20014.722%200l6.396%2012.792a2.64%202.64%200%2001-2.361%203.819H9.604a2.638%202.638%200%2001-2.361-3.819l6.396-12.792zm.954%2012.604c.267-.608.811-.992%201.407-.992s1.14.384%201.407.992l.001.002c.197.449.176.983-.056%201.41-.231.427-.64.687-1.081.687h-.542c-.441%200-.85-.26-1.081-.687a1.626%201.626%200%2001-.056-1.41l.001-.002zM16%2019.616c-1.705%200-1.537-3.613-1.537-5.827%200-1.419.437-2.727%201.537-2.727%201.1%200%201.537%201.23%201.537%202.711%200%202.214.168%205.843-1.537%205.843z'/%3e%3cpath%20d='M11.734%205.303L3.17%2022.43a4.771%204.771%200%20004.267%206.903h17.126a4.77%204.77%200%20004.267-6.903L20.266%205.303a4.768%204.768%200%2000-8.532%200zm1.905.966a2.64%202.64%200%20014.722%200l8.486%2016.973a2.64%202.64%200%2001-2.361%203.819H7.514a2.638%202.638%200%2001-2.361-3.819l8.486-16.973z'/%3e%3c/g%3e%3c/svg%3e",Gt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M10.557%208.949l4.855-5.534c.202-.229.492-.355.794-.344l3.978.157c.495.02.925.356%201.073.841l.655%202.134%201.274-.189c1.06-.158%202.09.433%202.516%201.441l.906%202.146c.05.115.093.231.13.349l.16.032c.356.07.65.33.768.682l1.077%203.182c.236.693.233%201.442%200%202.127l.509%201.875c.29%201.075-.215%202.209-1.197%202.686l-3.82%201.856-2.416%202.754a5.81%205.81%200%2001-3.322%201.894l-5.172.945a3.775%203.775%200%2000-1.841.905l-.047.042-1.336-1.571.046-.042a5.792%205.792%200%20012.821-1.387l5.172-.944a3.796%203.796%200%20002.17-1.237l.696-.795a2.75%202.75%200%2001-.884-.587l-.002-.001a2.997%202.997%200%2001-.805-2.797l-.386-.197a3.395%203.395%200%2001-4.061.422l-3.102-1.863-.585%201.39c-.222.53-.82.773-1.335.545a1.054%201.054%200%2001-.53-1.37L10%2016.87l-.14-.084a1.06%201.06%200%2001-.364-1.427%201.002%201.002%200%20011.39-.373l5.008%203.008a1.404%201.404%200%20001.764-.262c.523-.57.537-1.453.033-2.04l-2.746-3.203a3.239%203.239%200%2000-2.01-1.106l-3.205-.447a1.376%201.376%200%2000-1.41.741l-2.124%204.096a2.01%202.01%200%2000-.226.927v4.831a4.13%204.13%200%2001-.825%202.481l-.643.854a.999.999%200%2001-1.425.188%201.061%201.061%200%2001-.183-1.462l.643-.854c.26-.346.401-.77.401-1.207v-4.83c0-.666.16-1.32.465-1.908.5-.967%201.446-2.79%202.123-4.096.673-1.295%202.06-2.024%203.478-1.826l.553.077zm16.58%208.881a3.049%203.049%200%2001-.589.223l-4.886%201.3-.262.43a.88.88%200%2000.13%201.08v.002a.713.713%200%2000.815.136l4.84-2.352a.21.21%200%2000.11-.243l-.157-.576zm-7.154-.248l.084.042%205.971-1.59a1.14%201.14%200%2000.715-.576c.149-.285.174-.622.07-.928l-.456-1.353a3.818%203.818%200%2001-1.488%201.429l-4.82%202.575a3.824%203.824%200%2001-.076.401zm-.29-2.556l4.247-2.27c.821-.439%201.173-1.455.804-2.327l-.906-2.145a.337.337%200%2000-.36-.206l-.949.14.277.902a2.485%202.485%200%2001-.856%202.701l-2.708%202.061a.939.939%200%2001-.272.145l.247.289c.19.22.349.46.476.71zm-6.7-5.738l.216.03a5.258%205.258%200%20013.262%201.795l.842.983.956-.07%202.471-1.88a.368.368%200%2000.127-.4l-1.366-4.458-2.898-.115-3.61%204.115z'%20fill='%23fff'/%3e%3c/svg%3e",Mt=""+new URL("drink-oIDJNM0X.svg",import.meta.url).href,Bt=""+new URL("arsenal-Cs1MduTi.svg",import.meta.url).href,At="data:image/svg+xml,%3c!--%20icon666.com%20-%20MILLIONS%20OF%20FREE%20VECTOR%20ICONS%20--%3e%3csvg%20id='Layer_1'%20enable-background='new%200%200%2064%2064'%20viewBox='0%200%2064%2064'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Bulletproof'%3e%3cpath%20d='m58%2039.1h-5.6c-1.7%200-3.1%201.4-3.1%203.1v2.4c0%201.7%201.4%203.1%203.1%203.1h5.6c1.7%200%203.1-1.4%203.1-3.1v-2.4c0-1.7-1.4-3.1-3.1-3.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m14.7%2044.6v-2.4c0-1.7-1.4-3.1-3.1-3.1h-5.6c-1.7%200-3.1%201.4-3.1%203.1v2.4c0%201.7%201.4%203.1%203.1%203.1h5.6c1.7%200%203.1-1.4%203.1-3.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m52.4%2036.3h5.2v-5.9c0-1-.3-2-.9-2.7l-6-7.6c-.6-.8-.9-1.7-.9-2.7v-8.9h-9.9l-.3.7c-.6%201.5-2%202.4-3.5%202.4h-8c-1.6%200-3-1-3.5-2.4l-.3-.7h-9.9v8.9c0%201-.3%202-.9%202.7l-6%207.6c-.6.8-.9%201.7-.9%202.7v5.9h5.2c3.3%200%205.9%202.6%205.9%205.9v2.4c0%203.3-2.6%205.9-5.9%205.9h-5.4v8.1c0%201.4%201.1%202.5%202.5%202.5h46.2c1.4%200%202.5-1.1%202.5-2.5v-8.1h-5.2c-3.3%200-5.9-2.6-5.9-5.9v-2.4c0-3.2%202.6-5.9%205.9-5.9zm-10.3%2016.1c0%20.9-.7%201.7-1.7%201.7h-16.8c-.9%200-1.7-.7-1.7-1.7v-4.4h20.2zm0-8.6h-20.2v-4.7h20.2zm0-8.9h-20.2v-4.4c0-.9.7-1.7%201.7-1.7h16.9c.9%200%201.7.7%201.7%201.7v4.4z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m49.7%204.8c0-1.1-.9-1.9-1.9-1.9h-3.9c-1.1%200-2.2.7-2.6%201.8l-.7%201.7h9.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m22.7%204.6c-.4-1.1-1.4-1.8-2.6-1.8h-3.9c-1.1%200-1.9.9-1.9%201.9v1.5h9.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3c/g%3e%3c/svg%3e",Ht="Guide to medicine",Tt=46,Pt={"*":`<div class="mw-parser-output"><table cellspacing="0" cellpadding="10" width="600&#124;">\r
+	  `,{Critter:r,Description:d.Description}}),n=k(["Critter","Description"],i);n.className="critter-ext tgh-btab wikitable",a.replaceWith(n)})});F(Y,t=>{const e=Array.from(t.querySelectorAll(".critter-ext > tbody > tr:not(:first-child)"));v(e.map((a,i)=>{var n;return{page:Y,name:((n=a.querySelector(".critter-name"))==null?void 0:n.textContent.trim())||"",element:a,alignment:"center",id:i}}))});function bt(t){t.querySelectorAll("div.hidden").forEach(e=>{e.style.display="block",e.style.opacity="1"}),t.querySelector(".action_buttons").style.display="none",t.classList.remove("center")}F("$Welcome",t=>{const e=t.querySelector(".action_buttons");t.querySelectorAll("div[data-name]").forEach(a=>{const{name:i}=a.dataset;if(!i)return;const n=document.createElement("button");n.className="pretty-button",n.appendChild(document.createTextNode(i)),n.addEventListener("click",async()=>{bt(t),await j(),a.scrollIntoView({block:"start",inline:"nearest",behavior:"smooth"})}),e.appendChild(n)})});F("$Changelog",async t=>{const e=[{date:"2025-05-30T14:12:09.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Страница с Настроением",url:"https://github.com/nebula-in-space/handbook/commit/a712033956767ae722fa44313c556ae0011aff48"},{date:"2025-05-30T14:40:52.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"del: Прячем лишние страницы",url:"https://github.com/nebula-in-space/handbook/commit/3edf7d5f861c9e2db0ea0d63e37ff07626a38bf1"},{date:"2025-05-22T09:04:50.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Полный перевод руководства по медицине",url:"https://github.com/nebula-in-space/handbook/commit/11b5ffd97e461025564b44b7ea82c2d1b7078e79"},{date:"2025-05-14T17:52:50.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Руководство по медицине (часть 4)",url:"https://github.com/nebula-in-space/handbook/commit/2cf273e34b25f661fc0b63ae3bec9315b507646f"},{date:"2025-05-12T15:36:02.000Z",author:{name:"KOCMOHABT",avatar:"https://avatars.githubusercontent.com/u/25280520?v=4"},change:"add: Руководство по медицине (часть 3)",url:"https://github.com/nebula-in-space/handbook/commit/c45ef4e110aba808bac90b17d4e5b408fee17282"}],a=t.querySelector(".tgh-changes"),i=X(e,n=>{const d=new Date(n.date).toISOString();return d.substring(0,d.indexOf("T"))});Object.keys(i).sort().reverse().forEach(n=>{const d=Q("h3",{className:"tgh-change-date"},n);a.appendChild(d);const r=X(i[n],s=>s.author.name);Object.keys(r).forEach(s=>{a.appendChild(Q("article",{className:"tgh-change-entry"},["header",["img",{src:r[s][0].author.avatar}],["div",{className:"author"},r[s][0].author.name]],...r[s].map(l=>{const o=l.change.indexOf(":"),h=l.change.substring(0,o).trim(),m=l.change.substring(o+1).trim();return["div",{className:"tgh-change-info"},["div",{className:`tgh-change-tag tag-${h}`},h],m,["a",{href:l.url,className:"tgh-change-more",title:"Go to commit",target:"_blank"},"🔗"]]})))})})});const wt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M12.072%2014.416V4.121a1.455%201.455%200%20011.454-1.454h5.09a1.455%201.455%200%20011.453%201.454v10.295l5.722%2010.449a3.018%203.018%200%2001-2.647%204.468H8.997a3.018%203.018%200%2001-2.648-4.468l5.723-10.449zm6.027-9.779h-4.057v10.031a.99.99%200%2001-.121.473l-5.844%2010.67a1.048%201.048%200%2000.92%201.553l14.147-.001a1.047%201.047%200%2000.92-1.553c-2.207-4.027-5.844-10.669-5.844-10.669a.979.979%200%2001-.12-.473V4.637zm-2.604%2013.402h3.489l3.926%207.628a.556.556%200%2001-.492.807H9.723a.554.554%200%2001-.492-.807l3.926-7.628h1.23l-3.107%206.053a.493.493%200%2000.876.45l3.339-6.503z'%20fill='%23fff'/%3e%3cpath%20d='M59.485%2010.232c0-3.183-2.446-5.767-5.46-5.767h-10.92c-3.014%200-5.461%202.584-5.461%205.767v11.536c0%203.183%202.447%205.767%205.461%205.767h10.92c3.014%200%205.46-2.584%205.46-5.767V10.232z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.97'%20transform='rotate(45%2041.436%2021.869)%20scale(.86333%20.81734)'/%3e%3c/svg%3e",yt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M59.485%2010.232c0-3.183-2.446-5.767-5.46-5.767h-10.92c-3.014%200-5.461%202.584-5.461%205.767v11.536c0%203.183%202.447%205.767%205.461%205.767h10.92c3.014%200%205.46-2.584%205.46-5.767V10.232z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.97'%20transform='rotate(45%2080.063%205.869)%20scale(.86333%20.81734)'/%3e%3cpath%20d='M20.2%2011.8h7.608v8.4H20.2v7.608h-8.4V20.2H4.192v-8.4H11.8V4.192h8.4V11.8z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.9966500000000003'/%3e%3c/svg%3e",kt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M15.789%208.175c5.448-2.716%205.88-3.96%205.876-4.41l-.005-.047.002.022v-.019c-.034-.517.399-.978%201-1.046.63-.071%201.21.316%201.291.863%200%200%20.662%202.228-5.931%205.803%205.476%203.073%205.947%205.724%205.947%206.534l.013.046s.66%203.078-5.901%206.77c6.53%203.557%205.872%205.771%205.872%205.771-.082.547-.661.934-1.291.863-.63-.071-1.076-.573-1.002-1.043%200%200%20.003-.016.005-.047.004-.448-.424-1.686-5.823-4.383-5.4%202.697-5.829%203.935-5.823%204.383l.004.047-.003-.022.003.019c.033.517-.4.978-1.002%201.046-.63.071-1.208-.316-1.29-.863%200%200-.764-2.569%207.512-6.618%205.619-2.734%206.376-4.939%206.444-5.587a.653.653%200%2001-.027-.308s.003-.016.005-.047c.004-.465-.458-2.78-6.45-5.696l.005-.009C7.228%206.225%207.974%203.712%207.974%203.712c.082-.547.66-.934%201.29-.863.63.071%201.076.573%201.003%201.043%200%200-.004.016-.005.047-.004.44.408%201.64%205.527%204.236zm-3.42%201.942l.163.082-.005.007c.738.359%201.392.709%201.97%201.047-3.98%202.324-4.453%204.108-4.476%204.599a.607.607%200%2001.002.199s-.004.016-.004.047c-.004.41.354%202.259%204.551%204.689-.551.327-1.173.664-1.874%201.007h-.04l-.24.12C7.832%2018.986%207.68%2016.572%207.718%2016c-.038-.57.113-2.969%204.652-5.883z'%20fill='%23fff'/%3e%3cpath%20d='M83.785%2048H76.31'%20fill='none'%20stroke='%23fff'%20stroke-width='2.32'%20transform='matrix(.70074%200%200%201%20-40.045%20-32)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='2.46'%20transform='matrix(.56923%200%200%201%20-29.597%20-32)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='1.84'%20transform='matrix(.56923%200%200%201%20-29.597%20-18.667)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='2.46'%20transform='matrix(.56923%200%200%201%20-29.597%20-10.667)'/%3e%3cpath%20d='M78.869%2037.333h2.468'%20fill='none'%20stroke='%23fff'%20stroke-width='1.84'%20transform='matrix(.56923%200%200%201%20-29.597%20-24)'/%3e%3cpath%20d='M43.793%2018.242l1.761.958c.061.034.106.09.125.158a.262.262%200%2001-.026.2c-.663%201.191-.12%202.684.122%202.944-1.347%202.65-5.186%206.26-9.254%206.6a.275.275%200%2001-.256-.407c.87-1.58%205.41-9.839%206.076-11.05a.171.171%200%2001.23-.068l.49.267-5.485%2010.086s1.25-.56%201.383-.802l4.834-8.886zm1.502-2.76l2.808%201.528a.577.577%200%2001.23.78l-.718%201.323a.577.577%200%2001-.78.23l-2.81-1.528%201.27-2.334zm6.464-11.884l3.331.05a.574.574%200%2001.497.851c-1.237%202.264-4.67%208.549-6.423%2011.768a.575.575%200%2001-.781.23l-2.81-1.528L51.76%203.598zm-8.465%2013.82l-.134-.073a.579.579%200%2001-.23-.78l.72-1.324a.576.576%200%2001.78-.23l.134.072-1.27%202.335zm1.549-2.847l-.132-.07a.577.577%200%2001-.23-.783l5.407-9.842a.578.578%200%2001.514-.299l.417.006-5.976%2010.988zM41.523%2044.34a5.6%205.6%200%20011.905-.918%205.662%205.662%200%20012.197-.15L44.49%2045.87c-.128.016-.257.041-.384.075l-.28.092-2.302-1.697zm-3.384-2.494a9.342%209.342%200%20014.258-2.477%209.342%209.342%200%20014.927.016l-1.063%202.433a6.682%206.682%200%2000-3.187.075%206.682%206.682%200%2000-2.798%201.528l-2.137-1.575zm-3.472-2.559a13.025%2013.025%200%20016.59-4.171%2013.03%2013.03%200%20017.795.317l-1.05%202.4a10.437%2010.437%200%2000-6.068-.194%2010.437%2010.437%200%2000-5.159%203.202l-2.108-1.554z'%20fill='%23fff'/%3e%3c/svg%3e",_t="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M11.793%2018.242l1.761.958c.061.034.106.09.125.158a.262.262%200%2001-.026.2c-.663%201.191-.12%202.684.122%202.944-1.347%202.65-5.186%206.26-9.254%206.6a.275.275%200%2001-.256-.407c.87-1.58%205.41-9.839%206.076-11.05a.171.171%200%2001.23-.068l.49.267L5.576%2027.93s1.25-.56%201.383-.802l4.834-8.886zm1.502-2.76l2.808%201.528a.577.577%200%2001.23.78l-.718%201.323a.577.577%200%2001-.78.23l-2.81-1.528%201.27-2.334zm6.464-11.884l3.331.05a.574.574%200%2001.497.851c-1.237%202.264-4.67%208.549-6.423%2011.768a.575.575%200%2001-.781.23l-2.81-1.528L19.76%203.598zm-8.465%2013.82l-.134-.073a.579.579%200%2001-.23-.78l.72-1.324a.576.576%200%2001.78-.23l.134.072-1.27%202.335zm1.549-2.847l-.132-.07a.577.577%200%2001-.23-.783l5.407-9.842a.578.578%200%2001.514-.299l.417.006-5.976%2010.988zM12.812%2029.175s.478-.063%201.171-.114a12.397%2012.397%200%20011.171-.034c1.633.03%203.513.148%203.513.148a.5.5%200%20000-1s-1.88.118-3.513.147a12.639%2012.639%200%2001-1.171-.033c-.693-.051-1.171-.114-1.171-.114a.5.5%200%20000%201zM21.073%2029.175s.478-.063%201.17-.114a12.397%2012.397%200%20011.172-.034c1.633.03%203.513.148%203.513.148a.5.5%200%20000-1s-1.88.118-3.513.147a12.639%2012.639%200%2001-1.171-.033c-.693-.051-1.171-.114-1.171-.114a.5.5%200%20000%201zM46.984-24.02s.147%203.67.147%207.342c0%203.673-.147%207.343-.147%207.343a1%201%200%20002%200s-.146-3.67-.146-7.343c0-3.672.146-7.342.146-7.342a1%201%200%2000-2%200zM9.523%2044.34a5.6%205.6%200%20011.905-.918%205.662%205.662%200%20012.197-.15L12.49%2045.87c-.128.016-.257.041-.384.075l-.28.092-2.302-1.697zm-3.384-2.494a9.342%209.342%200%20014.258-2.477%209.342%209.342%200%20014.927.016l-1.063%202.433a6.682%206.682%200%2000-3.187.075%206.682%206.682%200%2000-2.798%201.528l-2.137-1.575zm-3.472-2.559a13.025%2013.025%200%20016.59-4.171%2013.03%2013.03%200%20017.795.317l-1.05%202.4a10.437%2010.437%200%2000-6.068-.194%2010.437%2010.437%200%2000-5.159%203.202l-2.108-1.554z'%20fill='%23fff'/%3e%3c/svg%3e",Ft=""+new URL("trauma-C3Qf18wH.svg",import.meta.url).href,vt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M-5.412%2013.034a1%201%200%2000-1.225-.707l-17.423%204.668c-.534.144-.85.692-.708%201.225l2.784%2010.39a1%201%200%20001.225.707l17.423-4.669a1%201%200%2000.707-1.225l-2.783-10.39zm-13.131%2013.05l3.29-.88c.496-.134.8-.606.68-1.055-.12-.449-.62-.705-1.117-.573l-3.29.882c-.496.133-.801.605-.68%201.054.12.449.62.705%201.117.573zm-1.142-2.915l3.29-.881c.496-.134.8-.606.68-1.055-.12-.449-.62-.705-1.117-.572l-3.29.881c-.496.134-.801.605-.68%201.054.12.449.62.706%201.117.573zm8.76-6.528a3.366%203.366%200%2000-2.38%204.12%203.367%203.367%200%20004.122%202.378%203.367%203.367%200%20002.378-4.12%203.366%203.366%200%2000-4.12-2.378zm-9.817%203.57l3.29-.882c.496-.132.8-.606.68-1.054-.12-.45-.62-.705-1.116-.573l-3.29.882c-.496.133-.802.605-.68%201.054.119.45.62.706%201.116.572zm10.27-1.878a1.614%201.614%200%2001.835%203.116%201.614%201.614%200%2001-.835-3.116zM4.535%207.735l3.242-.868c.007.053.018.106.032.159l1.186%204.425a1.511%201.511%200%20001.85%201.067l7.92-2.122a1.51%201.51%200%20001.067-1.85l-1.185-4.424a1.362%201.362%200%2000-.05-.155l3.24-.868c.087-.023.174-.04.262-.051l.05-.008.022-.002c.116-.012.231-.014.346-.008l.05.004c.035.004.07.008.104.01l.056.01a2.137%202.137%200%20011.729%201.554l.002.004%204.636%2017.302a2.14%202.14%200%2001-1.513%202.62l-.405.109a2.122%202.122%200%2000-.013-1.055l-2.91-10.855a2.139%202.139%200%2000-2.62-1.513l-12.47%203.342a2.14%202.14%200%2000-1.513%202.62l2.909%2010.855c.095.358.277.67.515.92l-.795.214c-.21.056-.424.079-.637.071l-.093-.006-.103-.01-.038-.007a2.175%202.175%200%2001-.753-.262%202.155%202.155%200%2001-.996-1.3L3.023%2010.356a2.138%202.138%200%2001.29-1.745l.038-.056.064-.083.05-.06c.097-.114.206-.218.325-.309l.08-.059c.03-.018.059-.037.088-.057l.04-.023a2.1%202.1%200%2001.537-.228zm8.275%2020.757a2.138%202.138%200%2001-1.558-1.524l-2.467-9.207a2.138%202.138%200%20011.512-2.619l10.644-2.852a2.139%202.139%200%20012.62%201.512l2.467%209.207a2.143%202.143%200%2001-.588%202.1l-12.63%203.383zm10.724-9.02a.968.968%200%2000-1.187-.686l-9.65%202.586a.97.97%200%2000.502%201.873l9.65-2.585a.97.97%200%2000.685-1.187v-.001zm-1.061-3.17a.968.968%200%2000-1.187-.685l-9.65%202.585a.968.968%200%2000.502%201.873l9.65-2.585a.968.968%200%2000.685-1.187v-.001zM17.562%204.245c.236.198.407.464.487.765l.822%203.066a1.51%201.51%200%2001-1.067%201.849l-6.362%201.705a1.511%201.511%200%2001-1.85-1.068l-.82-3.065a1.515%201.515%200%2001.038-.907l8.752-2.345zm-.903%201.438a.47.47%200%2000-.576-.333l-1.23.33a.47.47%200%2000-.333.576l.821%203.065a.47.47%200%2000.577.333l1.23-.33a.47.47%200%2000.333-.576l-.822-3.065z'%20fill='%23fff'/%3e%3c/svg%3e",Ct="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M22.736%2021.334a.705.705%200%2000-.703-.705H9.968a.705.705%200%20100%201.408h12.065a.704.704%200%2000.703-.703zm0-4.156a.704.704%200%2000-.703-.704H9.968a.705.705%200%20100%201.409h12.065a.705.705%200%2000.703-.705zm0-3.845a.704.704%200%2000-.703-.704H9.968a.705.705%200%20100%201.408h12.065a.705.705%200%2000.703-.704zM6.378%208.15a2.745%202.745%200%2001.14-5.485h16.218l.142.005a2.746%202.746%200%20012.603%202.74v18.435h.03v4.63c0%20.048.037.087.084.09a.089.089%200%2000.093-.08l.455-4.56a2.745%202.745%200%2001-.662%205.407H9.263a2.744%202.744%200%2001-2.743-2.707h-.001V9.776L20.967%208.33a.09.09%200%2000.08-.092.087.087%200%2000-.088-.085H6.52l-.141-.003z'%20fill='%23fff'/%3e%3c/svg%3e",St=""+new URL("races-6ppBx9xQ.svg",import.meta.url).href,Dt=""+new URL("food-DT-mtyGi.svg",import.meta.url).href,xt=""+new URL("robo-BweLIRTJ.svg",import.meta.url).href,Et="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M21.755-13.692l7.278%206.013c.237.197.347.51.283.812%200%200-.38%201.737-1.127%202.752-.43.584-.982.942-1.586.962-.413.014-.877-.118-1.372-.535-1.193-1.009-3.883-3.812-5.647-5.679l-.523.618S5.871-18.12%204.68-20.583c-2.842-5.876.655-8.752.655-8.752l16.42%2015.643zM6.165-26.67c-.005-.004-.003-.004-.008.003l.01.01c.022.139-.002%201.22%201.448%203.026%202.07%202.576%206.595%206.533%2012.623%2010.297L6.167-26.657l-.002-.013zm7.978%2016.176c-2.219%202.134-3.937%203.778-4.075%203.893-2.128%201.778-3.12%202.6-4.956%201.428-2.293-1.465-1.834-5.083.125-6.971l.219-.213-.012.45a40.478%2040.478%200%2000-.072%202.62c0%20.515.343.917.768.905.428-.01.781-.433.795-.947l.07-2.563c.047-.725.116-1.45.22-2.171l1.029-.992%201.223.984c-.01.376-.013.754-.013%201.13.002.513.344.915.77.903.392-.01.722-.367.783-.825l.818.629c.298.228.597.456.897.683l1.411%201.057zm5.676-15.72l.008-.009c1.959-1.888%205.137-1.884%206.97.125%201.26%201.38.201%202.982-2.067%205.346-.356.373-1.961%201.935-3.987%203.895l-5.152-4.909.07-.438%202.242-2.162-.037%201.367a40.478%2040.478%200%2000-.072%202.62c0%20.514.343.917.769.905.426-.012.78-.435.793-.949l.072-2.561a26.07%2026.07%200%2001.391-3.23zm.838%2015.575c1.724%201.831%204.446%204.675%205.641%205.685.095.08.168.144.247.145.095.002.152-.094.223-.174.122-.142.229-.315.324-.498a6.96%206.96%200%2000.484-1.254l-6.019-4.973-.9%201.069z'%20fill='%23fff'/%3e%3cg%20fill='%23fff'%3e%3cpath%20d='M13.639%209.265a2.638%202.638%200%20014.722%200l6.396%2012.792a2.64%202.64%200%2001-2.361%203.819H9.604a2.638%202.638%200%2001-2.361-3.819l6.396-12.792zm.954%2012.604c.267-.608.811-.992%201.407-.992s1.14.384%201.407.992l.001.002c.197.449.176.983-.056%201.41-.231.427-.64.687-1.081.687h-.542c-.441%200-.85-.26-1.081-.687a1.626%201.626%200%2001-.056-1.41l.001-.002zM16%2019.616c-1.705%200-1.537-3.613-1.537-5.827%200-1.419.437-2.727%201.537-2.727%201.1%200%201.537%201.23%201.537%202.711%200%202.214.168%205.843-1.537%205.843z'/%3e%3cpath%20d='M11.734%205.303L3.17%2022.43a4.771%204.771%200%20004.267%206.903h17.126a4.77%204.77%200%20004.267-6.903L20.266%205.303a4.768%204.768%200%2000-8.532%200zm1.905.966a2.64%202.64%200%20014.722%200l8.486%2016.973a2.64%202.64%200%2001-2.361%203.819H7.514a2.638%202.638%200%2001-2.361-3.819l8.486-16.973z'/%3e%3c/g%3e%3c/svg%3e",Gt="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cpath%20d='M10.557%208.949l4.855-5.534c.202-.229.492-.355.794-.344l3.978.157c.495.02.925.356%201.073.841l.655%202.134%201.274-.189c1.06-.158%202.09.433%202.516%201.441l.906%202.146c.05.115.093.231.13.349l.16.032c.356.07.65.33.768.682l1.077%203.182c.236.693.233%201.442%200%202.127l.509%201.875c.29%201.075-.215%202.209-1.197%202.686l-3.82%201.856-2.416%202.754a5.81%205.81%200%2001-3.322%201.894l-5.172.945a3.775%203.775%200%2000-1.841.905l-.047.042-1.336-1.571.046-.042a5.792%205.792%200%20012.821-1.387l5.172-.944a3.796%203.796%200%20002.17-1.237l.696-.795a2.75%202.75%200%2001-.884-.587l-.002-.001a2.997%202.997%200%2001-.805-2.797l-.386-.197a3.395%203.395%200%2001-4.061.422l-3.102-1.863-.585%201.39c-.222.53-.82.773-1.335.545a1.054%201.054%200%2001-.53-1.37L10%2016.87l-.14-.084a1.06%201.06%200%2001-.364-1.427%201.002%201.002%200%20011.39-.373l5.008%203.008a1.404%201.404%200%20001.764-.262c.523-.57.537-1.453.033-2.04l-2.746-3.203a3.239%203.239%200%2000-2.01-1.106l-3.205-.447a1.376%201.376%200%2000-1.41.741l-2.124%204.096a2.01%202.01%200%2000-.226.927v4.831a4.13%204.13%200%2001-.825%202.481l-.643.854a.999.999%200%2001-1.425.188%201.061%201.061%200%2001-.183-1.462l.643-.854c.26-.346.401-.77.401-1.207v-4.83c0-.666.16-1.32.465-1.908.5-.967%201.446-2.79%202.123-4.096.673-1.295%202.06-2.024%203.478-1.826l.553.077zm16.58%208.881a3.049%203.049%200%2001-.589.223l-4.886%201.3-.262.43a.88.88%200%2000.13%201.08v.002a.713.713%200%2000.815.136l4.84-2.352a.21.21%200%2000.11-.243l-.157-.576zm-7.154-.248l.084.042%205.971-1.59a1.14%201.14%200%2000.715-.576c.149-.285.174-.622.07-.928l-.456-1.353a3.818%203.818%200%2001-1.488%201.429l-4.82%202.575a3.824%203.824%200%2001-.076.401zm-.29-2.556l4.247-2.27c.821-.439%201.173-1.455.804-2.327l-.906-2.145a.337.337%200%2000-.36-.206l-.949.14.277.902a2.485%202.485%200%2001-.856%202.701l-2.708%202.061a.939.939%200%2001-.272.145l.247.289c.19.22.349.46.476.71zm-6.7-5.738l.216.03a5.258%205.258%200%20013.262%201.795l.842.983.956-.07%202.471-1.88a.368.368%200%2000.127-.4l-1.366-4.458-2.898-.115-3.61%204.115z'%20fill='%23fff'/%3e%3c/svg%3e",Mt=""+new URL("drink-oIDJNM0X.svg",import.meta.url).href,Bt=""+new URL("arsenal-Cs1MduTi.svg",import.meta.url).href,At="data:image/svg+xml,%3c!--%20icon666.com%20-%20MILLIONS%20OF%20FREE%20VECTOR%20ICONS%20--%3e%3csvg%20id='Layer_1'%20enable-background='new%200%200%2064%2064'%20viewBox='0%200%2064%2064'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Bulletproof'%3e%3cpath%20d='m58%2039.1h-5.6c-1.7%200-3.1%201.4-3.1%203.1v2.4c0%201.7%201.4%203.1%203.1%203.1h5.6c1.7%200%203.1-1.4%203.1-3.1v-2.4c0-1.7-1.4-3.1-3.1-3.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m14.7%2044.6v-2.4c0-1.7-1.4-3.1-3.1-3.1h-5.6c-1.7%200-3.1%201.4-3.1%203.1v2.4c0%201.7%201.4%203.1%203.1%203.1h5.6c1.7%200%203.1-1.4%203.1-3.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m52.4%2036.3h5.2v-5.9c0-1-.3-2-.9-2.7l-6-7.6c-.6-.8-.9-1.7-.9-2.7v-8.9h-9.9l-.3.7c-.6%201.5-2%202.4-3.5%202.4h-8c-1.6%200-3-1-3.5-2.4l-.3-.7h-9.9v8.9c0%201-.3%202-.9%202.7l-6%207.6c-.6.8-.9%201.7-.9%202.7v5.9h5.2c3.3%200%205.9%202.6%205.9%205.9v2.4c0%203.3-2.6%205.9-5.9%205.9h-5.4v8.1c0%201.4%201.1%202.5%202.5%202.5h46.2c1.4%200%202.5-1.1%202.5-2.5v-8.1h-5.2c-3.3%200-5.9-2.6-5.9-5.9v-2.4c0-3.2%202.6-5.9%205.9-5.9zm-10.3%2016.1c0%20.9-.7%201.7-1.7%201.7h-16.8c-.9%200-1.7-.7-1.7-1.7v-4.4h20.2zm0-8.6h-20.2v-4.7h20.2zm0-8.9h-20.2v-4.4c0-.9.7-1.7%201.7-1.7h16.9c.9%200%201.7.7%201.7%201.7v4.4z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m49.7%204.8c0-1.1-.9-1.9-1.9-1.9h-3.9c-1.1%200-2.2.7-2.6%201.8l-.7%201.7h9.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3cpath%20d='m22.7%204.6c-.4-1.1-1.4-1.8-2.6-1.8h-3.9c-1.1%200-1.9.9-1.9%201.9v1.5h9.1z'%20fill='%23000000'%20style='fill:%20rgb(255,%20255,%20255);'%3e%3c/path%3e%3c/g%3e%3c/svg%3e",Ht="Guide to medicine",Tt=46,Pt={"*":`<div class="mw-parser-output"><table cellspacing="0" cellpadding="10" width="600&#124;">\r
 <tbody><tr>\r
 <td width="50"><div class="floatright"><a href="/wiki/File:Generic_cmo.png" class="image"><img alt="Generic cmo.png" src="/wiki/images/c/c3/Generic_cmo.png" decoding="async" width="64" height="64" data-file-width="32" data-file-height="32" /></a></div>&#160;</td>\r
 <td bgcolor="fcfbce"><b>Главный врач Кингстон говорит:</b><br><i>"Доктор! Мне нужно, чтобы вы вырвали этому человеку аппендикс, выбросили этого клоуна из медицинского кабинета и зашили этому куратору лицо!"</i></td></tr></tbody></table>\r
@@ -810,7 +810,7 @@ ${"Notes"in n?`<p class="notes">${n.Notes.innerHTML}</p>`:""}
     <li>Зеленый свет обычно сопровождается, также, и звуковым сигналом, который можно отключить, щелкнув с зажатым ALT по лотку.</li>\r
     <li>Если вы несерьёзно относитесь к исцелению кого-то, то не сдавайтесь на полпути. Пусть им поможет надлежащий медицинский персонал. По крайней мере, постарайтесь, чтобы их спас врач.</li>\r
 </ul>\r
-</div>`},Rt={title:Ht,pageid:Tt,text:Pt},It="Guide to chemistry",Ot=52,Wt={"*":`<div class="mw-parser-output"><table cellspacing="0" cellpadding="10" width="600&#124;">\r
+</div>`},Rt={title:Ht,pageid:Tt,text:Pt},It="Guide to chemistry",jt=52,Ot={"*":`<div class="mw-parser-output"><table cellspacing="0" cellpadding="10" width="600&#124;">\r
 <tbody><tr>\r
 <td width="50"><div class="floatright"><a href="/wiki/File:Chemist_action.png" class="image"><img alt="Chemist action.png" src="/wiki/images/6/6b/Chemist_action.png" decoding="async" width="64" height="64" data-file-width="32" data-file-height="32" /></a></div>&#160;</td>\r
 <td bgcolor="fcfbce"><b>Tippo Felangus, the Chemist says:</b><br /><i>"Hey mate, welcome to Chemistry. This is one of the few jobs where you can make a man heal back up to full health one second and make him explode the next.</i>\r
@@ -6322,7 +6322,7 @@ When a smoke reaction occurs, the smoke will consume any other reagent in its or
 <h2><span class="mw-headline" id="Beyond_the_Dispenser">Beyond the Dispenser</span></h2>\r
 <p>Just because it isn't found in the dispenser or the guide above doesn't mean you can't use it! <a href="/wiki/Guide_to_drinks" title="Guide to drinks">Drinks</a>, <a href="/wiki/Guide_to_xenobiology" title="Guide to xenobiology">slime cores</a> and plenty of other things can provide limitless fun for an enterprising and curious chemist.\r
 </p>\r
-</div>`},Nt={title:It,pageid:Ot,text:Wt},zt="Surgery",Lt=57,Kt={"*":`<div class="mw-parser-output"><p>All surgery requires a set of medical tools, typically found in the <a href="/wiki/Operating_Theatre" title="Operating Theatre">Operating Theatre</a>, along with an operating table. \r
+</div>`},Wt={title:It,pageid:jt,text:Ot},Nt="Surgery",zt=57,Lt={"*":`<div class="mw-parser-output"><p>All surgery requires a set of medical tools, typically found in the <a href="/wiki/Operating_Theatre" title="Operating Theatre">Operating Theatre</a>, along with an operating table. \r
 </p>\r
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
@@ -7260,7 +7260,7 @@ Borgs should be able to perform the 'Free hand' surgery steps with any tool—if
 <td><a href="/wiki/File:Pen.png" class="image" title="Pen"><img alt="Pen" src="/wiki/images/4/4f/Pen.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> (50%)</td></tr><tr>\r
 <td>Step 6: <a href="/wiki/File:Cautery.png" class="image" title="Cautery"><img alt="Cautery" src="/wiki/images/5/54/Cautery.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> <b>Cautery</b>: seal the wound.</td>\r
 <td><a href="/wiki/File:Laser_gun.png" class="image" title="Laser"><img alt="Laser" src="/wiki/images/b/b1/Laser_gun.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> (90%) <a href="/wiki/File:Welder.png" class="image" title="Welder"><img alt="Welder" src="/wiki/images/9/9a/Welder.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> (70%) <a href="/wiki/File:Lighter.png" class="image" title="Lighter"><img alt="Lighter" src="/wiki/images/c/c4/Lighter.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> (45%) <a href="/wiki/File:Match.png" class="image" title="Match"><img alt="Match" src="/wiki/images/d/d0/Match.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> (20%)</td></tr><tr>\r
-</div><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr>`},Yt={title:zt,pageid:Lt,text:Kt},Vt="Guide to Traumas",jt=5040,Ut={"*":`<div class="mw-parser-output"><p>Brain Traumas are afflictions caused by unchecked brain damage, usually caused when a <a href="/wiki/Clown" title="Clown">poor, innocent crewmember</a> gets bashed in the head with a blunt object. They can severely debilitate players, or very rarely imbue them with supernatural powers <a href="/wiki/Beyond_the_impossible" class="mw-redirect" title="Beyond the impossible">if they're lucky</a>.\r
+</div><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr><tr>`},Kt={title:Nt,pageid:zt,text:Lt},Yt="Guide to Traumas",Vt=5040,Ut={"*":`<div class="mw-parser-output"><p>Brain Traumas are afflictions caused by unchecked brain damage, usually caused when a <a href="/wiki/Clown" title="Clown">poor, innocent crewmember</a> gets bashed in the head with a blunt object. They can severely debilitate players, or very rarely imbue them with supernatural powers <a href="/wiki/Beyond_the_impossible" class="mw-redirect" title="Beyond the impossible">if they're lucky</a>.\r
 </p><p>If you are planning on working as a <a href="/wiki/Medical_Doctor" title="Medical Doctor">Medical Doctor</a> or the <a href="/wiki/Chief_Medical_Officer" title="Chief Medical Officer">Chief Medical Officer</a>, then you will need to know what traumas there are and how to deal with them.\r
 </p><p>Traumas are visible to Health Analyzers, and will give a short indicator telling the user which trauma is affecting the patient.\r
 </p><p>A player gaining a trauma will generally see a warning message unique to the trauma, so you usually will be fully aware when you get one.\r
@@ -7506,7 +7506,7 @@ Magic traumas blur the lines between what's in the mind and reality. They can af
 <h3><span class="mw-headline" id="Permanent_Prefix">Permanent Prefix</span></h3>\r
 <p>You can identify permanent brain traumas by the prefix "permanent" on health analyzer. <b>Permanent</b> brain traumas are either permanent or curable with magic, which is typically unavailable. Failing a lobotomy can cause these traumas.  If you get one of these then assume "this is life now".\r
 </p>\r
-</div>`},qt={title:Vt,pageid:jt,text:Ut},Jt="Guide to Research and Development",$t=1814,Qt={"*":`<div class="mw-parser-output"><table cellpadding="0" cellspacing="0" width="80%" style="border: 1px solid #aaa; margin: 0 auto; display: block;">\r
+</div>`},qt={title:Yt,pageid:Vt,text:Ut},Jt="Guide to Research and Development",$t=1814,Qt={"*":`<div class="mw-parser-output"><table cellpadding="0" cellspacing="0" width="80%" style="border: 1px solid #aaa; margin: 0 auto; display: block;">\r
 \r
 <tbody><tr>\r
 <td width="10px" style="background: #f4C340;"></td>\r
@@ -17501,7 +17501,7 @@ Alternatively, there are <a href="/wiki/Critters#Gorilla" title="Critters">goril
 <li><i>Mind-Magnification Helmets:</i> when removing MM helmets, the sentient monkey has a slight chance (2.5%) to turn into an equally sentient gorilla.</li></ul>\r
 <p>Additionally, the <a href="/wiki/Traitor" title="Traitor">Traitor</a> geneticist's uplink offers <a href="/wiki/Syndicate_Items#Box_of_Gorilla_Cubes" title="Syndicate Items">Gorilla Cubes</a> and <a href="/wiki/Syndicate_Items#Magillitis_Serum_Autoinjector" title="Syndicate Items">an autoinjector</a> turning them into a gorilla.\r
 </p>\r
-</div>`},de={title:ie,pageid:re,text:ne},se="Guide to food",le=7845,oe={"*":`<div class="mw-parser-output"><p>You need food to avoid <a href="#Hunger">hunger</a>. Food is cooked either with the crafting menu <a href="/wiki/File:Crafting_menu_hud_icon.png" class="image"><img alt="Crafting menu hud icon.png" src="/wiki/images/9/91/Crafting_menu_hud_icon.png" decoding="async" width="28" height="28" data-file-width="28" data-file-height="28" /></a> or by putting certain ingredients into different types of machinery, such as the <a href="#Microwave_Oven">microwave</a> <a href="/wiki/File:Microwave.png" class="image"><img alt="Microwave.png" src="/wiki/images/6/6b/Microwave.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a>. \r
+</div>`},de={title:ie,pageid:re,text:ne},se="Guide to food",oe=7845,le={"*":`<div class="mw-parser-output"><p>You need food to avoid <a href="#Hunger">hunger</a>. Food is cooked either with the crafting menu <a href="/wiki/File:Crafting_menu_hud_icon.png" class="image"><img alt="Crafting menu hud icon.png" src="/wiki/images/9/91/Crafting_menu_hud_icon.png" decoding="async" width="28" height="28" data-file-width="28" data-file-height="28" /></a> or by putting certain ingredients into different types of machinery, such as the <a href="#Microwave_Oven">microwave</a> <a href="/wiki/File:Microwave.png" class="image"><img alt="Microwave.png" src="/wiki/images/6/6b/Microwave.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a>. \r
 </p>\r
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
@@ -22154,7 +22154,7 @@ On the other hand, eating junk food will satiate your hunger for a while but it 
 <li>toasts</li>\r
 <li>biscuits</li>\r
 <li>cereal</li></ul>\r
-</div>`},he={title:se,pageid:le,text:oe},ce="Guide to drinks",ge=7846,pe={"*":`<div class="mw-parser-output"><p>Note: These mixtures are usually poured into a glass (50 units), and are typically mixed in a shaker (100 units). If there are several reagents in the glass it will get the look of the drink with the largest amount of units.\r
+</div>`},he={title:se,pageid:oe,text:le},ce="Guide to drinks",ge=7846,pe={"*":`<div class="mw-parser-output"><p>Note: These mixtures are usually poured into a glass (50 units), and are typically mixed in a shaker (100 units). If there are several reagents in the glass it will get the look of the drink with the largest amount of units.\r
 </p>\r
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
@@ -24199,7 +24199,7 @@ Temperature 525K</div></span>, 1 part <a href="#Sugar_Rush">Sugar Rush</a>, 1 pa
 <th><a href="/wiki/File:Duke_Purple_Tea.png" class="image"><img alt="Duke Purple Tea.png" src="/wiki/images/1/1a/Duke_Purple_Tea.png" decoding="async" width="64" height="64" data-file-width="32" data-file-height="32" /></a></th>\r
 <th><span id="Dutch_Hot_Coco"></span>Dutch Hot Coco</th>\r
 <td>Contains hot coco and sugar. Made in Space South America. Hot coco heats you up if cold and has 20% chance per tick to heal 1 brute damage in a random body part. Hot coco can also be made on the station from 5 parts <a href="#Milk">milk</a> and 1 part cocoa heated to 320K. Alternatively mix 1 part <a href="#Chocolate_Milk">chocolate milk</a> with 2 parts <a href="#Milk">milk</a> and heat to 320K.</td></tr></tbody></table>\r
-</div>`},ue={title:ce,pageid:ge,text:pe},me="Guide to Combat",fe=1825,we={"*":`<div class="mw-parser-output"><p>There are times when running away from a fight is not an option. The combat system is <a href="/wiki/Terminology#Robust.2FRobusting" title="Terminology">robust</a> but functional and can feel weird at times. Sometimes your clicks are ignored. Sometimes you suddenly realise your <a href="#Melee_Weapons">melee weapon</a> is <a href="#Cheap_Tricks">no longer in your hand</a>. Sometimes your ranged shots <a href="/wiki/Syndicate_Items#Martial_Arts_Scroll" title="Syndicate Items">bounce off</a> your target. Sometimes you even <a href="/wiki/Guide_to_chemistry#Amanitin" title="Guide to chemistry">suddenly die</a> without knowing why. Some people reduce it to "click spaceman until horizontal", but there is a lot more to it. This guide may only cover some basics, but its intention is to help you win fights (or successfully commit murder as <a href="/wiki/Terminology#Antag" title="Terminology">antag</a>), even against veteran players. <br /><br />\r
+</div>`},ue={title:ce,pageid:ge,text:pe},me="Guide to Combat",fe=1825,be={"*":`<div class="mw-parser-output"><p>There are times when running away from a fight is not an option. The combat system is <a href="/wiki/Terminology#Robust.2FRobusting" title="Terminology">robust</a> but functional and can feel weird at times. Sometimes your clicks are ignored. Sometimes you suddenly realise your <a href="#Melee_Weapons">melee weapon</a> is <a href="#Cheap_Tricks">no longer in your hand</a>. Sometimes your ranged shots <a href="/wiki/Syndicate_Items#Martial_Arts_Scroll" title="Syndicate Items">bounce off</a> your target. Sometimes you even <a href="/wiki/Guide_to_chemistry#Amanitin" title="Guide to chemistry">suddenly die</a> without knowing why. Some people reduce it to "click spaceman until horizontal", but there is a lot more to it. This guide may only cover some basics, but its intention is to help you win fights (or successfully commit murder as <a href="/wiki/Terminology#Antag" title="Terminology">antag</a>), even against veteran players. <br /><br />\r
 </p>\r
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
@@ -25868,7 +25868,7 @@ Furthermore -  There are also two variants of the ammo this gun uses and which c
 <li>Look up: 5 seconds.</li></ul>\r
 <p>This is not a comprehensive list as some cooldowns are undefined or oddly defined. For example, spraying with a spray bottle is defined as CLICK_CD_RANGE*2. Guns also have defined for custom click speeds, so some guns may fire faster or slower than the standard 0.4 seconds. The 'Double Tap' trait gained from <a href="/wiki/Guide_to_drinks#Root_beer" title="Guide to drinks">root beer</a> speeds up the cooldown of guns by x2.\r
 </p>\r
-</div>`},be={title:me,pageid:fe,text:we},ye="Rules",ke=23,Fe={"*":`<div id="content" class="mw-body" role="main">\r
+</div>`},we={title:me,pageid:fe,text:be},ye="Rules",ke=23,_e={"*":`<div id="content" class="mw-body" role="main">\r
 <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr"><div class="mw-parser-output"><h3><span class="mw-headline" id="Важно!"><center><b>Важно!</b></center></span></h3>\r
 <p>Правила относительны. Иногда можно пожертвовать правилами ради интересной игры, но только с позволения администрации сервера.\r
 </p>\r
@@ -26191,7 +26191,7 @@ Furthermore -  There are also two variants of the ammo this gun uses and which c
 <ul><li><b>Ещё раз прочитай эти чёртовы правила!</b></li></ul>\r
 <table class="wikitable" style="text-align:center;" width="100%">\r
 \r
-<tbody>`},_e={title:ye,pageid:ke,text:Fe},ve="Guide to races",Ce=3589,Se={"*":`<div class="mw-parser-output"><p>Во время пребывания на станции вы можете оказаться лицом к лицу не совсем с человеком. Будь то инопланетяне, мутировавшие люди или осознавшие себя киборги, вы должны попытаться сосуществовать в этой смертельной ловушке.\r
+<tbody>`},Fe={title:ye,pageid:ke,text:_e},ve="Guide to races",Ce=3589,Se={"*":`<div class="mw-parser-output"><p>Во время пребывания на станции вы можете оказаться лицом к лицу не совсем с человеком. Будь то инопланетяне, мутировавшие люди или осознавшие себя киборги, вы должны попытаться сосуществовать в этой смертельной ловушке.\r
 </p><p>Знание их особенностей поможет вам лучше понять, как сохранить с ними дружеские отношения, пока всё спокойно, или легко устранить в случае раздоров.\r
 </p>\r
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
@@ -27068,9 +27068,12 @@ Stasis Bed = Стазисная кровать\r
 stamine = выносливости / стамина\r
 <br>\r
 decay = разложение / разрушается / гниет\r
-<br>`},Me={title:xe,pageid:Ee,text:Ge},Be="Guide to Arsenal",Ae=1984,He={"*":`<div class="mw-parser-output"><p>Don't be so serious. ARSENAL+ - Начала положено.<br /><br />\r
-</p>\r
-<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
+<br>`},Me={title:xe,pageid:Ee,text:Ge},Be="Guide to Arsenal",Ae=1984,He={"*":`<div class="mw-parser-output"><p>Don't be so serious. ARSENAL+ - Начала положено.<br><br></p>\r
+\r
+<!-- \r
+    MARK: Содержание\r
+-->\r
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
 <li class="toclevel-2 tocsection-32"><a href="#Sidearms_.28Energy.29"><span class="tocnumber">1</span> <span class="toctext">Энергетическое оружие</span></a>\r
 <ul>\r
@@ -27105,169 +27108,276 @@ decay = разложение / разрушается / гниет\r
 <h2><span id="Sidearms_(Energy)"></span><span class="mw-headline" id="Sidearms_.28Energy.29">Энергетическое</span></h2>\r
 <p>Energy weapons are among the most common kind of weapon you'll find on a Nanotrasen space station. Reliable but has issues with ammo.\r
 </p>\r
-<h3><span class="mw-headline" id="Energy_Based">Пистолеты (Энергия)</span></h3>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
 \r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+\r
+<!-- \r
+    MARK: Nanotrasen\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие NT</span></h2>\r
+<p></p>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><img alt="disabler.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/disabler.png" decoding="async" class="image64"><br /><span id="Disabler"></span>Усмиритель (Disabler)</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="bsgun.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/bsgun.gif" decoding="async" class="image64"><br><span id="bsgun"></span>bsgun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cshotgun.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/cshotgun.png" decoding="async" class="image64"><br><span id="Combat_Shotgun"></span>Combat Shotgun</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="dragnet.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/dragnet.gif" decoding="async" class="image64"><br><span id="Candor"></span>Candor</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="hoplaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hoplaser.gif" decoding="async" class="image64"><br><span id="Candor"></span>Candor</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="iot.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/iot.gif" decoding="async" class="image64"><br><span id="Candor"></span>E-SG 500 Second Edition</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>Режимы:\r
+    <br>7 <font color="orange">Лазеров</font>\r
+    <br>7 <font style="color:#429de7">Паралич</font></td>\r
+    <td>Режимы:\r
+    <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">6x15 <font color="orange">Ожогов</font>\r
+    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">6x15 <font style="color:#429de7">Энергии</font></td>\r
+    <td>\r
+    <br>0%\r
+    <br>-10%\r
+    </td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="protolaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/protolaser.gif" decoding="async" class="image64"><br><span id="Candor"></span>Candor</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"></a><br>Энергия</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="rdpdw.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/rdpdw.gif" decoding="async" class="image64"><br><span id="Candor"></span>Candor</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+\r
+<!-- \r
+    MARK: Пистолеты (Энерго)\r
+-->\r
+<h3><span class="mw-headline" id="Energy_Based">Пистолеты (Энергия)</span></h3>\r
+<table class="armorytable">\r
+<tr>\r
+    <th><img alt="disabler.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/disabler.png" decoding="async" class="image64"><br><span id="Disabler"></span>Усмиритель (Disabler)</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>20 <font style="color:#429de7">Паралич</font></td>\r
-    <td><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font></td>\r
+    <td><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async"><!--/obj/projectile/beam--> <font style="color:#429de7">Энергии</font></td>\r
+    <td><!--/obj/projectile/beam_p-->%</td>\r
     <td>Оружейка, Офицеры СБ</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>Оружие для не летального задержания целей, как правило используется для подавления драк и усмирения с безопасного расстояния. 2 попадания замедлят цель, 5 парализуют на 10 секунд</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="hybrid_taser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hybrid_taser.gif" decoding="async" class="image64"><br /><span id="Taser"></span>Гибридный Тазер</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="hybrid_taser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hybrid_taser.gif" decoding="async" class="image64"><br><span id="Taser"></span>Гибридный Тазер</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>Режимы:\r
     <br>20 <font style="color:#429de7">Паралич</font>\r
     <br>5 <font color="yellow">Стан</font></td>\r
     <td>Режимы:\r
-    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font>\r
-    <br><img alt="dmg_stun" src="/assets/images/pages/dmg_icon/dmg_stun.png" decoding="async">40 <font color="yellow">Стан</font></td>\r
+    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async"><!--/obj/projectile/beam/disabler--> <font style="color:#429de7">Энергии</font>\r
+    <br><img alt="dmg_stun" src="/assets/images/pages/dmg_icon/dmg_stun.png" decoding="async"><!--/obj/projectile/energy/electrode--> <font color="yellow">Стан</font></td>\r
+    <td>\r
+    <br><!--/obj/projectile/beam/disabler_p-->%\r
+    <br><!--/obj/projectile/energy/electrode_p-->%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>Ранее основное оружие СБ для задержания целей, замененены на усмерители в связи с огромной эффективностью при захвате данного оружия.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="plasma_pistol_fire.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/plasma_pistol_fire.png" decoding="async" class="image64"><img alt="plasma_pistol_cryo.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/plasma_pistol_cryo.png" decoding="async" class="image64"><br /><span id="Thermal_Pistols"></span>Thermal Pistols</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
-    <td>8 Огонь\r
-    <br>8 Крио</td>\r
-    <td><img alt="dmg_cold" src="/assets/images/pages/dmg_icon/dmg_cold.png" decoding="async">20 <font color="lightskyblue">Ожогов</font>\r
-    <br><img alt="dmg_fire" src="/assets/images/pages/dmg_icon/dmg_fire.png" decoding="async">20 <font color="orange">Ожогов</font>\r
-    <p>Shooting a hot person with cryo does 20 extra damage and knocks down, shooting a cold person with inferno causes an explosion.\r
-    </p></td>\r
-    <td><a href="/wiki/Cargo_Bay" title="Cargo Bay">Cargo Bay</a>.</td>\r
-    <td>Cargo</td>\r
-    <td>They come in pairs from cargo, though they work fine independently. Each shot has 10 AP. Despite being an energy weapon, their bullets function much like ballistics. Shooting someone the OPPOSITE temperature as the gun you're using has bonus effects!</td>\r
-</tr>\r
-<tr>\r
-    <th><img alt="mini2.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/mini2.gif" decoding="async" class="image64"><br /><span id="Taser"></span>Мини Е-ган</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="mini2.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/mini2.gif" decoding="async" class="image64"><br><span id="Taser"></span>Мини Е-ган</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>Режимы:\r
-    <br>00 <font style="color:#429de7">Паралич</font>\r
-    <br>00 <font color="yellow">Стан</font></td>\r
+    <br>10 <font style="color:#429de7">Паралич</font>\r
+    <br>5 <font color="orange">Лазеров</font></td>\r
     <td>Режимы:\r
     <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font>\r
-    <br><img alt="dmg_stun" src="/assets/images/pages/dmg_icon/dmg_stun.png" decoding="async">00 <font color="yellow">Стан</font></td>\r
-    <td>¯\\_(ツ)_/¯</td>\r
+    <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font></td>\r
+    <td>\r
+    <br>-20%\r
+    <br>-5%</td>\r
+    <td>ХоП</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>Миниатюрный Еган выполненный в стиле пистолета оснащен интегрированным фонариком. Очень малый боезапас, но можно использовать как вторичное оружие и носить в кармане вместо фонарика.</td>\r
 </tr>\r
+<tr>\r
+    <th><img alt="plasma_pistol_fire.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/plasma_pistol_fire.png" decoding="async" class="image64"><img alt="plasma_pistol_cryo.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/plasma_pistol_cryo.png" decoding="async" class="image64"><br><span id="Thermal_Pistols"></span>Термальные Пистолеты</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>8 Огонь\r
+    <br>8 Крио</td>\r
+    <td><img alt="dmg_cold" src="/assets/images/pages/dmg_icon/dmg_cold.png" decoding="async">20 <font color="lightskyblue">Ожогов</font>\r
+    <br><img alt="dmg_fire" src="/assets/images/pages/dmg_icon/dmg_fire.png" decoding="async">20 <font color="orange">Ожогов</font>\r
+    <td>0%\r
+    <br>0%</td>\r
+    <td><font style="color:#25679c">Nanotrasen</font></td>\r
+    <td><font style="color:#25679c">Nanotrasen</font>\r
+    <br>производства Sharplite</td>\r
+    <td>They come in pairs from cargo, though they work fine independently. Each shot has 10 AP. Despite being an energy weapon, their bullets function much like ballistics. Shooting someone the OPPOSITE temperature as the gun you're using has bonus effects!\r
+    <br>Shooting a hot person with cryo does 20 extra damage and knocks down, shooting a cold person with inferno causes an explosion.\r
+    </td>\r
+</tr>\r
 \r
 </tbody></table>\r
 <h3><span id="Longarm_(Energy)"></span><span class="mw-headline" id="Longarm_.28Energy.29">Винтовки (Энергия)</span></h3>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><img alt="laser.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/laser.png" decoding="async" class="image64"><br /><span id="Laser_Gun"></span>Laser Gun</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
-    <td>19 Lasers</td>\r
-    <td>25 Burn</td>\r
+    <th><img alt="retrolaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/retrolaser.png" decoding="async" class="image64"></a><br><span id="Retro_Laser"></span>Retro Laser</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>12 <font color="orange">Лазеров</font></td>\r
+    <td><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font></td>\r
+    <td>-5%</td>\r
+    <td><a href="/wiki/White_Ship" title="White Ship">White Ship</a>, deep space ruins.</td>\r
+    <td>Неизвестно</td>\r
+    <td>Found on the white ship, this old beast is like the laser gun; anyone with a spaaaaaace suit and a little know-how can reach it.</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="laser.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/laser.png" decoding="async" class="image64"><br><span id="Laser_Gun"></span>Laser Gun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>12 <font color="orange">Лазеров</font></td>\r
+    <td><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font></td>\r
+    <td>-5%</td>\r
     <td><a href="/wiki/Armory" title="Armory">Armory</a> and weapons crates.</td>\r
     <td>Security</td>\r
     <td>Lethal ONLY, but 4 extra shots.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="retrolaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/retrolaser.png" decoding="async" class="image64"></a><br /><span id="Retro_Laser"></span>Retro Laser</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
-    <td>12 <font color="orange">Лазеров</font></td>\r
-    <td><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">20 <font color="orange">Ожогов</font></td>\r
-    <td><a href="/wiki/White_Ship" title="White Ship">White Ship</a>, deep space ruins.</td>\r
-    <td>Unknown</td>\r
-    <td>Found on the white ship, this old beast is like the laser gun; anyone with a spaaaaaace suit and a little know-how can reach it.</td>\r
-</tr>\r
-<tr>\r
-    <th><img alt="lasercannon.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/lasercannon.png" decoding="async" class="image64"><br /><span id="Laser_Cannon"></span>Laser Cannon</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
-    <td>10 Lasers</td>\r
-    <td>40 Burn</td>\r
+    <th><img alt="lasercannon.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/lasercannon.png" decoding="async" class="image64"><br><span id="Laser_Cannon"></span>Laser Cannon</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>10 <font color="orange">Лазеров</font></td>\r
+    <td>~<img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">40 <font color="orange">Ожогов</font></td>\r
+    <td>-5%</td>\r
     <td>Summon guns</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>This is the Laser Gun's bigger brother, fear him, he will fuck you over.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="egun.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/egun.gif" decoding="async" class="image64"><br /><span id="Energy_Gun"></span>Energy Gun</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
-    <td>16 Lasers, 20 Disable</td>\r
-    <td>25 Burn<br />20 Stamina on Chest 15 on limbs</td>\r
+    <th><img alt="egun.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/egun.gif" decoding="async" class="image64"><br><span id="Energy_Gun"></span>Energy Gun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
+    <td>Режимы:\r
+    <br>12 <font color="orange">Лазеров</font>\r
+    <br>20 <font style="color:#429de7">Паралич</font></td>\r
+    <td>Режимы:\r
+    <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font>\r
+    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font></td>\r
+    <td>\r
+    <br>-5%\r
+    <br>-20%\r
+    </td>\r
     <td><a href="/wiki/Armory" title="Armory">Armory</a>, energy weapons crate, HoP/Captain lockers.</td>\r
     <td>Security</td>\r
     <td>A versatile energy weapon. Best thing is to disable a target and then either handcuff (for arresting) or spam the other remaining shots at them on kill mode (for murder).</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="etar.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/etar.gif" decoding="async" class="image64"></a><br /><span id="etar"></span>E-TAR SMG</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="etar.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/etar.gif" decoding="async" class="image64"></a><br><span id="etar"></span>E-TAR SMG</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>Режимы:\r
     <br>25 <font color="orange">Лазеров</font>\r
     <br>30 <font style="color:#429de7">Паралич</font></td>\r
     <td>Режимы:\r
     <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">15 <font color="orange">Ожогов</font>\r
     <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">15 <font style="color:#429de7">Энергии</font></td>\r
+    <td>\r
+    <br>-5%\r
+    <br>-30%\r
+    </td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="hades.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hades.gif" decoding="async" class="image64"><br /><span id="Hades"></span>SL AL-655 'Hades'</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="hades.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hades.gif" decoding="async" class="image64"><br><span id="Hades"></span>SL AL-655 'Hades'</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>Режимы:\r
     <br>20 <font color="orange">Лазеров</font>\r
     <br>20 <font style="color:#429de7">Паралич</font></td>\r
     <td>Режимы:\r
     <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font>\r
-    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">25 <font style="color:#429de7">Энергии</font></td>\r
+    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font></td>\r
+    <td>\r
+    <br>20%\r
+    <br>-20%\r
+    </td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="aegun.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/aegun.gif" decoding="async" class="image64"><br /><span id="Advanced_Energy_Gun"></span>Advanced Energy Gun</th>\r
-    <td><a href="/wiki/File:Powercell.png" class="image64"><img alt="Powercell.png" src="/wiki/images/7/73/Powercell.png" decoding="async" class="image64"></a><br />Energy<br>(само-зарядка)</td>\r
-    <td>12 <font color="orange">Лазеров</font></td>\r
-    <td>20 Burn\r
-    <p>20 Stamina on chest 15 on limbs\r
-    </p></td>\r
+    <th><img alt="aegun.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/aegun.gif" decoding="async" class="image64"><br><span id="Advanced_Energy_Gun"></span>Advanced Energy Gun</th>\r
+    <td><a href="/wiki/File:Powercell.png" class="image64"><img alt="Powercell.png" src="/wiki/images/7/73/Powercell.png" decoding="async" class="image64"></a><br>Энергия<br>(само-зарядка)</td>\r
+    <td>Режимы:\r
+    <br>12 <font color="orange">Лазеров</font>\r
+    <br>20 <font style="color:#429de7">Паралич</font></td>\r
+    <td>Режимы:\r
+    <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font>\r
+    <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font></td>\r
+    <td>\r
+    <br>-5%\r
+    <br>-20%\r
+    </td>\r
     <td>Combine an energy gun with a gun kit from security protolathe, once researched.</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Using advanced <s>wizardry</s> SCIENCE, a mini nuclear generator has been fitted into this gun to provide unlimited shots! Researched from R&amp;D. Cannot be used in recharging units. Unreliable models may emit radiation, take caution.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="caplaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/caplaser.gif" decoding="async" class="image64"><br /><span id="Antique_Laser_Gun"></span>Antique Laser Gun</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy<br>(само-зарядка)</td>\r
+    <th><img alt="caplaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/caplaser.gif" decoding="async" class="image64"><br><span id="Antique_Laser_Gun"></span>Antique Laser Gun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия<br>(само-зарядка)</td>\r
     <td>12 <font color="orange">Лазеров</font></td>\r
     <td><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</td>\r
+    <td>-5%</td>\r
     <td>Артефакт прошлого</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>Наградное оружие капитана, имеет только летальный режим стрельбы, однако встроенный реактор заряжает батарею со временем.<br><i><font color="lightgrey" style="font-size:6pt">«Такое оружие больше не выпускают — это артефакт эпохи, когда технологии не уступали амбициям»</font></i></td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="hoslaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hoslaser.gif" decoding="async" class="image64"><br /><span id="X-01_Multiphase_Energy_Gun"></span>X-01 Multiphase Energy Gun</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="hoslaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/hoslaser.gif" decoding="async" class="image64"><br><span id="X-01_Multiphase_Energy_Gun"></span>X-01 Multiphase Energy Gun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>Режимы:\r
     <br>16 <font color="orange">Лазеров</font>\r
     <br>33 <font style="color:#429de7">Паралич</font>\r
@@ -27278,14 +27388,15 @@ decay = разложение / разрушается / гниет\r
     <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font>\r
     <br><img alt="dmg_stun" src="/assets/images/pages/dmg_icon/dmg_stun.png" decoding="async">40 <font color="yellow">Стан</font>\r
     <br><img alt="dmg_ion" src="/assets/images/pages/dmg_icon/dmg_ion.png" decoding="async">10% <font style="color:#6d5aff">ЭМП</font></td>\r
+    <td>-%</td>\r
     <td>Личное оружие ХоСа</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>Первая попытка Nanotrasen переделать старинный Антикварный Лазер. Имеется больше режимов стрельбы, но отсутствует микрореактор с самозарядкой.<br><i><font color="lightgrey" style="font-size:6pt">«Прогресс потребовал жертв — функциональность в обмен на автономность. Теперь это всего лишь инструмент, а не легенда»</font></i></td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="caphoslaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/caphoslaser.gif" decoding="async" class="image64"><br /><span id="etar"></span>Modified Antique Laser Gun</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy<br>(само-зарядка)</td>\r
+    <th><img alt="caphoslaser.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/caphoslaser.gif" decoding="async" class="image64"><br><span id="etar"></span>Modified Antique Laser Gun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия<br>(само-зарядка)</td>\r
     <td>Режимы:\r
     <br>16 <font color="orange">Лазеров</font>\r
     <br>33 <font style="color:#429de7">Паралич</font>\r
@@ -27296,291 +27407,258 @@ decay = разложение / разрушается / гниет\r
     <br><img alt="dmg_energy" src="/assets/images/pages/dmg_icon/dmg_energy.png" decoding="async">30 <font style="color:#429de7">Энергии</font>\r
     <br><img alt="dmg_stun" src="/assets/images/pages/dmg_icon/dmg_stun.png" decoding="async">40 <font color="yellow">Стан</font>\r
     <br><img alt="dmg_ion" src="/assets/images/pages/dmg_icon/dmg_ion.png" decoding="async">10% <font style="color:#6d5aff">ЭМП</font></td>\r
+    <td>-%</td>\r
     <td>Уникальная Реликвия</td>\r
     <td><font style="color:#25679c">Nanotrasen</font>\r
     <br>производства Sharplite</td>\r
     <td>Улучшенная версия легендарного Антикварного Лазера, где инженеры Nanotrasen наконец совместили старую школу с новыми технологиями. Сохранив встроенный микрореактор для автономной зарядки, а так же расширенные режимы стрельбы.<br><i><font color="lightgrey" style="font-size:6pt">«Они вернули душу классики, добавив ей зубов. Теперь это не просто реликвия — это символ того, как прошлое и будущее стреляют в унисон»</font></i></td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="ion_carbine.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/ion_carbine.png" decoding="async" class="image64"></a><br /><span id="Ion_Rifle"></span>Ion Carbine</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="ion_carbine.png" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/ion_carbine.png" decoding="async" class="image64"></a><br><span id="Ion_Rifle"></span>Ion Carbine</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>10 <font style="color:#6d5aff">Ион</font></td>\r
-    <td>20 Brute to silicon mobs<br />Up to 90 damage to mechs<br />3x3 EMP</td>\r
+    <td>20 Brute to silicon mobs<br>Up to 90 damage to mechs<br>3x3 EMP</td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/Armory" title="Armory">Armory</a> and on the Nuclear Operative shuttle.</td>\r
     <td>Security</td>\r
     <td>Compact, great for dealing with mechs and cyborgs. Also opens lockers and crates.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Ionrifle.png" class="image64"><img alt="Ionrifle.png" src="/wiki/images/1/1f/Ionrifle.png" decoding="async" class="image64"></a><br /><span id="Ion_Rifle"></span>Ion Rifle</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><a href="/wiki/File:Ionrifle.png" class="image64"><img alt="Ionrifle.png" src="/wiki/images/1/1f/Ionrifle.png" decoding="async" class="image64"></a><br><span id="Ion_Rifle"></span>Ion Rifle</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>10 <font style="color:#6d5aff">Ион</font></td>\r
     <td>20 Brute to silicon mobs\r
     <br>Up to 90 damage to mechs\r
     <br><img alt="dmg_ion" src="/assets/images/pages/dmg_icon/dmg_ion.png" decoding="async">10% <font style="color:#6d5aff">ЭМП</font></td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/Armory" title="Armory">Armory</a> and on the Nuclear Operative shuttle.</td>\r
     <td>Security</td>\r
     <td>Large and unwieldy, great for dealing with mechs and cyborgs. Also opens lockers and crates.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="xray.png" src="/assets/images/pages/arsenal/misc/xray.png" decoding="async" class="image64"><br /><span id="X-Ray_Gun"></span>X-Ray Gun</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="xray.png" src="/assets/images/pages/arsenal/misc/xray.png" decoding="async" class="image64"><br><span id="X-Ray_Gun"></span>X-Ray Gun</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>20 Lasers</td>\r
     <td>15 Burn + 30 Irradiate</td>\r
+    <td>-%</td>\r
     <td>Combine a laser gun with a gun kit from security protolathe, once researched.</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>This beams from this gun will pass through everything, including walls, until they hit a mob.</td></tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Teslacannon.png" class="image64"><img alt="Teslacannon.png" src="/wiki/images/0/05/Teslacannon.png" decoding="async" class="image64"></a><br />Tesla Cannon</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><a href="/wiki/File:Teslacannon.png" class="image64"><img alt="Teslacannon.png" src="/wiki/images/0/05/Teslacannon.png" decoding="async" class="image64"></a><br>Tesla Cannon</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>33 Tesla</td>\r
     <td>5 Burn + Electrocution</td>\r
+    <td>-%</td>\r
     <td>Crafted from a tesla cannon parts kit with a flux anomaly core.</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Fully automatic and needs to be fired with two hands. If you're immune to electrocution via insulated gene you become immune to its shots.</td>\r
 </tr>\r
-</tbody></table>\r
 \r
 <h3><span class="mw-headline" id="Pulse_Based">Импульсное Вооружение</span></h3>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><img alt="pulse_pistol.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/pulse_pistol.gif" decoding="async" class="image64"><br /><span id="Pulse_Pistol"></span>Импульсный Пистолет<br>(Pulse Pistol)</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="pulse_pistol.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/pulse_pistol.gif" decoding="async" class="image64"><br><span id="Pulse_Pistol"></span>Импульсный Пистолет<br>(Pulse Pistol)</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>10 <font style="color:#004080">Импульс</font>\r
     <br>20 <font color="orange">Лазеров</font></td>\r
     <td><img alt="dmg_pulse" src="/assets/images/pages/dmg_icon/dmg_pulse.png" decoding="async">50 <font style="color:#004080">Ожогов</font>\r
     <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font></td>\r
+    <td>-%</td>\r
     <td>Элитное ОБР</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Военный образец, чудовищная мощность в малом корпусе. Боезапас не очень велик, но в режиме уничтожения способен разрушать стены и ложить в крит человека с 2-3 выстрелов. Доступен исключительно элитному отряду поддержки NanoTrasen.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="pulse_carbine.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/pulse_carbine.gif" decoding="async" class="image64"><br /><span id="Pulse_Carbine"></span>Импульсный Карабин<br>(Pulse Carbine)</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="pulse_carbine.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/pulse_carbine.gif" decoding="async" class="image64"><br><span id="Pulse_Carbine"></span>Импульсный Карабин<br>(Pulse Carbine)</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>25 <font style="color:#004080">Импульс</font>\r
     <br>50 <font color="orange">Лазеров</font></td>\r
     <td><img alt="dmg_pulse" src="/assets/images/pages/dmg_icon/dmg_pulse.png" decoding="async">50 <font style="color:#004080">Ожогов</font>\r
     <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font></td>\r
+    <td>-%</td>\r
     <td>Элитное ОБР</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Военный образец. Вариация Импульсной винтовки для элитных спецподразделений. Боезапас меньше чем у военного образца, но значительно выше стандартных моделей</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="pulse_rifle.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/pulse_rifle.gif" decoding="async" class="image64"><br /><span id="Pulse_Rifle"></span>Импульсная Винтовка<br>(Pulse Rifle)</th>\r
-    <td><a href="/wiki/File:Recharger.gif" class="image64"><img alt="Recharger.gif" src="/wiki/images/4/48/Recharger.gif" decoding="async" class="image64"></a><br />Energy</td>\r
+    <th><img alt="pulse_rifle.gif" src="/assets/images/pages/arsenal/nanotrasen_sharplite_laser/pulse_rifle.gif" decoding="async" class="image64"><br><span id="Pulse_Rifle"></span>Импульсная Винтовка<br>(Pulse Rifle)</th>\r
+    <td><img alt="recharger.gif" src="/assets/images/pages/arsenal/ammo/recharger.gif" decoding="async" class="image64"><br>Энергия</td>\r
     <td>100 <font style="color:#004080">Импульс</font>\r
     <br>200 <font color="orange">Лазеров</font></td>\r
     <td><img alt="dmg_pulse" src="/assets/images/pages/dmg_icon/dmg_pulse.png" decoding="async">50 <font style="color:#004080">Ожогов</font>\r
     <br><img alt="dmg_laser" src="/assets/images/pages/dmg_icon/dmg_laser.png" decoding="async">25 <font color="orange">Ожогов</font></td>\r
+    <td>-%</td>\r
     <td>Эскадрон Смерти</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Военный образец. Самое мощное энергетическое оружие из возможного, в дополнение имеет неприлично огромный боезапас. Уничтожает стены и шлюзы при попадании. Одна беда - в руках вы его вряд ли подержите, это оружие зачистки, нет свидетелей - нет проблем.</td>\r
-</tr></tbody></table>\r
+</tr>\r
 \r
 <h2><span id="Longarm_(Ballistic)"></span><span class="mw-headline" id="Longarm_.28Ballistic.29">Баллистическое</span></h2>\r
 <h3><span id="Sidearms_(Ballistic)"></span><span class="mw-headline" id="Sidearms_.28Ballistic.29">Пистолеты (Баллистика)</span></h3>\r
 <p>Ballistic weapons remain a popular weapon in the 26th century, typically however Nanotrasen prefer the usage of Energy weapons over Ballistic weapons, so don't expect to see many ballistic weapons on station.\r
 </p>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><a href="/wiki/File:Deagle.gif" class="image64"><img alt="Deagle.gif" src="/wiki/images/3/3d/Deagle.gif" decoding="async" class="image64"></a><br /><span id="Desert_Eagle"></span>Desert Eagle</th>\r
-    <td><a href="/wiki/File:Ammo_50.png" class="image64"><img alt="Ammo 50.png" src="/wiki/images/3/30/Ammo_50.png" decoding="async" class="image64"></a><br />.50</td>\r
+    <th><a href="/wiki/File:Deagle.gif" class="image64"><img alt="Deagle.gif" src="/wiki/images/3/3d/Deagle.gif" decoding="async" class="image64"></a><br><span id="Desert_Eagle"></span>Desert Eagle</th>\r
+    <td><a href="/wiki/File:Ammo_50.png" class="image64"><img alt="Ammo 50.png" src="/wiki/images/3/30/Ammo_50.png" decoding="async" class="image64"></a><br>.50</td>\r
     <td>7 Rounds</td>\r
     <td>60 Brute</td>\r
+    <td>-%</td>\r
     <td>Summon guns, can spawn in secure contraband lockers, and also from the MetaStation vault.</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Comes in three tasteful variants. Normal, gold and camo gold. Hope for the gold gun. 7 Rounds of pure mlg; spare ammo available nowhere.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Mateba.png" class="image64"><img alt="Mateba.png" src="/wiki/images/5/5e/Mateba.png" decoding="async" class="image64"></a><br /><span id="Mateba"></span>Unica 6 auto-revolver</th>\r
-    <td><a href="/wiki/File:357_speedloader.png" class="image64"><img alt="357 speedloader.png" src="/wiki/images/c/c5/357_speedloader.png" decoding="async" class="image64"></a><br />.357</td>\r
+    <th><a href="/wiki/File:Mateba.png" class="image64"><img alt="Mateba.png" src="/wiki/images/5/5e/Mateba.png" decoding="async" class="image64"></a><br><span id="Mateba"></span>Unica 6 auto-revolver</th>\r
+    <td><a href="/wiki/File:357_speedloader.png" class="image64"><img alt="357 speedloader.png" src="/wiki/images/c/c5/357_speedloader.png" decoding="async" class="image64"></a><br>.357</td>\r
     <td>7 Патронов</td>\r
     <td>60 <img alt="dmg_bullet" src="/assets/images/pages/dmg_icon/dmg_bullet.png" decoding="async"> Травм</td>\r
+    <td>-%</td>\r
     <td>Эскадрон Смерти, ОБР</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>По характеристикам полностью совпадает с револьвером синдиката, но эта модель была изготовлена по заказу NanoTrasen для Офицеров ЦК, и Элетных Служб NanoTrasen. Чрезвычайно убойный.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Revolver.png" class="image64"><img alt="Revolver.png" src="/wiki/images/6/6d/Revolver.png" decoding="async" class="image64"></a><br /><span id="Revolver"></span>Revolver</th>\r
-    <td><a href="/wiki/File:357_speedloader.png" class="image64"><img alt="357 speedloader.png" src="/wiki/images/c/c5/357_speedloader.png" decoding="async" class="image64"></a><br />.357</td>\r
+    <th><a href="/wiki/File:Revolver.png" class="image64"><img alt="Revolver.png" src="/wiki/images/6/6d/Revolver.png" decoding="async" class="image64"></a><br><span id="Revolver"></span>Revolver</th>\r
+    <td><a href="/wiki/File:357_speedloader.png" class="image64"><img alt="357 speedloader.png" src="/wiki/images/c/c5/357_speedloader.png" decoding="async" class="image64"></a><br>.357</td>\r
     <td>7 Rounds</td>\r
     <td>60 Brute</td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/Syndicate_Uplink" class="mw-redirect" title="Syndicate Uplink">Syndicate Uplink</a> and summon guns</td>\r
     <td><font style="color:#e11717">Syndicate</font></td>\r
     <td>Security (or generally anyone) will be quick to scream <b>"TRAITOR!"</b> if they see you with one; You can get more ammo from hacked autolathes. Serve with a side of grenade to finish your foe off for good.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Detectivegun.png" class="image64"><img alt="Detectivegun.png" src="/wiki/images/5/53/Detectivegun.png" decoding="async" class="image64"></a><br /><span id="Revolver"></span>Revolver</th>\r
-    <td><a href="/wiki/File:Ammo_38.png" class="image64"><img alt="Ammo 38.png" src="/wiki/images/1/1a/Ammo_38.png" decoding="async" class="image64"></a><br />.38</td>\r
+    <th><a href="/wiki/File:Detectivegun.png" class="image64"><img alt="Detectivegun.png" src="/wiki/images/5/53/Detectivegun.png" decoding="async" class="image64"></a><br><span id="Revolver"></span>Revolver</th>\r
+    <td><a href="/wiki/File:Ammo_38.png" class="image64"><img alt="Ammo 38.png" src="/wiki/images/1/1a/Ammo_38.png" decoding="async" class="image64"></a><br>.38</td>\r
     <td>6 Rounds</td>\r
     <td>25 Brute</td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/Detective" title="Detective">Detective</a>'s locker or summon guns.</td>\r
     <td>Security</td>\r
     <td>Deals moderate damage. Can be modified to fire .357 by wrenching it, but each consecutive shot raises the chance of a misfire, usually ending with you shooting yourself with .357.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Stetchkin.png" class="image64"><img alt="Stetchkin.png" src="/wiki/images/2/28/Stetchkin.png" decoding="async" class="image64"></a><br /><span id="Makarov_Pistol"></span>Makarov Pistol</th>\r
-    <td><a href="/wiki/File:Ammo_9mm.png" class="image64"><img alt="Ammo 9mm.png" src="/wiki/images/1/1c/Ammo_9mm.png" decoding="async" class="image64"></a><br />9mm</td>\r
+    <th><a href="/wiki/File:Stetchkin.png" class="image64"><img alt="Stetchkin.png" src="/wiki/images/2/28/Stetchkin.png" decoding="async" class="image64"></a><br><span id="Makarov_Pistol"></span>Makarov Pistol</th>\r
+    <td><a href="/wiki/File:Ammo_9mm.png" class="image64"><img alt="Ammo 9mm.png" src="/wiki/images/1/1c/Ammo_9mm.png" decoding="async" class="image64"></a><br>9mm</td>\r
     <td>8 rounds</td>\r
     <td>30 Brute</td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/Syndicate_Uplink" class="mw-redirect" title="Syndicate Uplink">Syndicate Uplink</a>.</td>\r
     <td><font style="color:#e11717">Syndicate</font></td>\r
     <td>A robust sidearm accessible through a <a href="/wiki/Syndicate_items" class="mw-redirect" title="Syndicate items">traitor uplink</a>. Doesn't deal as much damage as the <a href="#Revolver">revolver</a>, but costs less and can be reloaded more easily without purchasing additional magazines by printing ammo boxes from the <a href="/wiki/Autolathe" title="Autolathe">Autolathe</a>. Small enough to fit in pockets. One of the few guns that takes the universal silencer. Can be found in the contraband locker.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Ansem.png" class="image64"><img alt="Ansem.png" src="/wiki/images/b/b7/Ansem.png" decoding="async" class="image64"></a><br /><span id="Ansem_Pistol"></span>Ansem Pistol</th>\r
-    <td><a href="/wiki/File:10mm.png" class="image64"><img alt="10mm.png" src="/wiki/images/d/d9/10mm.png" decoding="async" class="image64"></a><br />10x22mm</td>\r
-    <td>8 rounds</td><td>40 Brute</td><td><a href="/wiki/Nuclear_Operative" title="Nuclear Operative">Nuclear Operatives</a> and their <a href="/wiki/Syndicate_items" class="mw-redirect" title="Syndicate items">uplinks</a>.</td><td><font style="color:#e11717">Syndicate</font></td>\r
+    <th><a href="/wiki/File:Ansem.png" class="image64"><img alt="Ansem.png" src="/wiki/images/b/b7/Ansem.png" decoding="async" class="image64"></a><br><span id="Ansem_Pistol"></span>Ansem Pistol</th>\r
+    <td><a href="/wiki/File:10mm.png" class="image64"><img alt="10mm.png" src="/wiki/images/d/d9/10mm.png" decoding="async" class="image64"></a><br>10x22mm</td>\r
+    <td>8 rounds</td>\r
+    <td>40 Brute</td>\r
+    <td>-%</td>\r
+    <td><a href="/wiki/Nuclear_Operative" title="Nuclear Operative">Nuclear Operatives</a> and their <a href="/wiki/Syndicate_items" class="mw-redirect" title="Syndicate items">uplinks</a>.</td>\r
+    <td><font style="color:#e11717">Syndicate</font></td>\r
     <td>Starting equipment of the <a href="/wiki/Nuclear_Operative" title="Nuclear Operative">Nuclear Operatives</a>. Similar to the <a href="#Makarov_Pistol">Makarov Pistol</a>, but uses 10x22mm ammo and deals more damage. A silencer can be attached to it.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Russianrevolver.png" class="image64"><img alt="Russianrevolver.png" src="/wiki/images/4/4c/Russianrevolver.png" decoding="async" class="image64"></a><br /><span id="Russian_Revolver"></span>Russian Revolver</th>\r
-    <td><a href="/wiki/File:357_speedloader.png" class="image64"><img alt="357 speedloader.png" src="/wiki/images/c/c5/357_speedloader.png" decoding="async" class="image64"></a><br />.357</td>\r
+    <th><a href="/wiki/File:Russianrevolver.png" class="image64"><img alt="Russianrevolver.png" src="/wiki/images/4/4c/Russianrevolver.png" decoding="async" class="image64"></a><br><span id="Russian_Revolver"></span>Russian Revolver</th>\r
+    <td><a href="/wiki/File:357_speedloader.png" class="image64"><img alt="357 speedloader.png" src="/wiki/images/c/c5/357_speedloader.png" decoding="async" class="image64"></a><br>.357</td>\r
     <td>1 round. Can load up to 6.</td>\r
-    <td>60 Brute<br />300 Brute when used on self</td>\r
+    <td>60 Brute<br>300 Brute when used on self</td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/MetaStation" title="MetaStation">MetaStation</a></td>\r
     <td>Old Russia</td>\r
     <td>A Russian made revolver. Uses .357 ammo. It has a single slot in its chamber for a bullet. A gun to play Russian Roulette! You can spin the chamber to randomize the position of the bullet.  True men aim for the head.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Nagantrevolver.png" class="image64"><img alt="Nagantrevolver.png" src="/wiki/images/6/67/Nagantrevolver.png" decoding="async" class="image64"></a><br />Nagant Revolver</th>\r
-    <td><a href="/wiki/File:10mm.png" class="image64"><img alt="10mm.png" src="/wiki/images/d/d9/10mm.png" decoding="async" class="image64"></a>\r
-    <p>7.62x38mmR\r
-    </p></td>\r
-    <td>7 rounds</td><td>60 Brute</td><td>Summon guns, Russians</td><td>Old Russia</td>\r
-    <td>A Russian made revolver in 7.62x38mmR, functionally identical to a regular one except this can be suppressed.</td></tr><tr>\r
-    <th><a href="/wiki/File:Chaplain_revolver.png" class="image64"><img alt="Chaplain revolver.png" src="/wiki/images/c/c4/Chaplain_revolver.png" decoding="async" class="image64"></a><br />Chaplain's Revolver</th>\r
-    <td>.77</td><td>5 rounds</td><td>18 brute</td><td>Punished sect</td><td>Psykers</td>\r
-    <td>A chaplains revolver, can be reloaded via a prayer action.</td>\r
-</tr></tbody></table>\r
+    <th><a href="/wiki/File:Nagantrevolver.png" class="image64"><img alt="Nagantrevolver.png" src="/wiki/images/6/67/Nagantrevolver.png" decoding="async" class="image64"></a><br>Nagant Revolver</th>\r
+    <td><a href="/wiki/File:10mm.png" class="image64"><img alt="10mm.png" src="/wiki/images/d/d9/10mm.png" decoding="async" class="image64"></a><p>7.62x38mmR</p></td>\r
+    <td>7 rounds</td>\r
+    <td>60 Brute</td>\r
+    <td>-%</td>\r
+    <td>Summon guns, Russians</td>\r
+    <td>Old Russia</td>\r
+    <td>A Russian made revolver in 7.62x38mmR, functionally identical to a regular one except this can be suppressed.</td></tr>\r
+<tr>\r
+\r
 \r
 <h3><span class="mw-headline" id="Automatic">Автоматы и полуавтоматы (Баллистика)</span></h3>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col" >Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><img alt="cobra.png" src="/assets/images/pages/arsenal/scarborough/cobra.png" decoding="async" class="image64"></a><span id="C-20r_SMG"></span><br />C-20r SMG</th>\r
-    <td><a href="/wiki/File:12mmMag.png" class="image64"><img alt="12mmMag.png" src="/wiki/images/b/b1/12mmMag.png" decoding="async" class="image64"></a><br />.45</td>\r
+    <th><img alt="cobra.png" src="/assets/images/pages/arsenal/scarborough/cobra.png" decoding="async" class="image64"></a><span id="C-20r_SMG"></span><br>C-20r SMG</th>\r
+    <td><a href="/wiki/File:12mmMag.png" class="image64"><img alt="12mmMag.png" src="/wiki/images/b/b1/12mmMag.png" decoding="async" class="image64"></a><br>.45</td>\r
     <td>24 Патронов</td>\r
     <td>25 <img alt="dmg_bullet" src="/assets/images/pages/dmg_icon/dmg_bullet.png" decoding="async"> Травм</td>\r
+    <td>-%</td>\r
     <td>Синдикат, Ядерный Оперативник</td>\r
     <td><font style="color:#e11717">Syndicate</font></td>\r
     <td>Дешево и сердито. Базовый автомат Синдиката, что не делает его менее смертоносным. Главное набрать побольше патронов. Ведет огонь очередями по 3 патрона.</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="cobra20.png" src="/assets/images/pages/arsenal/scarborough/cobra20.png" decoding="async" class="image64"></a><span id="C-20_SMG"></span><br />Cobra-20 SMG</th>\r
-    <td><a href="/wiki/File:12mmMag.png" class="image64"><img alt="12mmMag.png" src="/wiki/images/b/b1/12mmMag.png" decoding="async" class="image64"></a><br />.45</td>\r
-    <td>24 Патронов</td>\r
-    <td>25 <img alt="dmg_bullet" src="/assets/images/pages/dmg_icon/dmg_bullet.png" decoding="async"> Травм</td>\r
-    <td>Синдикат, Ядерный Оперативник</a></td>\r
-    <td><font style="color:#e11717">Syndicate</font></td>\r
-    <td>Дешево и сердито. Базовый автомат Синдиката, что не делает его менее смертоносным. Главное набрать побольше патронов. Ведет огонь очередями по 3 патрона.</td>\r
-</tr>\r
-<tr>\r
-    <th><img alt="WT-550" src="/assets/images/pages/arsenal/nanotrasen_sharplite_balistic/wt550.png" decoding="async" class="image64"></a><span id="WT550_Automatic_Rifle"></span><br />WT550 Automatic Rifle</th>\r
-    <td><img alt="46x30ammo.png" class="image64" src="/assets/images/pages/arsenal/ammo/nanotrasen_sharplite_balistic/wt550_46x30mm.png" decoding="async" class="image64"></a><br />4.6×30mm</td>\r
+    <th><img alt="WT-550" src="/assets/images/pages/arsenal/nanotrasen_sharplite_balistic/wt550.png" decoding="async" class="image64"></a><span id="WT550_Automatic_Rifle"></span><br>WT550 Automatic Rifle</th>\r
+    <td><img alt="46x30ammo.png" class="image64" src="/assets/images/pages/arsenal/ammo/nanotrasen_sharplite_balistic/wt550_46x30mm.png" decoding="async" class="image64"></a><br>4.6×30mm</td>\r
     <td>30 Патронов</td>\r
     <td>20 <img alt="dmg_bullet" src="/assets/images/pages/dmg_icon/dmg_bullet.png" decoding="async"> Травм</td>\r
+    <td>-%</td>\r
     <td>Служба Безопасности и Карго</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>Классика гражданской обороны, офицеры СБ могут экипироваться ими со старта, карго может заказать как сами стволы, так и патроны к ним для зачистки реликтов или войны с синдикатом, чужими, магом или собственным руководством. После исследования в протолате СБ можно производить снаряженные магазины к ним с различными модификациями.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:L6machinegun.png" class="image64"><img alt="L6machinegun.png" src="/wiki/images/3/3b/L6machinegun.png" decoding="async" class="image64"></a><span id="L6_SAW"></span><br />L6 SAW</th>\r
-    <td><a href="/wiki/File:A762.png" class="image64"><img alt="A762.png" src="/wiki/images/9/96/A762.png" decoding="async" class="image64"></a><br />7.12x82mm</td>\r
+    <th><a href="/wiki/File:L6machinegun.png" class="image64"><img alt="L6machinegun.png" src="/wiki/images/3/3b/L6machinegun.png" decoding="async" class="image64"></a><span id="L6_SAW"></span><br>L6 SAW</th>\r
+    <td><a href="/wiki/File:A762.png" class="image64"><img alt="A762.png" src="/wiki/images/9/96/A762.png" decoding="async" class="image64"></a><br>7.12x82mm</td>\r
     <td>50 Патронов</td>\r
     <td>45 <img alt="dmg_bullet" src="/assets/images/pages/dmg_icon/dmg_bullet.png" decoding="async"> Травм</td>\r
+    <td>-%</td>\r
     <td>Синдикат, Ядерный Оперативник</td>\r
     <td><font style="color:#e11717">Syndicate</font></td>\r
     <td>Тяжелый калибр Синдиката, да он громоздкий, да дорогой, да достаточно косой, но это мать его пулемет! При удачном попадании может положить цель с одной очереди. К сожалению переносить его можно только в руках а процесс перезарядки достаточно трудоемок, но он того стоит.</td>\r
 </tr>\r
-<tr>\r
-    <th><a href="/wiki/File:Uzi.png" class="image64"><img alt="Uzi.png" src="/wiki/images/9/98/Uzi.png" decoding="async" class="image64"></a><span id="Uzi"></span><br />Uzi</th>\r
-    <td><a href="/wiki/File:Ammo_50.png" class="image64"><img alt="Ammo 50.png" src="/wiki/images/3/30/Ammo_50.png" decoding="async" class="image64"></a><br />9mm</td>\r
-    <td>32 Патронов</td>\r
-    <td>20 <img alt="dmg_bullet" src="/assets/images/pages/dmg_icon/dmg_bullet.png" decoding="async"> Травм</td>\r
-    <td>Гэнги</td>\r
-    <td>Гэнги</td>\r
-    <td>Легкий, скорострельный пистолет, для тех случаев, когда вы хотите кого-то убить. Использует патроны калибра 9 мм.</td>\r
-</tr></tbody></table>\r
 \r
 <h3><span class="mw-headline" id="Bolt_Action">Bolt Action</span></h3>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><a href="/wiki/File:Pipegun.png" class="image64"><img alt="Pipegun.png" src="/wiki/images/e/eb/Pipegun.png" decoding="async" class="image64"></a><br /><span id="Pipegun"></span>Pipegun</th>\r
-    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br />12 Gauge shells\r
+    <th><a href="/wiki/File:Pipegun.png" class="image64"><img alt="Pipegun.png" src="/wiki/images/e/eb/Pipegun.png" decoding="async" class="image64"></a><br><span id="Pipegun"></span>Pipegun</th>\r
+    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br>12 Gauge shells\r
     <p>Can be modified to fit 7.62mm bullets\r
     </p></td>\r
     <td>1 Shell</td>\r
     <td>Depends on shell</td>\r
+    <td>-%</td>\r
     <td>Crafted or found in the Abandoned Gambling Den on BirdshotStation.</td>\r
     <td>Civilian</td>\r
-    <td>A handcrafted pipegun made of scavenged materials.<br />\r
-    <p>To load shells or bullets, simply use the full round on the pipegun. To attach a bayonet, open the bolt then apply a survival knife to it.<br />\r
+    <td>A handcrafted pipegun made of scavenged materials.<br>\r
+    <p>To load shells or bullets, simply use the full round on the pipegun. To attach a bayonet, open the bolt then apply a survival knife to it.<br>\r
     </p></td>\r
 </tr>\r
 <tr>\r
     <th><a href="/wiki/File:Surplus_rifle.png" class="image64"><img alt="Surplus rifle.png" src="/wiki/images/9/95/Surplus_rifle.png" decoding="async" width="64" height="49" data-file-width="42" data-file-height="32" /></a>\r
     <p><a href="/wiki/File:Sawnmosin.png" class="image64"><img alt="Sawnmosin.png" src="/wiki/images/0/0b/Sawnmosin.png" decoding="async" width="64" height="49" data-file-width="42" data-file-height="32" /></a>\r
-    </p><br /><span id="Mosin"></span>Mosin</th>\r
+    </p><br><span id="Mosin"></span>Mosin</th>\r
     <td><a href="/wiki/File:Surplus_ammo.png" class="image64"><img alt="Surplus ammo.png" src="/wiki/images/c/cc/Surplus_ammo.png" decoding="async" class="image64"></a>\r
     <ul><li>7.62 mm rifle cartridge</li></ul>\r
     <ul><li>Surplus 7.62 mm rifle cartridge</li></ul></td>\r
     <td>5 rounds (1 full stripper clip)</td>\r
     <td>60 Brute</td>\r
+    <td>-%</td>\r
     <td>Formerly bought from nuke op uplink, now a random chance to get it in the russian surplus crate from cargo.</td>\r
     <td>CARGONIA, security, centcom, pirates</td>\r
     <td>An old, unreliable but popular and hard hitting bolt action rifle. Can be loaded one bullet by one, or up to 5 at once using a stripper clip. Mass produced so much, it somehow found it's way on a <s>really bad</s> space station.\r
-    <p><br />\r
+    <p><br>\r
     There are two variants of this gun - a "new" one (which is also used by some pirates and centcom assistants) and an old one (or "wet" as it is described in-game). The old ones have to be cleaned quite often or they will start jamming (have a chance to not do anything when using in hand to open the bolt). Can be cleaned using the cleaning kits that might or might not have come in the crates.  Can be sawn down.\r
-    </p><p><br />\r
+    </p><p><br>\r
     Furthermore -  There are also two variants of the ammo this gun uses and which can come with it in the crates - the normal and the surplus kind. They are identical in everything except that the surplus ammo has worse armor penetration, but can be printed in a hacked autolathe.\r
     </p></td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Sniper.png" class="image64"><img alt="Sniper.png" src="/wiki/images/8/8f/Sniper.png" decoding="async" class="image64"></a><br />Sniper</th>\r
-    <td><a href="/wiki/File:Sniper_ammo.png" class="image64"><img alt="Sniper ammo.png" src="/wiki/images/2/22/Sniper_ammo.png" decoding="async" class="image64"></a><br />.50 Cal</td>\r
+    <th><a href="/wiki/File:Sniper.png" class="image64"><img alt="Sniper.png" src="/wiki/images/8/8f/Sniper.png" decoding="async" class="image64"></a><br>Sniper</th>\r
+    <td><a href="/wiki/File:Sniper_ammo.png" class="image64"><img alt="Sniper ammo.png" src="/wiki/images/2/22/Sniper_ammo.png" decoding="async" class="image64"></a><br>.50 Cal</td>\r
     <td>Depends on ammo</td>\r
     <td>Depends on ammo</td>\r
+    <td>-%</td>\r
     <td>Nuke ops and summon guns.</td>\r
     <td><font style="color:#e11717">Syndicate</font></td>\r
     <td>The Sniper Rifle is a high-power long range weapon fitted with a scope; right click to activate the scope and left click to shoot.</td>\r
 </tr>\r
-\r
-</tbody></table>\r
 \r
 <h3><span class="mw-headline" id="Shotgun_Shells">Sniper Ammo</span></h3>\r
 <table class="wikitable mw-collapsible mw-collapsed"><ul>\r
@@ -27591,47 +27669,41 @@ decay = разложение / разрушается / гниет\r
 </ul></table>\r
 \r
 <h3><span class="mw-headline" id="Shotgun">Дробовики</span></h3>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><a href="/wiki/File:Doubleshotgun.png" class="image64"><img alt="Doubleshotgun.png" src="/wiki/images/9/94/Doubleshotgun.png" decoding="async" class="image64"></a> <a href="/wiki/File:Doubleshotgunsawnoff.png" class="image64"><img alt="Doubleshotgunsawnoff.png" src="/wiki/images/4/48/Doubleshotgunsawnoff.png" decoding="async" class="image64"></a><br />Double-Barrelled Shotgun</th>\r
-    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br />12 Gauge shells</td>\r
+    <th><a href="/wiki/File:Doubleshotgun.png" class="image64"><img alt="Doubleshotgun.png" src="/wiki/images/9/94/Doubleshotgun.png" decoding="async" class="image64"></a> <a href="/wiki/File:Doubleshotgunsawnoff.png" class="image64"><img alt="Doubleshotgunsawnoff.png" src="/wiki/images/4/48/Doubleshotgunsawnoff.png" decoding="async" class="image64"></a><br>Double-Barrelled Shotgun</th>\r
+    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br>12 Gauge shells</td>\r
     <td>2 Shells</td>\r
     <td>Depends on shell</td>\r
+    <td>-%</td>\r
     <td><a href="/wiki/Bar" title="Bar">Bar</a>.</td>\r
     <td>Civilian</td>\r
-    <td>Easiest shotgun to get, yet the rarest. Only one starts on the station and the Bartender likes to keep it in case of bar fights. Can be sawn off with a circular saw (make sure it's not loaded). A sawn-off shotgun will fit in your backpack.<br />\r
+    <td>Easiest shotgun to get, yet the rarest. Only one starts on the station and the Bartender likes to keep it in case of bar fights. Can be sawn off with a circular saw (make sure it's not loaded). A sawn-off shotgun will fit in your backpack.<br>\r
     <p>To load shells, simply use the full shell on the shotgun. Use it in hand to eject the shells.</p></td>\r
 </tr>\r
 <tr>\r
     <th><a href="/wiki/File:Riot_shotgun.png" class="image64"><img alt="Riot shotgun.png" src="/wiki/images/d/dd/Riot_shotgun.png" decoding="async" class="image64"></a>\r
     <p><a href="/wiki/File:Riotsawn.png" class="image64"><img alt="Riotsawn.png" src="/wiki/images/4/4c/Riotsawn.png" decoding="async" class="image64"></a>\r
-    </p><br /><span id="Shotgun"></span>Riot Shotgun</th>\r
-    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br />12 Gauge shells</td>\r
+    </p><br><span id="Shotgun"></span>Riot Shotgun</th>\r
+    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br>12 Gauge shells</td>\r
     <td>7 Shells</td>\r
     <td>Depends on shell</td>\r
+    <td>-%</td>\r
     <td>The Armoury and summon spells.</td>\r
     <td>Security</td>\r
-    <td>A uncommon shotgun, typically only used in emergencies by Security or when facing someone with ranged energy protection. Is the only main shotgun on the station at round start sans the bartender's double barrel.<br />\r
+    <td>A uncommon shotgun, typically only used in emergencies by Security or when facing someone with ranged energy protection. Is the only main shotgun on the station at round start sans the bartender's double barrel.<br>\r
     <p>To load shells, simply use the full shell on the shotgun; when you shoot a shell, you need to eject it manually by using the shotgun in your hand before shooting another. It can also be sawed off with a circular saw or chainsaw to fit in your backpack.</p></td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Combatshotgun.png" class="image64"><img alt="Combatshotgun.png" src="/wiki/images/7/70/Combatshotgun.png" decoding="async" class="image64"></a><br /><span id="Combat_Shotgun"></span>Combat Shotgun</th>\r
-    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br />12 Gauge Shells</td>\r
+    <th><a href="/wiki/File:Combatshotgun.png" class="image64"><img alt="Combatshotgun.png" src="/wiki/images/7/70/Combatshotgun.png" decoding="async" class="image64"></a><br><span id="Combat_Shotgun"></span>Combat Shotgun</th>\r
+    <td><a href="/wiki/File:Blank_shell.png" class="image64"><img alt="Blank shell.png" src="/wiki/images/1/10/Blank_shell.png" decoding="async" class="image64"></a><br>12 Gauge Shells</td>\r
     <td>7 Shells</td>\r
     <td>Depends on shell</td>\r
+    <td>-%</td>\r
     <td>Armory contraband locker, ordered in <a href="/wiki/Cargo" class="mw-redirect" title="Cargo">Cargo</a> and from <a href="/wiki/Summon_guns" class="mw-redirect" title="Summon guns">Summon guns</a>.</td>\r
     <td><font style="color:#25679c">Nanotrasen</font></td>\r
     <td>The highest ammo capacity of any shotgun. Best of all, you don't need to manually eject shells after shooting. Unlike the riot shotgun, it cannot be sawed off and can only be carried on your back.</td>\r
-</tr></tbody></table>\r
+</tr>\r
 \r
 <h3><span class="mw-headline" id="Shotgun_Shells">Shotgun Shells</span></h3>\r
 <ul><li><a href="/wiki/File:Improvised_shell.png" class="image64"><img alt="Improvised shell.png" src="/wiki/images/9/94/Improvised_shell.png" decoding="async" width="32" height="32" data-file-width="32" data-file-height="32" /></a> <b>Improvised Shotgun Shell:</b> Shoots a spread of 7 metal shards, doing a total of 42 damage at point blank. Has damage falloff from range.</li>\r
@@ -27658,17 +27730,15 @@ decay = разложение / разрушается / гниет\r
 <!-- Прочее -->\r
 <h2><span class="mw-headline" id="Misc_Weapons">Misc Weapons</span></h2>\r
 <table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
 <th scope="col" class="unsortable">Предмет</th>\r
 <th scope="col">Тип боеприпаса</th>\r
 <th scope="col">Боезапас</th>\r
 <th scope="col">Урон и Эффекты</th>\r
 <th scope="col">Где раздобыть</th>\r
 <th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<th scope="col" class="unsortable">Заметки</th>\r
 <tr>\r
-    <th><a href="/wiki/File:Chem_sprayer.png" class="image64"><img alt="Chem sprayer.png" src="/wiki/images/2/21/Chem_sprayer.png" decoding="async" class="image64"></a><br /><span id="Chem_Sprayer"></span>Chem Sprayer</th>\r
+    <th><a href="/wiki/File:Chem_sprayer.png" class="image64"><img alt="Chem sprayer.png" src="/wiki/images/2/21/Chem_sprayer.png" decoding="async" class="image64"></a><br><span id="Chem_Sprayer"></span>Chem Sprayer</th>\r
     <td>Chemicals</td>\r
     <td>600 units total\r
     <ul><li>150 units of Spore Toxin (Causes blindness)</li>\r
@@ -27678,11 +27748,11 @@ decay = разложение / разрушается / гниет\r
     <td>Confusion, blindness, dizziness, knockout, and random mutations with the standard reagents.</td>\r
     <td>Ordered via syndicate uplink, costs 10 telecrystals, only available to Nuclear Agents.</td>\r
     <td><font style="color:#e11717">Syndicate</font></td>\r
-    <td>Think of it as a spray bottle. Except each spray is three tiles wide and can travel the entire screen. Generally kept away from players due to the potential of the lubepocalypse.</td>\r
-</tr>\r
-<tr>\r
-    <th><a href="/wiki/File:Flamethrower.png" class="image64"><img alt="Flamethrower.png" src="/wiki/images/a/ad/Flamethrower.png" decoding="async" class="image64"></a><br /><span id="Flamethrower"></span>Flamethrower</th>\r
-    <td><a href="/wiki/File:Plasma_tank.png" class="image64"><img alt="Plasma tank.png" src="/wiki/images/3/34/Plasma_tank.png" decoding="async" class="image64"></a><br />Gas of your choice</td>\r
+    <td>Think of it as a spray bot\r
+<trtle. Except each spray is three tiles wide and can travel the entire screen. Generally kept away from players due to the potential of the lubepocalypse.</td>\r
+</tr>>\r
+    <th><a href="/wiki/File:Flamethrower.png" class="image64"><img alt="Flamethrower.png" src="/wiki/images/a/ad/Flamethrower.png" decoding="async" class="image64"></a><br><span id="Flamethrower"></span>Flamethrower</th>\r
+    <td><a href="/wiki/File:Plasma_tank.png" class="image64"><img alt="Plasma tank.png" src="/wiki/images/3/34/Plasma_tank.png" decoding="async" class="image64"></a><br>Gas of your choice</td>\r
     <td>Depends on tank pressure</td>\r
     <td>Depends on the gas</td>\r
     <td><a href="/wiki/Makeshift_weapons" title="Makeshift weapons">Made by yourself</a> or with a hacked <a href="/wiki/Autolathe" title="Autolathe">Autolathe</a></td>\r
@@ -27690,8 +27760,8 @@ decay = разложение / разрушается / гниет\r
     <td>You are a firestarter! Allows for creative gas mixes if you know your atmos. An area denial tool, generally useful for making small areas uninhabitable for people, not so useful when trying to kill someone or something, as it's easy to run away.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Sgun.png" class="image64"><img alt="Sgun.png" src="/wiki/images/d/d4/Sgun.png" decoding="async" width="64" height="51" data-file-width="40" data-file-height="32" /></a><br /><span id="Syringe_Gun"></span>Syringe Gun</th>\r
-    <td><a href="/wiki/File:Syringe.png" class="image64"><img alt="Syringe.png" src="/wiki/images/1/17/Syringe.png" decoding="async" class="image64"></a><br />Syringes</td>\r
+    <th><a href="/wiki/File:Sgun.png" class="image64"><img alt="Sgun.png" src="/wiki/images/d/d4/Sgun.png" decoding="async" width="64" height="51" data-file-width="40" data-file-height="32" /></a><br><span id="Syringe_Gun"></span>Syringe Gun</th>\r
+    <td><a href="/wiki/File:Syringe.png" class="image64"><img alt="Syringe.png" src="/wiki/images/1/17/Syringe.png" decoding="async" class="image64"></a><br>Syringes</td>\r
     <td>1 Syringe</td>\r
     <td>6 Brute + 15u chemicals</td>\r
     <td><a href="/wiki/Medbay_Storage" class="mw-redirect" title="Medbay Storage">Medbay Storage</a>.</td>\r
@@ -27699,8 +27769,8 @@ decay = разложение / разрушается / гниет\r
     <td>In fact, this is very robust. Think of it as a ranged hypospray.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Rapidsyringegun.png" class="image64"><img alt="Rapidsyringegun.png" src="/wiki/images/4/4b/Rapidsyringegun.png" decoding="async" width="64" height="51" data-file-width="40" data-file-height="32" /></a><br /><span id="Rapid_Syringe_Gun"></span>Rapid Syringe Gun</th>\r
-    <td><a href="/wiki/File:Syringe.png" class="image64"><img alt="Syringe.png" src="/wiki/images/1/17/Syringe.png" decoding="async" class="image64"></a><br />Syringes</td>\r
+    <th><a href="/wiki/File:Rapidsyringegun.png" class="image64"><img alt="Rapidsyringegun.png" src="/wiki/images/4/4b/Rapidsyringegun.png" decoding="async" width="64" height="51" data-file-width="40" data-file-height="32" /></a><br><span id="Rapid_Syringe_Gun"></span>Rapid Syringe Gun</th>\r
+    <td><a href="/wiki/File:Syringe.png" class="image64"><img alt="Syringe.png" src="/wiki/images/1/17/Syringe.png" decoding="async" class="image64"></a><br>Syringes</td>\r
     <td>6 Syringes</td>\r
     <td>6 Brute + 15u chemicals</td>\r
     <td>Medical techfab if researched.</td>\r
@@ -27708,8 +27778,8 @@ decay = разложение / разрушается / гниет\r
     <td>See the syringe gun, but take into account it holds six syringes. Can be made through researching them, and only costs metal and glass to make. This gun gives <b>you</b> the power to fuck over six people at once! First syringe in is first out.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Large_ebow.png" class="image64"><img alt="Large ebow.png" src="/wiki/images/4/42/Large_ebow.png" decoding="async" class="image64"></a><br /><span id="Energy_Crossbow"></span>Energy Crossbow</th>\r
-    <td><a href="/wiki/File:Powercell.png" class="image64"><img alt="Powercell.png" src="/wiki/images/7/73/Powercell.png" decoding="async" class="image64"></a><br />Energy (Self-Charging)</td>\r
+    <th><a href="/wiki/File:Large_ebow.png" class="image64"><img alt="Large ebow.png" src="/wiki/images/4/42/Large_ebow.png" decoding="async" class="image64"></a><br><span id="Energy_Crossbow"></span>Energy Crossbow</th>\r
+    <td><a href="/wiki/File:Powercell.png" class="image64"><img alt="Powercell.png" src="/wiki/images/7/73/Powercell.png" decoding="async" class="image64"></a><br>Энергия (Self-Charging)</td>\r
     <td>Infinite bolts (needs to cooldown after shooting)</td>\r
     <td>10 Toxin + Stun</td>\r
     <td>Craftable using a gun part kit from security protolathe, Proto-Kinetic Accelerator, 15u of Radium and 5 pieces of cable.</td>\r
@@ -27717,8 +27787,8 @@ decay = разложение / разрушается / гниет\r
     <td>Same as the <a href="#Miniature_Energy_Crossbow">Miniature Energy Crossbow</a>, but large and can't fit in bags. Can be worn on armor.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Ebow.png" class="image64"><img alt="Ebow.png" src="/wiki/images/6/65/Ebow.png" decoding="async" class="image64"></a><br /><span id="Miniature_Energy_Crossbow"></span>Miniature Energy Crossbow</th>\r
-    <td><a href="/wiki/File:Powercell.png" class="image64"><img alt="Powercell.png" src="/wiki/images/7/73/Powercell.png" decoding="async" class="image64"></a><br />Energy (Self-Charging)</td>\r
+    <th><a href="/wiki/File:Ebow.png" class="image64"><img alt="Ebow.png" src="/wiki/images/6/65/Ebow.png" decoding="async" class="image64"></a><br><span id="Miniature_Energy_Crossbow"></span>Miniature Energy Crossbow</th>\r
+    <td><a href="/wiki/File:Powercell.png" class="image64"><img alt="Powercell.png" src="/wiki/images/7/73/Powercell.png" decoding="async" class="image64"></a><br>Энергия (Self-Charging)</td>\r
     <td>Infinite Bolts (needs to cooldown after shooting)</td>\r
     <td>10 Toxin + Stun</td>\r
     <td><a href="/wiki/Syndicate_Uplink" class="mw-redirect" title="Syndicate Uplink">Syndicate Uplink</a>.</td>\r
@@ -27726,8 +27796,8 @@ decay = разложение / разрушается / гниет\r
     <td>The syndicate's energy crossbow, small, silent and deadly.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Plasma_Cutter.png" class="image64"><img alt="Plasma Cutter.png" src="/wiki/images/1/13/Plasma_Cutter.png" decoding="async" class="image64"></a><br /><span id="Plasma_Cutter"></span>Plasma Cutter</th>\r
-    <td><a href="/wiki/File:Plasmaore.png" class="image64"><img alt="Plasmaore.png" src="/wiki/images/0/09/Plasmaore.png" decoding="async" class="image64"></a><br />Plasma</td>\r
+    <th><a href="/wiki/File:Plasma_Cutter.png" class="image64"><img alt="Plasma Cutter.png" src="/wiki/images/1/13/Plasma_Cutter.png" decoding="async" class="image64"></a><br><span id="Plasma_Cutter"></span>Plasma Cutter</th>\r
+    <td><a href="/wiki/File:Plasmaore.png" class="image64"><img alt="Plasmaore.png" src="/wiki/images/0/09/Plasmaore.png" decoding="async" class="image64"></a><br>Plasma</td>\r
     <td>40 plasma bursts</td>\r
     <td>5 Burn</td>\r
     <td><a href="/wiki/Cargo_Bay" title="Cargo Bay">Cargo Bay</a>, in the protolathe after research</td>\r
@@ -27735,8 +27805,8 @@ decay = разложение / разрушается / гниет\r
     <td>Bad for killing, decent for delimbing, 7 shots to the same limb can take it off. Dual-wielding recommended.</td>\r
 </tr>\r
 <tr>\r
-    <th><a href="/wiki/File:Adv_plasma_cutter.gif" class="image64"><img alt="Adv plasma cutter.gif" src="/wiki/images/9/9a/Adv_plasma_cutter.gif" decoding="async" class="image64"></a><br /><span id="Advanced_Plasma_Cutter"></span>Advanced Plasma Cutter</th>\r
-    <td><a href="/wiki/File:Plasmaore.png" class="image64"><img alt="Plasmaore.png" src="/wiki/images/0/09/Plasmaore.png" decoding="async" class="image64"></a><br />Plasma</td>\r
+    <th><a href="/wiki/File:Adv_plasma_cutter.gif" class="image64"><img alt="Adv plasma cutter.gif" src="/wiki/images/9/9a/Adv_plasma_cutter.gif" decoding="async" class="image64"></a><br><span id="Advanced_Plasma_Cutter"></span>Advanced Plasma Cutter</th>\r
+    <td><a href="/wiki/File:Plasmaore.png" class="image64"><img alt="Plasmaore.png" src="/wiki/images/0/09/Plasmaore.png" decoding="async" class="image64"></a><br>Plasma</td>\r
     <td>100 plasma bursts</td>\r
     <td>7 Burn</td>\r
     <td><a href="/wiki/Cargo_Bay" title="Cargo Bay">Cargo Bay</a>, in the protolathe after research</td>\r
@@ -27744,158 +27814,768 @@ decay = разложение / разрушается / гниет\r
     <td>Bad for killing, Viable for delimbing, 5 shots to the same limb takes it off. Aim for the arms &amp; legs!</td>\r
 </tr>\r
 \r
-</tbody></table>\r
-<h2><span class="mw-headline" id="Admin_Only_Weapons">Admin Only Weapons</span></h2>\r
-<p>These weapons are currently restricted to admin spawn only, some may also appear in 'summon gun' events during a Wizard round however.\r
-</p>\r
-<table class="wikitable sortable" style="width:80%; table-layout: fixed;" cellspacing="0" cellpadding="2" border="1">\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
+<!-- \r
+    MARK: Фронтиры\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие Фронтиров</span></h2>\r
+<p>То оружие что можно встретить на фронтире</p>\r
+<table class="armorytable">\r
 <tr>\r
-    <th><a href="/wiki/File:Automaticsilenced.png" class="image64"><img alt="Automaticsilenced.png" src="/wiki/images/6/62/Automaticsilenced.png" decoding="async" class="image64"></a><br /><span id="Silenced_Pistol"></span>Silenced Pistol</th>\r
-    <td><a href="/wiki/File:Ammo_50.png" class="image64"><img alt="Ammo 50.png" src="/wiki/images/3/30/Ammo_50.png" decoding="async" class="image64"></a><br />.45</td>\r
-    <td>12 rounds</td>\r
-    <td>20 Brute + Knockdown</td>\r
-    <td>Away missions. Admins.</td>\r
-    <td>Admin</td>\r
-    <td>A small, quiet,  easily concealable gun. Uses .45 rounds.</td>\r
-</tr>\r
-<tr>\r
-    <th><a href="/wiki/File:Tommy_gun.png" class="image64"><img alt="Tommy gun.png" src="/wiki/images/1/16/Tommy_gun.png" decoding="async" class="image64"></a><br /><span id="Tommy_Gun"></span>Tommy Gun</th>\r
-    <td><a href="/wiki/File:Ammo_9mm.png" class="image64"><img alt="Ammo 9mm.png" src="/wiki/images/1/1c/Ammo_9mm.png" decoding="async" class="image64"></a><br />9mm</td>\r
-    <td>50 rounds</td>\r
-    <td>20 Brute + Knockdown</td>\r
-    <td>Admins</td>\r
-    <td>Admin</td>\r
-    <td>A genuine Chicago Typewriter.</td>\r
-</tr>\r
-<tr>\r
-    <th><a href="/wiki/File:Gyrogun.png" class="image64"><img alt="Gyrogun.png" src="/wiki/images/6/65/Gyrogun.png" decoding="async" class="image64"></a><br /><span id="Gyrojet_Pistol"></span>Gyrojet Pistol</th>\r
-    <td><a href="/wiki/File:Ammo_75.png" class="image64"><img alt="Ammo 75.png" src="/wiki/images/2/21/Ammo_75.png" decoding="async" class="image64"></a><br />.75</td>\r
-    <td>8 Rounds</td>\r
-    <td>74 Brute from direct hit <br />24 from a tile away <br />explosion (-1, 0, 2)</td>\r
-    <td>Summon guns exclusive.</td>\r
-    <td>Admin</td>\r
-    <td>Delivers an explosion with every shot, plus you can afford to be less accurate with it, as the explosion hits 3x3, so it's great against groups.</td>\r
-</tr>\r
-<tr>\r
-    <th><a href="/wiki/File:Instagib.png" class="image64"><img alt="Instagib.png" src="/wiki/images/3/3f/Instagib.png" decoding="async" class="image64"></a><br /><span id="Instakill_Rifle"></span>Instakill Rifle</th>\r
-    <td>None</td>\r
-    <td>Infinite</td>\r
-    <td>Instantly gibs targets</td>\r
-    <td>Admins</td>\r
-    <td>Admin</td>\r
-    <td>Flat out disintegrates all living targets. Only likely to be encountered if someone particularly likes or hates you.</td>\r
-</tr>\r
-\r
-<tbody><tr>\r
-<th scope="col" class="unsortable">Предмет</th>\r
-<th scope="col">Тип боеприпаса</th>\r
-<th scope="col">Боезапас</th>\r
-<th scope="col">Урон и Эффекты</th>\r
-<th scope="col">Пробитие</th>\r
-<th scope="col">Где раздобыть</th>\r
-<th scope="col">Кем используется</th>\r
-<th scope="col" class="unsortable">Заметки</th></tr>\r
-<tr>\r
-    <th><img alt="mauler.png" src="/assets/images/pages/arsenal/frontier/mauler.png" decoding="async" class="image64"><br /><span id="Mauler"></span>Mauler</th>\r
+    <th><img alt="mauler.png" src="/assets/images/pages/arsenal/frontier/mauler.png" decoding="async" class="image64"><br><span id="Mauler"></span>Mauler</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="pounder.png" src="/assets/images/pages/arsenal/frontier/pounder.png" decoding="async" class="image64"><br /><span id="Pounder"></span>Pounder</th>\r
+    <th><img alt="spitter.png" src="/assets/images/pages/arsenal/frontier/spitter.png" decoding="async" class="image64"><br><span id="Spitter"></span>Spitter</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="rpg.png" src="/assets/images/pages/arsenal/frontier/rpg.png" decoding="async" class="image64"><br /><span id="RPG"></span>RPG</th>\r
+    <th><img alt="pounder.png" src="/assets/images/pages/arsenal/frontier/pounder.png" decoding="async" class="image64"><br><span id="Pounder"></span>Pounder</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="shredder.png" src="/assets/images/pages/arsenal/frontier/shredder.png" decoding="async" class="image64"><br /><span id="shredder"></span>shredder</th>\r
+    <th><img alt="skm_carabine.png" src="/assets/images/pages/arsenal/frontier/skm_carabine.png" decoding="async" class="image64"><br><span id="skm_carabine"></span>skm_carabine</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="skm.png" src="/assets/images/pages/arsenal/frontier/skm.png" decoding="async" class="image64"><br /><span id="skm"></span>skm</th>\r
+    <th><img alt="skm.png" src="/assets/images/pages/arsenal/frontier/skm.png" decoding="async" class="image64"><br><span id="skm"></span>skm</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="skm_carabine.png" src="/assets/images/pages/arsenal/frontier/skm_carabine.png" decoding="async" class="image64"><br /><span id="skm_carabine"></span>skm_carabine</th>\r
+    <th><img alt="skm_pirate.png" src="/assets/images/pages/arsenal/frontier/skm_pirate.png" decoding="async" class="image64"><br><span id="skm_pirate"></span>skm_pirate</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="skm_lmg.png" src="/assets/images/pages/arsenal/frontier/skm_lmg.png" decoding="async" class="image64"><br /><span id="skm_lmg"></span>skm_lmg</th>\r
+    <th><img alt="skm_lmg.png" src="/assets/images/pages/arsenal/frontier/skm_lmg.png" decoding="async" class="image64"><br><span id="skm_lmg"></span>skm_lmg</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="skm_pirate.png" src="/assets/images/pages/arsenal/frontier/skm_pirate.png" decoding="async" class="image64"><br /><span id="skm_pirate"></span>skm_pirate</th>\r
+    <th><img alt="shredder.png" src="/assets/images/pages/arsenal/frontier/shredder.png" decoding="async" class="image64"><br><span id="shredder"></span>shredder</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="spitter.png" src="/assets/images/pages/arsenal/frontier/spitter.png" decoding="async" class="image64"><br /><span id="Spitter"></span>Spitter</th>\r
+    <th><img alt="rpg.png" src="/assets/images/pages/arsenal/frontier/rpg.png" decoding="async" class="image64"><br><span id="RPG"></span>RPG</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 <tr>\r
-    <th><img alt="wasp.png" src="/assets/images/pages/arsenal/frontier/wasp.png" decoding="async" class="image64"><br /><span id="Wasp"></span>Wasp</th>\r
+    <th><img alt="wasp.png" src="/assets/images/pages/arsenal/frontier/wasp.png" decoding="async" class="image64"><br><span id="Wasp"></span>Wasp</th>\r
     <td>Magazine.png</td>\r
     <td>0 Rounds</td>\r
     <td>0 Brute</td>\r
+    <td>-%</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
     <td>¯\\_(ツ)_/¯</td>\r
 </tr>\r
 \r
-</tbody></table>`},Te={title:Be,pageid:Ae,text:He},Pe="Guide to Arsenal",Re=1985,Ie={"*":`<div class="mw-parser-output"><p>Броня - Все сопротивления описаны тут.<br /><br />\r
+<!-- \r
+    MARK: Clip Lanchester\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие Clip Lanchester</span></h2>\r
+<p>Clip Lanchester</p>\r
+<table class="armorytable">\r
+<tr>\r
+    <th><img alt="cm23.png" src="/assets/images/pages/arsenal/clip_lanchester/cm23.png" decoding="async" class="image64"><br><span id="CM23"></span>CM23</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm357.png" src="/assets/images/pages/arsenal/clip_lanchester/cm357.png" decoding="async" class="image64"><br><span id="CM357"></span>CM357</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm70.png" src="/assets/images/pages/arsenal/clip_lanchester/cm70.png" decoding="async" class="image64"><br><span id="CM70"></span>CM70</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm5c.png" src="/assets/images/pages/arsenal/clip_lanchester/cm5c.png" decoding="async" class="image64"><br><span id="CM5c"></span>CM5c</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm5.png" src="/assets/images/pages/arsenal/clip_lanchester/cm5.png" decoding="async" class="image64"><br><span id="CM5"></span>CM5</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm24.png" src="/assets/images/pages/arsenal/clip_lanchester/cm24_skm.png" decoding="async" class="image64"><br><span id="CM24_SKM"></span>CM24 SKM</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm40.png" src="/assets/images/pages/arsenal/clip_lanchester/cm40.png" decoding="async" class="image64"><br><span id="CM40"></span>CM40</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm82.png" src="/assets/images/pages/arsenal/clip_lanchester/cm82.png" decoding="async" class="image64"><br><span id="CM82"></span>CM82</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="f4.png" src="/assets/images/pages/arsenal/clip_lanchester/f4.png" decoding="async" class="image64"><br><span id="F4"></span>F4</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="f90.png" src="/assets/images/pages/arsenal/clip_lanchester/f90.png" decoding="async" class="image64"><br><span id="F90"></span>F90</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm15.png" src="/assets/images/pages/arsenal/clip_lanchester/cm15.png" decoding="async" class="image64"><br><span id="CM15"></span>CM15</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cm50.png" src="/assets/images/pages/arsenal/clip_lanchester/cm50.png" decoding="async" class="image64"><br><span id="CM50"></span>CM50</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+\r
+<!-- \r
+    MARK: Eoehoma\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие Eoehoma</span></h2>\r
+<p>Eoehoma</p>\r
+<table class="armorytable">\r
+<tr>\r
+    <th><img alt="e10.png" src="/assets/images/pages/arsenal/eoehoma/e10.png" decoding="async" class="image64"><br><span id="E10"></span>E10</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="e11.gif" src="/assets/images/pages/arsenal/eoehoma/e11.gif" decoding="async" class="image64"><br><span id="E11"></span>E11</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="e40.png" src="/assets/images/pages/arsenal/eoehoma/e40.png" decoding="async" class="image64"><br><span id="E40"></span>E40</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="e50.png" src="/assets/images/pages/arsenal/eoehoma/e50.png" decoding="async" class="image64"><br><span id="E50"></span>E50</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="e60.png" src="/assets/images/pages/arsenal/eoehoma/e60.png" decoding="async" class="image64"><br><span id="E60"></span>E60</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+\r
+<!-- \r
+    MARK: Etherbor\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие Etherbor</span></h2>\r
+<p></p>\r
+<table class="armorytable">\r
+<tr>\r
+    <th><img alt="kalixpistol.png" src="/assets/images/pages/arsenal/etherbor/kalixpistol.png" decoding="async" class="image64"><br><span id="Kalixpistol"></span>Kalixpistol</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="kalixgun.png" src="/assets/images/pages/arsenal/etherbor/kalixgun.png" decoding="async" class="image64"><br><span id="Kalixgun"></span>Kalixgun</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="pgfmedium.png" src="/assets/images/pages/arsenal/etherbor/pgfmedium.png" decoding="async" class="image64"><br><span id="PGF_Medium"></span>PGF Medium</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="pgfheavy.png" src="/assets/images/pages/arsenal/etherbor/pgfheavy.png" decoding="async" class="image64"><br><span id="PGF_Heavy"></span>PGF Heavy</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="pgfheavy_sniper.png" src="/assets/images/pages/arsenal/etherbor/pgfheavy_sniper.png" decoding="async" class="image64"><br><span id="PGF_Heavy_Sniper"></span>PGF Heavy Sniper</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+\r
+<!-- \r
+    MARK: Syndicate\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие Syndicate</span></h2>\r
+<p></p>\r
+<table class="armorytable">\r
+<tr>\r
+    <th><img alt="ringneck.png" src="/assets/images/pages/arsenal/scarborough/ringneck.png" decoding="async" class="image64"><br><span id="Ringneck"></span>Ringneck</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="himehabu.png" src="/assets/images/pages/arsenal/scarborough/himehabu.png" decoding="async" class="image64"><br><span id="Himehabu"></span>Himehabu</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="asp.png" src="/assets/images/pages/arsenal/scarborough/asp.png" decoding="async" class="image64"><br><span id="ASP"></span>ASP</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="rattlesnake.png" src="/assets/images/pages/arsenal/scarborough/rattlesnake.png" decoding="async" class="image64"><br><span id="Rattlesnake"></span>Rattlesnake</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="derringer_syndie.png" src="/assets/images/pages/arsenal/scarborough/derringer_syndie.png" decoding="async" class="image64"><br><span id="Derringer_syndie"></span>Derringer Syndie</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="viper.png" src="/assets/images/pages/arsenal/scarborough/viper.png" decoding="async" class="image64"><br><span id="Viper"></span>Viper</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="sidewinder.png" src="/assets/images/pages/arsenal/scarborough/sidewinder.png" decoding="async" class="image64"><br><span id="Sidewinder"></span>Sidewinder</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cobra.png" src="/assets/images/pages/arsenal/scarborough/cobra.png" decoding="async" class="image64"><br><span id="Cobra"></span>Cobra</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="cobra20.png" src="/assets/images/pages/arsenal/scarborough/cobra20.png" decoding="async" class="image64"><br><span id="Cobra20"></span>Cobra20</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="SL hitscangun.png" src="/assets/images/pages/arsenal/scarborough/SL hitscangun.png" decoding="async" class="image64"><br><span id="SL hitscangun"></span>SL hitscangun</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="boomslang.png" src="/assets/images/pages/arsenal/scarborough/boomslang.png" decoding="async" class="image64"><br><span id="Boomslang"></span>Boomslang</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="boomslang90.png" src="/assets/images/pages/arsenal/scarborough/boomslang90.png" decoding="async" class="image64"><br><span id="Boomslang90"></span>Boomslang90</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="buldog.png" src="/assets/images/pages/arsenal/scarborough/buldog.png" decoding="async" class="image64"><br><span id="Buldog"></span>Buldog</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="hydra.png" src="/assets/images/pages/arsenal/scarborough/hydra.png" decoding="async" class="image64"><br><span id="Hydra"></span>Hydra</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="hydra_dmr.png" src="/assets/images/pages/arsenal/scarborough/hydra_dmr.png" decoding="async" class="image64"><br><span id="Hydra_DMR"></span>Hydra DMR</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="hydra_gl.png" src="/assets/images/pages/arsenal/scarborough/hydra_gl.png" decoding="async" class="image64"><br><span id="Hydra_GL"></span>Hydra GL</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="hydra_lmg.png" src="/assets/images/pages/arsenal/scarborough/hydra_lmg.png" decoding="async" class="image64"><br><span id="Hydra_LMG"></span>Hydra LMG</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="taipan.png" src="/assets/images/pages/arsenal/scarborough/taipan.png" decoding="async" class="image64"><br><span id="Taipan"></span>Taipan</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="mako.png" src="/assets/images/pages/arsenal/scarborough/mako.png" decoding="async" class="image64"><br><span id="Mako"></span>Mako</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+\r
+<!-- \r
+    MARK: Hunter Spride\r
+-->\r
+<h2><span class="mw-headline" id="Оружие Фронтиров">Оружие Hunter Spride</span></h2>\r
+<p></p>\r
+<table class="armorytable">\r
+<tr>\r
+    <th><img alt="candor.png" src="/assets/images/pages/arsenal/hunterspride/candor.png" decoding="async" class="image64"><br><span id="Candor"></span>Candor</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="pepperbox.png" src="/assets/images/pages/arsenal/hunterspride/pepperbox.png" decoding="async" class="image64"><br><span id="Pepper Box"></span>Pepper Box</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="phenex.png" src="/assets/images/pages/arsenal/hunterspride/phenex.png" decoding="async" class="image64"><br><span id="Phenex"></span>Phenex</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="shadow.png" src="/assets/images/pages/arsenal/hunterspride/shadow.png" decoding="async" class="image64"><br><span id="Shadow"></span>Shadow</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="derringer.png" src="/assets/images/pages/arsenal/hunterspride/derringer.png" decoding="async" class="image64"><br><span id="Derringer"></span>Derringer</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="detective.png" src="/assets/images/pages/arsenal/hunterspride/detective.png" decoding="async" class="image64"><br><span id="Detective"></span>Detective</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="ashhand.png" src="/assets/images/pages/arsenal/hunterspride/ashhand.png" decoding="async" class="image64"><br><span id="Ashhand"></span>Ashhand</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="montagne.png" src="/assets/images/pages/arsenal/hunterspride/montagne.png" decoding="async" class="image64"><br><span id="Montagne"></span>Montagne</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="absolution.png" src="/assets/images/pages/arsenal/hunterspride/absolution.png" decoding="async" class="image64"><br><span id="Absolution"></span>Absolution</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="beacon.png" src="/assets/images/pages/arsenal/hunterspride/beacon.png" decoding="async" class="image64"><br><span id="Beacon"></span>Beacon</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="flamingarrow.png" src="/assets/images/pages/arsenal/hunterspride/flamingarrow.png" decoding="async" class="image64"><br><span id="Flaming Arrow"></span>Flaming Arrow</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="flamingbolt.png" src="/assets/images/pages/arsenal/hunterspride/flamingbolt.png" decoding="async" class="image64"><br><span id="Flaming Bolt"></span>Flaming Bolt</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="huntsman.png" src="/assets/images/pages/arsenal/hunterspride/huntsman.png" decoding="async" class="image64"><br><span id="Hunt Sman"></span>Hunt Sman</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="illestren.png" src="/assets/images/pages/arsenal/hunterspride/illestren.png" decoding="async" class="image64"><br><span id="Illestren"></span>Illestren</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="scout.png" src="/assets/images/pages/arsenal/hunterspride/scout.png" decoding="async" class="image64"><br><span id="Scout"></span>Scout</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="brimstone.png" src="/assets/images/pages/arsenal/hunterspride/brimstone.png" decoding="async" class="image64"><br><span id="Brimstone"></span>Brimstone</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="conflagration.png" src="/assets/images/pages/arsenal/hunterspride/conflagration.png" decoding="async" class="image64"><br><span id="Conflagration"></span>Conflagration</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="dshotgun.png" src="/assets/images/pages/arsenal/hunterspride/dshotgun.png" decoding="async" class="image64"><br><span id="Dshotgun"></span>Dshotgun</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="hellfire.png" src="/assets/images/pages/arsenal/hunterspride/hellfire.png" decoding="async" class="image64"><br><span id="Hell Fire"></span>Hell Fire</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="firestorm.png" src="/assets/images/pages/arsenal/hunterspride/firestorm.png" decoding="async" class="image64"><br><span id="Firestorm"></span>Firestorm</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+<tr>\r
+    <th><img alt="vickland.png" src="/assets/images/pages/arsenal/hunterspride/vickland.png" decoding="async" class="image64"><br><span id="Vickland"></span>Vickland</th>\r
+    <td>Magazine.png</td>\r
+    <td>0 Rounds</td>\r
+    <td>0 Brute</td>\r
+    <td>-%</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+    <td>¯\\_(ツ)_/¯</td>\r
+</tr>\r
+`},Te={title:Be,pageid:Ae,text:He},Pe="Guide to Arsenal",Re=1985,Ie={"*":`<div class="mw-parser-output"><p>Броня - Все сопротивления описаны тут.<br /><br />\r
 </p>\r
 <div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
@@ -28262,7 +28942,7 @@ decay = разложение / разрушается / гниет\r
 <td><a href="/wiki/Death_squad" class="mw-redirect" title="Death squad">Death squad</a></td>\r
 <td>A strong helmet that provides reduction against most damage types. Spaceworthy.</td>\r
 <td>melee = 80 <br />bullet = 80 <br />laser = 50 <br />energy = 50 <br />bomb = 100</td>\r
-<td>Underwhelming compared to the deathsquad body armor</td></tr></tbody></table>`},Oe={title:Pe,pageid:Re,text:Ie},We="Mood",Ne=223,ze={"*":`<div id="bodyContent" class="vector-body">\r
+<td>Underwhelming compared to the deathsquad body armor</td></tr></tbody></table>`},je={title:Pe,pageid:Re,text:Ie},Oe="Mood",We=223,Ne={"*":`<div id="bodyContent" class="vector-body">\r
 <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="ru" dir="ltr">\r
 <div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>\r
 <ul>\r
@@ -28401,4 +29081,13 @@ decay = разложение / разрушается / гниет\r
 <li>Скорость действий зависит от настроения, максимум -25% скорости для сильно подавленных людей и +10% скорости для очень счастливых.</li>\r
 <li>Уровень голода пропорционален настроению. Депрессия побуждает вас есть больше, в то время как удовлетворенность заставляет вас есть меньше.</li></ul>\r
 </div>\r
-</div>`},Le={title:We,pageid:Ne,text:ze},lt="$META",Ke=[{name:"Медицина",tabs:[{page:"Guide_to_medicine",text:"Медицина",icon:yt,data:Rt},{page:"Guide_to_chemistry",text:"Химия",icon:bt,data:Nt},{page:"Surgery",text:"Хирургия",icon:Ft,data:Yt},{page:"Guide_to_Traumas",text:"Церебралки",icon:_t,data:qt}]},{name:"Исследование",tabs:[{page:"Guide_to_Research_and_Development",text:"R&D",icon:vt,data:Xt},{page:"Guide_to_robotics",text:"Роботика",icon:xt,data:ae},{page:"Guide_to_genetics",text:"Генетика",icon:kt,data:de},{page:"Guide_to_food",text:"Еда",icon:Dt,data:he},{page:"Guide_to_drinks",text:"Напитки",icon:Mt,data:ue}]},{name:"Разное",tabs:[{page:"Rules",text:"Правила",icon:Ct,data:_e},{page:"Guide_to_races",text:"Расы",icon:St,data:De},{page:"Arsenal",text:"Арсенал",icon:Bt,data:Te},{page:"Mood",text:"Настроение",icon:null,data:Le}]},{name:"Bonus",tabs:[{page:"Golosary",text:"Голосарий",icon:Et,data:Me},{page:"Guide_to_Combat",text:"Боевка",icon:Gt,data:be},{page:"Armor",text:"Броня",icon:At,data:Oe}]},{name:lt,tabs:[{page:"$Welcome",text:"На главную",icon:null},{page:"$Changelog",text:"Список изменений",icon:null}]}],Ye="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M59.485%2010.232c0-3.183-2.446-5.767-5.46-5.767h-10.92c-3.014%200-5.461%202.584-5.461%205.767v11.536c0%203.183%202.447%205.767%205.461%205.767h10.92c3.014%200%205.46-2.584%205.46-5.767V10.232z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.97'%20transform='rotate(45%2025.436%20-16.758)%20scale(.86333%20.81734)'/%3e%3cpath%20d='M44.849%2014.354a3.718%203.718%200%20013.716-3.716%203.718%203.718%200%20013.716%203.716%203.718%203.718%200%2001-3.716%203.716c-1.17%200%20.445%203.776.445%203.776'%20fill='none'%20stroke='%23fff'%20stroke-width='2.73'%20transform='matrix(.7474%20.11886%20-.12555%20.70758%20-18.515%20-3.04)'/%3e%3cpath%20d='M49.627%2022.899l-.097-.548'%20fill='none'%20stroke='%23fff'%20stroke-width='1.96'%20transform='matrix(1.04955%20-.00858%20.00906%20.99364%20-36.237%20-.551)'/%3e%3c/svg%3e",Ve="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg%20width='100%25'%20height='100%25'%20viewBox='0%200%208%2016'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20xml:space='preserve'%20xmlns:serif='http://www.serif.com/'%20style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3e%3cg%20transform='matrix(0.882061,0,0,0.882061,-4.09882,0.835343)'%3e%3ccircle%20cx='9.182'%20cy='2.928'%20r='1.61'%20style='fill:white;'/%3e%3c/g%3e%3cg%20transform='matrix(0.882061,0,0,0.882061,-4.09882,5.59501)'%3e%3ccircle%20cx='9.182'%20cy='2.928'%20r='1.61'%20style='fill:white;'/%3e%3c/g%3e%3cg%20transform='matrix(0.882061,0,0,0.882061,-4.09882,10.3547)'%3e%3ccircle%20cx='9.182'%20cy='2.928'%20r='1.61'%20style='fill:white;'/%3e%3c/g%3e%3c/svg%3e",je="data:image/svg+xml,%3csvg%20width='100vmin'%20height='100vmin'%20viewBox='0%200%20340%20340'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cstyle%3e@keyframes%20rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}%3c/style%3e%3cpath%20id='text'%20d='M104.26%20279.309V92.146H71.496V66.804h87.644v25.34l-32.764.002v187.163m79.441%200c-9.874%200-17.365-2.805-22.265-8.337-5.083-5.735-7.66-14.546-7.66-26.189V101.33c0-11.643%202.577-20.454%207.66-26.19%204.898-5.53%2012.39-8.334%2022.264-8.334h32.764c19.855%200%2029.924%2011.614%2029.924%2034.524v27.801h-21.125v-19.957c0-10.503-6.033-17.027-15.748-17.027h-17.872c-9.86%200-15.75%206.365-15.75%2017.027v127.764c0%2010.663%205.89%2017.028%2015.75%2017.028h17.87c9.862%200%2015.75-6.365%2015.75-17.027v-43.364h-16.88V168.23h38.004v76.555c0%2022.91-10.068%2034.524-29.924%2034.524h-32.764.002z'%20fill='%23a4b4c596'%20fill-rule='nonzero'/%3e%3cg%20mask='url(%23textmask)'%20fill='%23a4b4c596'%3e%3cpath%20d='M52.637%2076.985l-34.293%2023.281%203.536%2041.297-19.545%2036.551%2022.32%2034.923-.321%2041.444%2035.993%2020.552%2018.978%2036.847%2041.422%201.473%2033.926%2023.808%2037.364-17.95%2041.103%205.317%2024.741-33.256%2038.866-14.401%206.45-40.939%2027.726-30.81-13.316-39.251%2010.23-40.165-30.029-28.569-9.608-40.318-39.866-11.342-27.244-31.234-40.569%208.485-38.639-14.997-31.981%2026.367-41.18%204.678-16.065%2038.209h.001zm164.124%20203.757l17.013-23.69%2028.163-10.316%204.233-29.641%2020.242-22.182-10.017-28.107%207.683-28.966-21.972-20.134-6.635-29.114-28.894-7.548-19.434-22.593-29.196%206.767-27.78-10.897-22.81%2019.532-29.763%203.297-11.198%2027.822-24.927%2016.735%202.979%2029.739-14.381%2026.339%2016.474%2024.842-.534%2029.582%2012.349%207.051%2013.839%207.531%2013.181%2026.145%2012.693.452.192.201%2017.273.232%2024.313%2017.246%2026.781-13.543%2029.617%203.911.516-.693z'%20style='transform-origin:50%25%2050%25;animation-name:rotate;animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:linear'/%3e%3c/g%3e%3cmask%20id='textmask'%3e%3cpath%20fill='%23fff'%20d='M0%200h340v340H0z'/%3e%3cpath%20d='M274.325%20244.784c0%2026.336-12.66%2040.345-35.744%2040.345h-32.764c-8.33%200-14.878-2.482-20.736-5.29-14.579-6.987-16.017-38.658-16.017-38.658h-36.868v39.464c0%203.08-1.24%204.482-3.972%204.482h-25.811c-2.482%200-3.972-1.4-3.972-4.482v-30.777l-.31-.495.524-151.407H69.646c-2.482%200-3.972-1.682-3.972-4.483V65.464c0-2.8%201.49-4.48%203.973-4.48h61.604l27.295-.061c4.769-.383%206.373%201.937%206.073%205.881v24.618h6c2.168-19.875%2015.212-31.314%2038.13-30.439h29.832c23.085%200%2035.744%2014.008%2035.744%2040.345v17.55l.001%2083.882v42.022l-.001.002z'%20fill-rule='nonzero'/%3e%3c/mask%3e%3c/svg%3e";function Z(t){const e=document.createElement("div");e.className="speen";const a=document.createElement("img");a.src=je,e.appendChild(a),t.appendChild(e)}async function tt(t,e,a){if(t.startsWith("$"))return J(t,a),a.classList.remove("waiting"),a;const i=document.createElement("div");i.className="wrapper";let r=e;r=r.replace(/"\/wiki/gi,'"https://tgstation13.org/wiki'),r=r.replace(/"\/assets/gi,'"https://raw.githubusercontent.com/nebula-in-space/handbook/refs/heads/master/assets'),await O(),i.innerHTML=r,console.log(`${t}: загружен`);try{ot(t,i)}catch(d){console.error(`Ошибка загрузки страницы: ${t}`),console.error(d)}return a.innerHTML=i.outerHTML,J(t,a),a.classList.remove("waiting"),a}class M{constructor(e,a,i){this.sections={},this.sectionMap={},this.loading=!1,this.sectionListContainer=e,this.tabListContainer=a,this.tabContentContainer=i,M.instance=this}setLoading(e){var a;if(e){(a=document.getElementById("app"))==null||a.classList.add("waiting"),Z(this.tabContentContainer);const i=this.tabContentContainer.querySelector(".speen");i==null||i.appendChild(document.createTextNode("Загружаем страницы"))}else{document.getElementById("app").classList.remove("waiting");const i=this.tabContentContainer.querySelector(".speen");this.tabContentContainer.removeChild(i)}}createSection(e){const a=document.createElement("div");if(a.className="section",a.dataset.section=e,e===lt){const i=document.createElement("img");i.src=Ve,i.className="meta-icon",a.appendChild(i)}else a.appendChild(document.createTextNode(e));a.addEventListener("click",()=>{a.classList.contains("active")||this.showSection(e)}),this.sectionListContainer.appendChild(a),this.sections[e]={name:e,element:a,tabs:{}}}showSection(e){const a=this.sectionListContainer.querySelector(".active");a&&(a.classList.remove("active"),this.tabListContainer.querySelectorAll(`div[data-section='${a.dataset.section}']`).forEach(i=>i.classList.add("hidden"))),this.sections[e].element.classList.add("active"),this.tabListContainer.querySelectorAll(`div[data-section='${e}']`).forEach(i=>i.classList.remove("hidden"))}async openTab(e,a,{active:i}){var f,w;const r=a.page,d=a.icon,n=a.text,s=document.createElement("div");s.className="tab",s.dataset.section=e,s.dataset.tab=r,s.addEventListener("click",()=>{s.classList.contains("active")||(this.setActive(r),N(r,""))});const o=document.createElement("img");o.src=d||Ye,s.title=r.replace(/_/gi," "),s.appendChild(o);const l=n||r.substr(r.lastIndexOf("_")+1,4);if(s.appendChild(document.createTextNode(l)),this.tabListContainer.appendChild(s),r.startsWith("$")){const c=this.tabContentContainer.querySelector(`div[data-tab='${r}']`);this.sections[e].tabs[r]={tabListItem:s,tabContentItem:c},this.sectionMap[r]=e,await tt(r,((f=a.data)==null?void 0:f.text["*"])||"",c);return}const h=document.createElement("div");h.className="page waiting",h.dataset.tab=r,Z(h),this.tabContentContainer.appendChild(h),this.sections[e].tabs[r]={tabListItem:s,tabContentItem:h},this.sectionMap[r]=e,this.sections[e].element.classList.contains("active")||s.classList.add("hidden");const m=await tt(r,((w=a.data)==null?void 0:w.text["*"])||"",h);m!==h&&(this.sections[e].tabs[r].tabContentItem=m),i&&this.setActive(r)}setActive(e){const a=this.sectionMap[e];if(!(a in this.sections))throw new Error("section not found");if(!(e in this.sections[a].tabs))throw new Error("tab not found");this.tabListContainer.querySelectorAll(".active").forEach(n=>n.classList.remove("active")),this.tabContentContainer.querySelectorAll(".active").forEach(n=>n.classList.remove("active")),this.sections[a].element.classList.contains("active")||this.showSection(a);const{tabListItem:r,tabContentItem:d}=this.sections[a].tabs[e];this.sections[a].element.classList.add("active"),r.classList.add("active"),d.classList.add("active")}}var et={VITE_PATH:"/handbook",VITE_APP_REVISION:"a712033956767ae722fa44313c556ae0011aff48",BASE_URL:"./",MODE:"production",DEV:!1,PROD:!0,SSR:!1};async function Ue(){const t=document.getElementById("section-list"),e=document.getElementById("tab-list"),a=document.getElementById("tabs"),i=new M(t,e,a);i.setLoading(!0),await O();const r=Ke.flatMap(d=>(i.createSection(d.name),d.tabs.map(async n=>{await i.openTab(d.name,n,{})})));Promise.all(r).then(()=>{i.setLoading(!1);const{path:d,hash:n}=pt();st(d,n)||(i.setActive("$Welcome"),i.showSection("Medical"))})}if("serviceWorker"in navigator){const t=et.VITE_SUBDIR?`${et.VITE_SUBDIR}/sw.js`:"sw.js";navigator.serviceWorker.register(t).then(e=>{console.log("Registration successful, scope is:",e.scope)}).catch(e=>{console.log("Service worker registration failed, error:",e)})}Ue();document.body.appendChild(mt());var at;(at=document.getElementById("tgh-version"))==null||at.appendChild(document.createTextNode("a712033956767ae722fa44313c556ae0011aff48"));
+</div>`},ze={title:Oe,pageid:We,text:Ne},ot="$META",Le=[{name:"Медицина",tabs:[{page:"Guide_to_medicine",text:"Медицина",icon:yt,data:Rt},{page:"Guide_to_chemistry",text:"Химия",icon:wt,data:Wt},{page:"Surgery",text:"Хирургия",icon:_t,data:Kt},{page:"Guide_to_Traumas",text:"Церебралки",icon:Ft,data:qt}]},{name:"Исследование",tabs:[{page:"Guide_to_Research_and_Development",text:"R&D",icon:vt,data:Xt},{page:"Guide_to_robotics",text:"Роботика",icon:xt,data:ae},{page:"Guide_to_genetics",text:"Генетика",icon:kt,data:de},{page:"Guide_to_food",text:"Еда",icon:Dt,data:he},{page:"Guide_to_drinks",text:"Напитки",icon:Mt,data:ue}]},{name:"Разное",tabs:[{page:"Rules",text:"Правила",icon:Ct,data:Fe},{page:"Guide_to_races",text:"Расы",icon:St,data:De},{page:"Arsenal",text:"Арсенал",icon:Bt,data:Te},{page:"Mood",text:"Настроение",icon:null,data:ze}]},{name:"Bonus",tabs:[{page:"Golosary",text:"Голосарий",icon:Et,data:Me},{page:"Guide_to_Combat",text:"Боевка",icon:Gt,data:we},{page:"Armor",text:"Броня",icon:At,data:je}]},{name:ot,tabs:[{page:"$Welcome",text:"На главную",icon:null},{page:"$Changelog",text:"Список изменений",icon:null}]}],Ke="data:image/svg+xml,%3csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-miterlimit='1.5'%3e%3cpath%20d='M59.485%2010.232c0-3.183-2.446-5.767-5.46-5.767h-10.92c-3.014%200-5.461%202.584-5.461%205.767v11.536c0%203.183%202.447%205.767%205.461%205.767h10.92c3.014%200%205.46-2.584%205.46-5.767V10.232z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.97'%20transform='rotate(45%2025.436%20-16.758)%20scale(.86333%20.81734)'/%3e%3cpath%20d='M44.849%2014.354a3.718%203.718%200%20013.716-3.716%203.718%203.718%200%20013.716%203.716%203.718%203.718%200%2001-3.716%203.716c-1.17%200%20.445%203.776.445%203.776'%20fill='none'%20stroke='%23fff'%20stroke-width='2.73'%20transform='matrix(.7474%20.11886%20-.12555%20.70758%20-18.515%20-3.04)'/%3e%3cpath%20d='M49.627%2022.899l-.097-.548'%20fill='none'%20stroke='%23fff'%20stroke-width='1.96'%20transform='matrix(1.04955%20-.00858%20.00906%20.99364%20-36.237%20-.551)'/%3e%3c/svg%3e",Ye="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg%20width='100%25'%20height='100%25'%20viewBox='0%200%208%2016'%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20xml:space='preserve'%20xmlns:serif='http://www.serif.com/'%20style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3e%3cg%20transform='matrix(0.882061,0,0,0.882061,-4.09882,0.835343)'%3e%3ccircle%20cx='9.182'%20cy='2.928'%20r='1.61'%20style='fill:white;'/%3e%3c/g%3e%3cg%20transform='matrix(0.882061,0,0,0.882061,-4.09882,5.59501)'%3e%3ccircle%20cx='9.182'%20cy='2.928'%20r='1.61'%20style='fill:white;'/%3e%3c/g%3e%3cg%20transform='matrix(0.882061,0,0,0.882061,-4.09882,10.3547)'%3e%3ccircle%20cx='9.182'%20cy='2.928'%20r='1.61'%20style='fill:white;'/%3e%3c/g%3e%3c/svg%3e",Ve="data:image/svg+xml,%3csvg%20width='100vmin'%20height='100vmin'%20viewBox='0%200%20340%20340'%20xmlns='http://www.w3.org/2000/svg'%20fill-rule='evenodd'%20clip-rule='evenodd'%20stroke-linejoin='round'%20stroke-miterlimit='2'%3e%3cstyle%3e@keyframes%20rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}%3c/style%3e%3cpath%20id='text'%20d='M104.26%20279.309V92.146H71.496V66.804h87.644v25.34l-32.764.002v187.163m79.441%200c-9.874%200-17.365-2.805-22.265-8.337-5.083-5.735-7.66-14.546-7.66-26.189V101.33c0-11.643%202.577-20.454%207.66-26.19%204.898-5.53%2012.39-8.334%2022.264-8.334h32.764c19.855%200%2029.924%2011.614%2029.924%2034.524v27.801h-21.125v-19.957c0-10.503-6.033-17.027-15.748-17.027h-17.872c-9.86%200-15.75%206.365-15.75%2017.027v127.764c0%2010.663%205.89%2017.028%2015.75%2017.028h17.87c9.862%200%2015.75-6.365%2015.75-17.027v-43.364h-16.88V168.23h38.004v76.555c0%2022.91-10.068%2034.524-29.924%2034.524h-32.764.002z'%20fill='%23a4b4c596'%20fill-rule='nonzero'/%3e%3cg%20mask='url(%23textmask)'%20fill='%23a4b4c596'%3e%3cpath%20d='M52.637%2076.985l-34.293%2023.281%203.536%2041.297-19.545%2036.551%2022.32%2034.923-.321%2041.444%2035.993%2020.552%2018.978%2036.847%2041.422%201.473%2033.926%2023.808%2037.364-17.95%2041.103%205.317%2024.741-33.256%2038.866-14.401%206.45-40.939%2027.726-30.81-13.316-39.251%2010.23-40.165-30.029-28.569-9.608-40.318-39.866-11.342-27.244-31.234-40.569%208.485-38.639-14.997-31.981%2026.367-41.18%204.678-16.065%2038.209h.001zm164.124%20203.757l17.013-23.69%2028.163-10.316%204.233-29.641%2020.242-22.182-10.017-28.107%207.683-28.966-21.972-20.134-6.635-29.114-28.894-7.548-19.434-22.593-29.196%206.767-27.78-10.897-22.81%2019.532-29.763%203.297-11.198%2027.822-24.927%2016.735%202.979%2029.739-14.381%2026.339%2016.474%2024.842-.534%2029.582%2012.349%207.051%2013.839%207.531%2013.181%2026.145%2012.693.452.192.201%2017.273.232%2024.313%2017.246%2026.781-13.543%2029.617%203.911.516-.693z'%20style='transform-origin:50%25%2050%25;animation-name:rotate;animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:linear'/%3e%3c/g%3e%3cmask%20id='textmask'%3e%3cpath%20fill='%23fff'%20d='M0%200h340v340H0z'/%3e%3cpath%20d='M274.325%20244.784c0%2026.336-12.66%2040.345-35.744%2040.345h-32.764c-8.33%200-14.878-2.482-20.736-5.29-14.579-6.987-16.017-38.658-16.017-38.658h-36.868v39.464c0%203.08-1.24%204.482-3.972%204.482h-25.811c-2.482%200-3.972-1.4-3.972-4.482v-30.777l-.31-.495.524-151.407H69.646c-2.482%200-3.972-1.682-3.972-4.483V65.464c0-2.8%201.49-4.48%203.973-4.48h61.604l27.295-.061c4.769-.383%206.373%201.937%206.073%205.881v24.618h6c2.168-19.875%2015.212-31.314%2038.13-30.439h29.832c23.085%200%2035.744%2014.008%2035.744%2040.345v17.55l.001%2083.882v42.022l-.001.002z'%20fill-rule='nonzero'/%3e%3c/mask%3e%3c/svg%3e",Ue=`class="armorytable sortable" style="width:80%" cellspacing="0" cellpadding="2" border="1">\r
+<tbody><tr>\r
+<th scope="col" class="unsortable">Предмет</th>\r
+<th scope="col">Тип боеприпаса</th>\r
+<th scope="col">Боезапас</th>\r
+<th scope="col">Урон и Эффекты</th>\r
+<th scope="col">Пробитие<br><img alt="dmg_armor_penetration" src="/assets/images/pages/dmg_icon/dmg_armor_penetration.png" decoding="async"></th>\r
+<th scope="col">Где раздобыть</th>\r
+<th scope="col">Кем используется</th>\r
+<th scope="col" class="unsortable">Заметки</th></tr>`,qe={armorytable:Ue},Je={"/obj/projectile/beam":"25","/obj/projectile/beam_p":"5","/obj/projectile/beam/laser/light":"15","/obj/projectile/beam/laser/eoehoma":"35","/obj/projectile/beam/laser/eoehoma_p":"0","/obj/projectile/beam/laser/eoehoma/heavy":"60","/obj/projectile/beam/laser/eoehoma/heavy_p":"20","/obj/projectile/beam/laser/assault":"25","/obj/projectile/beam/laser/assault_p":"20","/obj/projectile/beam/laser/assault/sharplite":"25","/obj/projectile/beam/laser/assault/sharplite_p":"20","/obj/projectile/beam/laser/heavylaser":"40","/obj/projectile/beam/laser/heavylaser/assault_p":"20","/obj/projectile/beam/weak":"15","/obj/projectile/beam/weak/sharplite":"15","/obj/projectile/beam/weaker":"10","/obj/projectile/beam/weak/low_range":"10","/obj/projectile/beam/weak/penetrator_p":"50","/obj/projectile/beam/laser/weak/negative_ap":"15","/obj/projectile/beam/laser/weak/negative_ap_p":"30","/obj/projectile/beam/practice":"0","/obj/projectile/beam/practice/sharplite":"0","/obj/projectile/beam/laser/slug":"20","/obj/projectile/beam/laser/slug_p":"40","/obj/projectile/beam/scatter":"5","/obj/projectile/beam/xray":"15","/obj/projectile/beam/disabler":"30","/obj/projectile/beam/disabler_p":"20","/obj/projectile/beam/disabler/weak":"15","/obj/projectile/beam/disabler/weak/negative_ap_p":"30","/obj/projectile/beam/disabler/weak/negative_ap/sharplite_p":"30","/obj/projectile/beam/pulse":"40","/obj/projectile/beam/pulse/shotgun":"40","/obj/projectile/beam/emitter":"60","/obj/projectile/beam/lasertag":"0","/obj/projectile/beam/instakill":"200","/obj/projectile/beam/shrink":"0","/obj/projectile/bullet/dart":"6","/obj/projectile/bullet/dnainjector":"5","/obj/projectile/bullet/gauss":"25","/obj/projectile/bullet/gauss/hc":"15","/obj/projectile/bullet/gauss/hc_p":"60","/obj/projectile/bullet/gauss/lance":"30","/obj/projectile/bullet/gauss/lance_p":"20","/obj/projectile/bullet/gauss/lance/hc":"20","/obj/projectile/bullet/gauss/lance/hc_p":"80","/obj/projectile/bullet/gauss/slug":"50","/obj/projectile/bullet/gauss/slug_p":"60","/obj/projectile/bullet/gauss/slug/hc":"25","/obj/projectile/bullet/gauss/slug/hc_p":"0","/obj/projectile/bullet/a40mm":"60","/obj/projectile/bullet/c3d":"20","/obj/projectile/bullet/ctac":"40","/obj/projectile/bullet/ctac_p":"35","/obj/projectile/bullet/csour":"0","/obj/projectile/bullet/csour_p":"30","/obj/projectile/bullet/csweet":"5","/obj/projectile/bullet/lmg":"25","/obj/projectile/bullet/lmg_p":"40","/obj/projectile/bullet/incendiary/fnx99":"25","/obj/projectile/bullet/manned_turret":"30","/obj/projectile/bullet/manned_turret_p":"40","/obj/projectile/bullet/manned_turret/hmg_p":"40","/obj/projectile/bullet/syndicate_turret":"20","/obj/projectile/bullet/syndicate_turret_p":"20","/obj/projectile/bullet/mm712x82":"25","/obj/projectile/bullet/mm712x82_p":"40","/obj/projectile/bullet/mm712x82/ap_p":"75","/obj/projectile/bullet/mm712x82/hp":"40","/obj/projectile/bullet/mm712x82/hp_p":"20","/obj/projectile/bullet/mm712x82/match_p":"50","/obj/projectile/bullet/c22lr":"20","/obj/projectile/bullet/c22lr_p":"40","/obj/projectile/bullet/c22lr/hp":"24","/obj/projectile/bullet/c22lr/hp_p":"50","/obj/projectile/bullet/c22lr/ap":"18","/obj/projectile/bullet/c22lr/ap_p":"20","/obj/projectile/bullet/c22lr/rubber":"4","/obj/projectile/bullet/c22lr/rubber_p":"50","/obj/projectile/bullet/c9mm":"20","/obj/projectile/bullet/c9mm_p":"20","/obj/projectile/bullet/c9mm/ap":"18","/obj/projectile/bullet/c9mm/ap_p":"10","/obj/projectile/bullet/c9mm/hp":"30","/obj/projectile/bullet/c9mm/hp_p":"30","/obj/projectile/bullet/c9mm/rubber":"5","/obj/projectile/bullet/c9mm/rubber_p":"40","/obj/projectile/bullet/c10mm":"25","/obj/projectile/bullet/c10mm_p":"20","/obj/projectile/bullet/c10mm/ap":"23","/obj/projectile/bullet/c10mm/ap_p":"10","/obj/projectile/bullet/c10mm/hp":"35","/obj/projectile/bullet/c10mm/hp_p":"30","/obj/projectile/bullet/c10mm/rubber":"7","/obj/projectile/bullet/c10mm/rubber_p":"30","/obj/projectile/bullet/c45":"25","/obj/projectile/bullet/c45_p":"20","/obj/projectile/bullet/c45/ap":"22","/obj/projectile/bullet/c45/ap_p":"10","/obj/projectile/bullet/c45/hp":"37","/obj/projectile/bullet/c45/hp_p":"30","/obj/projectile/bullet/c45/rubber":"7","/obj/projectile/bullet/c45/rubber_p":"30","/obj/projectile/bullet/c38":"20","/obj/projectile/bullet/c38_p":"20","/obj/projectile/bullet/c38/match_p":"10","/obj/projectile/bullet/c38/bouncy":"7","/obj/projectile/bullet/c38/bouncy_p":"60","/obj/projectile/bullet/c38/dumdum":"20","/obj/projectile/bullet/c38/dumdum_p":"30","/obj/projectile/bullet/c38/trac":"10","/obj/projectile/bullet/c38/force_p":"10","/obj/projectile/bullet/a357":"45","/obj/projectile/bullet/a357/match_p":"10","/obj/projectile/bullet/a357/hp":"50","/obj/projectile/bullet/a357/hp_p":"20","/obj/projectile/bullet/a4570":"45","/obj/projectile/bullet/a4570/match_p":"10","/obj/projectile/bullet/a4570/hp":"55","/obj/projectile/bullet/a4570/hp_p":"10","/obj/projectile/bullet/a44roum":"35","/obj/projectile/bullet/a44roum/rubber":"7","/obj/projectile/bullet/a44roum/rubber_p":"10","/obj/projectile/bullet/a44roum/hp":"50","/obj/projectile/bullet/a44roum/hp_p":"10","/obj/projectile/bullet/a556_42":"25","/obj/projectile/bullet/a556_42_p":"20","/obj/projectile/bullet/a556_42/hp":"35","/obj/projectile/bullet/a556_42/hp_p":"10","/obj/projectile/bullet/a556_42/ap":"22","/obj/projectile/bullet/a556_42/ap_p":"40","/obj/projectile/bullet/a556_42/rubber":"5","/obj/projectile/bullet/a556_42/rubber_p":"0","/obj/projectile/bullet/a8_50r":"37","/obj/projectile/bullet/a8_50r_p":"30","/obj/projectile/bullet/a8_50r/hp":"50","/obj/projectile/bullet/a8_50r/hp_p":"10","/obj/projectile/bullet/a8_50r/match":"40","/obj/projectile/bullet/a8_50r/match_p":"27","/obj/projectile/bullet/a8_50r/trac":"10","/obj/projectile/bullet/a8_50r/trac_p":"0","/obj/projectile/bullet/a762_40":"30","/obj/projectile/bullet/a762_40_p":"20","/obj/projectile/bullet/a762_40/hp":"40","/obj/projectile/bullet/a762_40/hp_p":"10","/obj/projectile/bullet/a762_40/ap":"27","/obj/projectile/bullet/a762_40/ap_p":"40","/obj/projectile/bullet/a762_40/rubber":"15","/obj/projectile/bullet/a762_40/rubber_p":"10","/obj/projectile/bullet/a308":"35","/obj/projectile/bullet/a308_p":"40","/obj/projectile/bullet/a308/hp":"40","/obj/projectile/bullet/a308/hp_p":"30","/obj/projectile/bullet/a308/ap":"32","/obj/projectile/bullet/a308/ap_p":"60","/obj/projectile/bullet/a308/rubber":"20","/obj/projectile/bullet/a308/rubber_p":"20","/obj/projectile/bullet/a858":"45","/obj/projectile/bullet/a858_p":"50","/obj/projectile/bullet/c299":"20","/obj/projectile/bullet/c299_p":"10","/obj/projectile/bullet/slug":"40","/obj/projectile/bullet/slug_p":"10","/obj/projectile/bullet/slug/beanbag":"10","/obj/projectile/bullet/slug/beanbag_p":"45","/obj/projectile/bullet/incendiary/shotgun":"25","/obj/projectile/bullet/incendiary/shotgun_p":"10","/obj/projectile/bullet/incendiary/shotgun/dragonsbreath":"8","/obj/projectile/bullet/incendiary/shotgun/dragonsbreath_p":"35","/obj/projectile/bullet/slug/stun":"5","/obj/projectile/bullet/slug/meteor":"30","/obj/projectile/bullet/slug/frag12":"25","///How_p":"0","/obj/projectile/bullet/pellet/buckshot":"14","/obj/projectile/bullet/pellet/rubbershot":"2","/obj/projectile/bullet/pellet/rubbershot_p":"25","/obj/projectile/bullet/pellet/rubbershot/incapacitate":"1","/obj/projectile/bullet/pellet/improvised":"6","/obj/projectile/bullet/pellet/improvised_p":"60","/obj/projectile/bullet/pellet/scattershot":"24","/obj/projectile/bullet/pellet/scattershot_p":"20","/obj/projectile/bullet/pellet/buckshot/twobore":"30","/obj/projectile/bullet/pellet/buckshot/twobore_p":"25","/obj/projectile/bullet/pellet/blank":"30","/obj/projectile/bullet/pellet/blank_p":"70","/obj/projectile/bullet/c57x39mm":"20","/obj/projectile/bullet/c57x39mm_p":"10","/obj/projectile/bullet/c57x39mm/hp":"30","/obj/projectile/bullet/c57x39mm/hp_p":"10","/obj/projectile/bullet/c57x39mm/ap":"19","/obj/projectile/bullet/c57x39mm/ap_p":"30","/obj/projectile/bullet/c57x39mm/rubber":"5","/obj/projectile/bullet/c46x30mm":"20","/obj/projectile/bullet/c46x30mm_p":"10","/obj/projectile/bullet/c46x30mm/recycled":"15","/obj/projectile/bullet/c46x30mm/ap":"18","/obj/projectile/bullet/c46x30mm/ap_p":"40","/obj/projectile/bullet/c46x30mm/hp":"30","/obj/projectile/bullet/c46x30mm/hp_p":"10","/obj/projectile/bullet/c46x30mm/rubber":"4","/obj/projectile/bullet/c46x30mm/rubber_p":"10","/obj/projectile/bullet/c47x33mm":"25","/obj/projectile/bullet/c47x33mm_p":"20","/obj/projectile/bullet/c556mm":"20","/obj/projectile/bullet/c556mm/ap":"19","/obj/projectile/bullet/c556mm/ap_p":"20","/obj/projectile/bullet/c556mm/hp":"30","/obj/projectile/bullet/c556mm/hp_p":"10","/obj/projectile/bullet/c556mm/rubber":"5","/obj/projectile/bullet/c556mm/rubber_p":"10","/obj/projectile/bullet/p50":"70","/obj/projectile/bullet/p50_p":"60","/obj/projectile/bullet/p50/soporific_p":"0","/obj/projectile/bullet/p50/soporific":"0","/obj/projectile/bullet/p50/penetrator":"60","/obj/projectile/bullet/a75clip":"40","/obj/projectile/bullet/a75clip_p":"50","/obj/projectile/bullet/a75clip/trac":"10","/obj/projectile/bullet/a75clip/trac_p":"0","/obj/projectile/bullet/a75clip/rubber":"10","/obj/projectile/bullet/a858/trac":"12","/obj/projectile/bullet/a858/trac_p":"0","/obj/projectile/bullet/a300":"50","/obj/projectile/bullet/a300_p":"40","/obj/projectile/bullet/a300/trac":"10","/obj/projectile/bullet/a300/trac_p":"0","/obj/projectile/bullet/turret":"60","/obj/projectile/bullet/turret/rubber":"5","/obj/projectile/bullet/incendiary":"20","/obj/projectile/bullet":"60","/obj/projectile/energy/bolt":"15","/obj/projectile/energy/bolt/large":"20","/obj/projectile/energy/declone":"20","/obj/projectile/energy/declone/weak":"9","/obj/projectile/energy/dart":"5","/obj/projectile/energy/buster":"0","/obj/projectile/energy/plasmabolt":"25","/obj/projectile/energy/plasmabolt_p":"15","/obj/projectile/energy/plasmabolt/shred":"35","/obj/projectile/energy/plasmabolt/shred_p":"5","/obj/projectile/energy/net":"10","/obj/projectile/energy/nuclear_particle/proc/customize(custompower)":"30","/obj/projectile/energy/electrode":"40","/obj/projectile/energy/tesla":"10","/obj/projectile/energy/tesla/cannon":"15","/obj/projectile/energy/tesla_cannon":"0","/obj/projectile/energy":"0","/obj/projectile/bullet/reusable/arrow":"50","/obj/projectile/bullet/reusable/arrow/wood":"15","/obj/projectile/bullet/reusable/arrow/ash":"25","/obj/projectile/bullet/reusable/arrow/bone":"25","/obj/projectile/bullet/reusable/arrow/bone_p":"40","/obj/projectile/bullet/reusable/arrow/bronze":"20","/obj/projectile/bullet/reusable/arrow/bronze_p":"10","/obj/projectile/bullet/reusable/foam_dart":"0","/obj/projectile/curse_hand":"10","/obj/projectile/curse_hand/phantom":"15","/obj/projectile/energy/floramut":"0","/obj/projectile/energy/florayield":"0","/obj/projectile/energy/florarevolution":"0","/obj/projectile/gravityrepulse":"0","/obj/projectile/gravityattract":"0","/obj/projectile/gravitychaos":"0","/obj/projectile/hallucination":"0","/obj/projectile/ion":"10","/obj/projectile/meteor":"0","/obj/projectile/bullet/neurotoxin":"20","/obj/projectile/plasma":"15","/obj/projectile/plasma/adv":"7","/obj/projectile/plasma/adv/mech":"10","//Between":"24","/obj/projectile/bullet/gyro":"50","/obj/projectile/bullet/a84mm":"80","/obj/projectile/bullet/a84mm_p":"100","/obj/projectile/bullet/a84mm_he":"30","/obj/projectile/bullet/a84mm_br":"30","/obj/projectile/temp":"0","/obj/projectile/beam/wormhole":"0","/obj/projectile/beam/hitscan/disabler":"20","/obj/projectile/beam/hitscan/disabler_p":"20","/obj/projectile/beam/hitscan/disabler/heavy":"30","/obj/projectile/beam/hitscan/disabler/heavy_p":"10","/obj/projectile/kinetic":"20","/obj/projectile/kinetic/prehit_pierce(atom/target)":"20","/obj/projectile/beam/laser/accelerator":"6","/obj/projectile/beam/emitter/hitscan/clip":"35","/obj/projectile/beam/hitscan/kalix":"25","/obj/projectile/beam/hitscan/kalix_p":"10","/obj/projectile/beam/hitscan/kalix/pgf/assault":"25","/obj/projectile/beam/hitscan/kalix/pgf/assault_p":"20","/obj/projectile/beam/hitscan/kalix/pgf/sniper":"35","/obj/projectile/beam/hitscan/kalix/pgf/sniper_p":"40","/obj/projectile/beam/beam_rifle":"0","/obj/projectile/beam/beam_rifle/hitscan/aiming_beam":"0","/obj/projectile/blastwave":"0","/obj/projectile/bullet/pellet_p":"15","/obj/projectile/bullet/pellet/rubbershot/incapacitate_p":"45","/obj/projectile/bullet/a357_p":"10","/obj/projectile/beam/disabler/iot":"15","/obj/projectile/beam/laser/iot":"15","/obj/projectile/beam/laser/iot_p":"10","/obj/projectile/beam/disabler/weak/smg_p":"15","/obj/projectile/beam/laser/light/smg_p":"15","/obj/projectile/beam/disabler/assault":"25","/obj/projectile/beam/disabler/assault_p":"20","/obj/projectile/beam/disabler/heavylaser":"40","/obj/item/ammo_casing/mm712x82":"25","/obj/item/ammo_casing/mm712x82_p":"40","/obj/item/ammo_casing/mm712x82/ap":"25","/obj/item/ammo_casing/mm712x82/ap_p":"40","/obj/item/ammo_casing/mm712x82/hp":"40","/obj/item/ammo_casing/mm712x82/hp_p":"20","/obj/item/ammo_casing/mm712x82/match":"25","/obj/item/ammo_casing/mm712x82/match_p":"40","/obj/item/ammo_casing/c10mm":"25","/obj/item/ammo_casing/c10mm_p":"20","/obj/item/ammo_casing/c10mm/surplus":"25","/obj/item/ammo_casing/c10mm/surplus_p":"20","/obj/item/ammo_casing/c10mm/ap":"23","/obj/item/ammo_casing/c10mm/ap_p":"10","/obj/item/ammo_casing/c10mm/hp":"35","/obj/item/ammo_casing/c10mm/hp_p":"30","/obj/item/ammo_casing/c10mm/rubber":"7","/obj/item/ammo_casing/c10mm/rubber_p":"30","/obj/item/ammo_casing/c9mm":"20","/obj/item/ammo_casing/c9mm_p":"20","/obj/item/ammo_casing/c9mm/surplus":"20","/obj/item/ammo_casing/c9mm/surplus_p":"20","/obj/item/ammo_casing/c9mm/ap":"18","/obj/item/ammo_casing/c9mm/ap_p":"10","/obj/item/ammo_casing/c9mm/hp":"30","/obj/item/ammo_casing/c9mm/hp_p":"30","/obj/item/ammo_casing/c9mm/rubber":"5","/obj/item/ammo_casing/c9mm/rubber_p":"40","/obj/item/ammo_casing/c45":"25","/obj/item/ammo_casing/c45_p":"20","/obj/item/ammo_casing/c45/surplus":"25","/obj/item/ammo_casing/c45/surplus_p":"20","/obj/item/ammo_casing/c45/ap":"22","/obj/item/ammo_casing/c45/ap_p":"10","/obj/item/ammo_casing/c45/hp":"37","/obj/item/ammo_casing/c45/hp_p":"30","/obj/item/ammo_casing/c45/rubber":"7","/obj/item/ammo_casing/c45/rubber_p":"30","/obj/item/ammo_casing/c22lr":"20","/obj/item/ammo_casing/c22lr_p":"40","/obj/item/ammo_casing/c22lr/hp":"24","/obj/item/ammo_casing/c22lr/hp_p":"50","/obj/item/ammo_casing/c22lr/ap":"18","/obj/item/ammo_casing/c22lr/ap_p":"20","/obj/item/ammo_casing/c22lr/rubber":"4","/obj/item/ammo_casing/c22lr/rubber_p":"50","/obj/item/ammo_casing/a357":"45","/obj/item/ammo_casing/a357_p":"10","/obj/item/ammo_casing/a357/match":"45","/obj/item/ammo_casing/a357/match_p":"10","/obj/item/ammo_casing/a357/hp":"50","/obj/item/ammo_casing/a357/hp_p":"20","/obj/item/ammo_casing/a4570":"45","/obj/item/ammo_casing/a4570/match":"45","/obj/item/ammo_casing/a4570/hp":"55","/obj/item/ammo_casing/a4570/hp_p":"10","/obj/item/ammo_casing/a4570/explosive":"45","/obj/item/ammo_casing/c38":"20","/obj/item/ammo_casing/c38_p":"20","/obj/item/ammo_casing/c38/surplus":"20","/obj/item/ammo_casing/c38/surplus_p":"20","/obj/item/ammo_casing/c38/trac":"10","/obj/item/ammo_casing/c38/match":"20","/obj/item/ammo_casing/c38/match_p":"20","/obj/item/ammo_casing/c38/match/bouncy":"7","/obj/item/ammo_casing/c38/match/bouncy_p":"60","/obj/item/ammo_casing/c38/dumdum":"20","/obj/item/ammo_casing/c38/dumdum_p":"30","/obj/item/ammo_casing/c38/hotshot":"20","/obj/item/ammo_casing/c38/hotshot_p":"20","/obj/item/ammo_casing/c38/iceblox":"20","/obj/item/ammo_casing/c38/iceblox_p":"20","/obj/item/ammo_casing/c38/ashwine":"20","/obj/item/ammo_casing/c38/ashwine_p":"20","/obj/item/ammo_casing/c38/shock":"20","/obj/item/ammo_casing/c38/shock_p":"20","/obj/item/ammo_casing/c38/force":"20","/obj/item/ammo_casing/c38/force_p":"20","/obj/item/ammo_casing/a44roum":"35","/obj/item/ammo_casing/a44roum/rubber":"7","/obj/item/ammo_casing/a44roum/rubber_p":"10","/obj/item/ammo_casing/a44roum/hp":"50","/obj/item/ammo_casing/a44roum/hp_p":"10","/obj/item/ammo_casing/a8_50r":"37","/obj/item/ammo_casing/a8_50r_p":"30","/obj/item/ammo_casing/a8_50r/hp":"50","/obj/item/ammo_casing/a8_50r/hp_p":"10","/obj/item/ammo_casing/a8_50r/match":"40","/obj/item/ammo_casing/a8_50r/match_p":"27","/obj/item/ammo_casing/a8_50r/trac":"10","/obj/item/ammo_casing/a8_50r/trac_p":"0","/obj/item/ammo_casing/caseless/a858":"45","/obj/item/ammo_casing/caseless/a858_p":"50","/obj/item/ammo_casing/caseless/a858/trac":"12","/obj/item/ammo_casing/caseless/a858/trac_p":"0","/obj/item/ammo_casing/a556_42":"25","/obj/item/ammo_casing/a556_42_p":"20","/obj/item/ammo_casing/a556_42/hp":"35","/obj/item/ammo_casing/a556_42/hp_p":"10","/obj/item/ammo_casing/a556_42/ap":"22","/obj/item/ammo_casing/a556_42/ap_p":"40","/obj/item/ammo_casing/a556_42/rubber":"5","/obj/item/ammo_casing/a556_42/rubber_p":"0","/obj/item/ammo_casing/a762_40":"30","/obj/item/ammo_casing/a762_40_p":"20","/obj/item/ammo_casing/a762_40/hp":"40","/obj/item/ammo_casing/a762_40/hp_p":"10","/obj/item/ammo_casing/a762_40/ap":"27","/obj/item/ammo_casing/a762_40/ap_p":"40","/obj/item/ammo_casing/a762_40/rubber":"15","/obj/item/ammo_casing/a762_40/rubber_p":"10","/obj/item/ammo_casing/a308":"35","/obj/item/ammo_casing/a308_p":"40","/obj/item/ammo_casing/a308/ap":"32","/obj/item/ammo_casing/a308/ap_p":"60","/obj/item/ammo_casing/a308/hp":"40","/obj/item/ammo_casing/a308/hp_p":"30","/obj/item/ammo_casing/caseless/c299":"20","/obj/item/ammo_casing/caseless/c299_p":"10","/obj/item/ammo_casing/shotgun":"40","/obj/item/ammo_casing/shotgun_p":"10","/obj/item/ammo_casing/shotgun/buckshot":"14","/obj/item/ammo_casing/shotgun/beanbag":"10","/obj/item/ammo_casing/shotgun/beanbag_p":"45","/obj/item/ammo_casing/shotgun/rubbershot":"2","/obj/item/ammo_casing/shotgun/rubbershot_p":"25","/obj/item/ammo_casing/shotgun/incendiary":"25","/obj/item/ammo_casing/shotgun/incendiary_p":"10","/obj/item/ammo_casing/shotgun/blank":"30","/obj/item/ammo_casing/shotgun/blank_p":"70","/obj/item/ammo_casing/shotgun/improvised":"6","/obj/item/ammo_casing/shotgun/improvised_p":"60","/obj/item/ammo_casing/shotgun/incapacitate":"1","/obj/item/ammo_casing/shotgun/incapacitate_p":"45","/obj/item/ammo_casing/shotgun/stunslug":"5","/obj/item/ammo_casing/shotgun/dart":"6","/obj/item/ammo_casing/shotgun/dragonsbreath":"8","/obj/item/ammo_casing/shotgun/dragonsbreath_p":"35","/obj/item/ammo_casing/shotgun/meteorslug":"30","/obj/item/ammo_casing/shotgun/frag12":"25","/obj/item/ammo_casing/shotgun/ion":"10","/obj/item/ammo_casing/shotgun/laserscatter":"15","/obj/item/ammo_casing/shotgun/pulseslug":"40","/obj/item/ammo_casing/shotgun/buckshot/twobore":"30","/obj/item/ammo_casing/shotgun/buckshot/twobore_p":"25","/obj/item/ammo_casing/c57x39mm":"20","/obj/item/ammo_casing/c57x39mm_p":"10","/obj/item/ammo_casing/c57x39mm/ap":"19","/obj/item/ammo_casing/c57x39mm/ap_p":"30","/obj/item/ammo_casing/c57x39mm/hp":"30","/obj/item/ammo_casing/c57x39mm/hp_p":"10","/obj/item/ammo_casing/c57x39mm/rubber":"5","/obj/item/ammo_casing/c46x30mm":"20","/obj/item/ammo_casing/c46x30mm_p":"10","/obj/item/ammo_casing/c46x30mm/recycled":"15","/obj/item/ammo_casing/c46x30mm/ap":"18","/obj/item/ammo_casing/c46x30mm/ap_p":"40","/obj/item/ammo_casing/c46x30mm/hp":"30","/obj/item/ammo_casing/c46x30mm/hp_p":"10","/obj/item/ammo_casing/c46x30mm/rubber":"4","/obj/item/ammo_casing/c46x30mm/rubber_p":"10","/obj/item/ammo_casing/caseless/c47x33mm":"25","/obj/item/ammo_casing/caseless/c47x33mm_p":"20","/obj/item/ammo_casing/caseless/c556mm":"20","/obj/item/ammo_casing/caseless/c556mm/surplus":"20","/obj/item/ammo_casing/caseless/c556mm/ap":"19","/obj/item/ammo_casing/caseless/c556mm/ap_p":"20","/obj/item/ammo_casing/caseless/c556mm/hp":"30","/obj/item/ammo_casing/caseless/c556mm/hp_p":"10","/obj/item/ammo_casing/caseless/c556mm/rubbershot":"5","/obj/item/ammo_casing/caseless/c556mm/rubbershot_p":"10","/obj/item/ammo_casing/p50":"70","/obj/item/ammo_casing/p50_p":"60","/obj/item/ammo_casing/p50/soporific":"0","/obj/item/ammo_casing/p50/soporific_p":"0","/obj/item/ammo_casing/p50/penetrator":"60","/obj/item/ammo_casing/a300":"50","/obj/item/ammo_casing/a300_p":"40","/obj/item/ammo_casing/a300/trac":"10","/obj/item/ammo_casing/a300/trac_p":"0","/obj/item/ammo_casing/a75clip":"40","/obj/item/ammo_casing/a75clip_p":"50","/obj/item/ammo_casing/a75clip/trac":"10","/obj/item/ammo_casing/a75clip/trac_p":"0","/obj/item/ammo_casing/caseless/arrow":"50","/obj/item/ammo_casing/caseless/arrow/wood":"15","/obj/item/ammo_casing/caseless/arrow/ash":"25","/obj/item/ammo_casing/caseless/arrow/bone":"25","/obj/item/ammo_casing/caseless/arrow/bone_p":"40","/obj/item/ammo_casing/caseless/arrow/bronze":"20","/obj/item/ammo_casing/caseless/arrow/bronze_p":"10","/obj/item/ammo_casing/caseless/foam_dart":"0","/obj/item/ammo_casing/caseless/foam_dart/riot":"0","/obj/item/ammo_casing/caseless/laser":"25","/obj/item/ammo_casing/caseless/laser_p":"5","/obj/item/ammo_casing/caseless/rocket":"30","/obj/item/ammo_casing/caseless/rocket/hedp":"80","/obj/item/ammo_casing/caseless/rocket/hedp_p":"100","/obj/item/ammo_casing/caseless/a75":"50","/obj/item/ammo_casing/energy/bolt":"15","/obj/item/ammo_casing/energy/bolt/halloween":"15","/obj/item/ammo_casing/energy/bolt/large":"20","/obj/item/ammo_casing/energy/gravity/repulse":"0","/obj/item/ammo_casing/energy/gravity/attract":"0","/obj/item/ammo_casing/energy/gravity/chaos":"0","/obj/item/ammo_casing/energy/laser":"25","/obj/item/ammo_casing/energy/laser_p":"5","/obj/item/ammo_casing/energy/laser/sharplite":"25","/obj/item/ammo_casing/energy/laser/sharplite_p":"5","/obj/item/ammo_casing/energy/laser/underbarrel":"25","/obj/item/ammo_casing/energy/laser/underbarrel_p":"5","/obj/item/ammo_casing/energy/laser/slug":"20","/obj/item/ammo_casing/energy/laser/slug_p":"40","/obj/item/ammo_casing/energy/laser/eoehoma":"35","/obj/item/ammo_casing/energy/laser/eoehoma_p":"0","/obj/item/ammo_casing/energy/laser/assault":"25","/obj/item/ammo_casing/energy/laser/assault_p":"20","/obj/item/ammo_casing/energy/laser/assault/sharplite":"25","/obj/item/ammo_casing/energy/laser/assault/sharplite_p":"20","/obj/item/ammo_casing/energy/laser/eoehoma/e50":"60","/obj/item/ammo_casing/energy/lasergun":"25","/obj/item/ammo_casing/energy/lasergun_p":"5","/obj/item/ammo_casing/energy/lasergun/sharplite":"25","/obj/item/ammo_casing/energy/lasergun/sharplite_p":"5","/obj/item/ammo_casing/energy/lasergun/eoehoma":"35","/obj/item/ammo_casing/energy/lasergun/eoehoma_p":"0","/obj/item/ammo_casing/energy/lasergun/eoehoma/heavy":"60","/obj/item/ammo_casing/energy/lasergun/eoehoma/heavy_p":"20","/obj/item/ammo_casing/energy/laser/smg":"15","/obj/item/ammo_casing/energy/laser/sharplite/smg":"15","/obj/item/ammo_casing/energy/lasergun/old":"25","/obj/item/ammo_casing/energy/lasergun/old_p":"5","/obj/item/ammo_casing/energy/laser/practice":"0","/obj/item/ammo_casing/energy/laser/practice/sharplite":"0","/obj/item/ammo_casing/energy/laser/scatter":"5","/obj/item/ammo_casing/energy/laser/ultima":"15","/obj/item/ammo_casing/energy/laser/ultima_p":"10","/obj/item/ammo_casing/energy/laser/heavy":"40","/obj/item/ammo_casing/energy/laser/pulse":"40","/obj/item/ammo_casing/energy/laser/bluetag":"0","/obj/item/ammo_casing/energy/laser/bluetag/hitscan":"0","/obj/item/ammo_casing/energy/laser/redtag":"0","/obj/item/ammo_casing/energy/laser/redtag/hitscan":"0","/obj/item/ammo_casing/energy/xray":"15","/obj/item/ammo_casing/energy/mindflayer":"25","/obj/item/ammo_casing/energy/mindflayer_p":"5","/obj/item/ammo_casing/energy/lasergun/hitscan":"25","/obj/item/ammo_casing/energy/lasergun/hitscan_p":"5","/obj/item/ammo_casing/energy/disabler/hitscan":"20","/obj/item/ammo_casing/energy/disabler/hitscan_p":"20","/obj/item/ammo_casing/energy/laser/minigun":"15","/obj/item/ammo_casing/energy/c3dbullet":"20","/obj/item/ammo_casing/energy/ctac":"40","/obj/item/ammo_casing/energy/ctac_p":"35","/obj/item/ammo_casing/energy/csour":"0","/obj/item/ammo_casing/energy/csour_p":"30","/obj/item/ammo_casing/energy/csweet":"5","/obj/item/ammo_casing/energy/plasma":"15","/obj/item/ammo_casing/energy/plasma/adv":"7","/obj/item/ammo_casing/energy/wormhole":"0","/obj/item/ammo_casing/energy/wormhole/orange":"0","/obj/item/ammo_casing/energy/ion":"10","/obj/item/ammo_casing/energy/flora/revolution":"0","/obj/item/ammo_casing/energy/ion/hos":"10","/obj/item/ammo_casing/energy/declone":"20","/obj/item/ammo_casing/energy/declone/weak":"9","/obj/item/ammo_casing/energy/flora/yield":"0","/obj/item/ammo_casing/energy/flora/mut":"0","/obj/item/ammo_casing/energy/temp":"0","/obj/item/ammo_casing/energy/temp/hot":"0","/obj/item/ammo_casing/energy/meteor":"0","/obj/item/ammo_casing/energy/net":"10","/obj/item/ammo_casing/energy/trap":"0","/obj/item/ammo_casing/energy/instakill":"200","/obj/item/ammo_casing/energy/instakill/blue":"200","/obj/item/ammo_casing/energy/instakill/red":"200","/obj/item/ammo_casing/energy/tesla_cannon":"0","/obj/item/ammo_casing/energy/shrink":"0","/obj/item/ammo_casing/energy/buster":"0","/obj/item/ammo_casing/energy/electrode":"40","/obj/item/ammo_casing/energy/disabler":"30","/obj/item/ammo_casing/energy/disabler_p":"20","/obj/item/ammo_casing/energy/disabler/sharplite":"30","/obj/item/ammo_casing/energy/disabler/sharplite_p":"20","/obj/item/ammo_casing/energy/disabler/scatter/ultima":"15","/obj/item/ammo_casing/energy/disabler/smg":"15","/obj/item/ammo_casing/energy/disabler/sharplite/smg":"15","/obj/item/ammo_casing/energy":"0","/obj/item/ammo_casing/caseless/gauss":"25","/obj/item/ammo_casing/caseless/gauss/hc":"15","/obj/item/ammo_casing/caseless/gauss/hc_p":"60","/obj/item/ammo_casing/caseless/gauss/lance":"30","/obj/item/ammo_casing/caseless/gauss/lance_p":"20","/obj/item/ammo_casing/caseless/gauss/lance/hc":"20","/obj/item/ammo_casing/caseless/gauss/lance/hc_p":"80","/obj/item/ammo_casing/caseless/gauss/slug":"50","/obj/item/ammo_casing/caseless/gauss/slug_p":"60","/obj/item/ammo_casing/caseless/gauss/slug/hc":"25","/obj/item/ammo_casing/caseless/gauss/slug/hc_p":"0","/obj/item/ammo_casing/syringegun":"6","/obj/item/ammo_casing/chemgun":"6","/obj/item/ammo_casing/dnainjector":"5","/obj/item/ammo_casing/a40mm":"60","/obj/item/ammo_casing/energy/duel":"0","/obj/item/ammo_casing/energy/kinetic":"20","/obj/item/ammo_casing/energy/laser/accelerator":"6","/obj/item/ammo_casing/energy/laser/eoehoma/e50/clip":"35","/obj/item/ammo_casing/energy/kalix":"25","/obj/item/ammo_casing/energy/kalix_p":"10","/obj/item/ammo_casing/energy/kalix/pgf":"25","/obj/item/ammo_casing/energy/kalix/pgf_p":"10","/obj/item/ammo_casing/energy/pgf/assault":"25","/obj/item/ammo_casing/energy/pgf/assault_p":"20","/obj/item/ammo_casing/energy/pgf/sniper":"35","/obj/item/ammo_casing/energy/pgf/sniper_p":"40","/obj/item/ammo_casing/caseless/rocket/a70mm":"30","/obj/item/ammo_casing/caseless/rocket/a70mm/hedp":"80","/obj/item/ammo_casing/caseless/rocket/a70mm/hedp_p":"100","/obj/item/ammo_casing/energy/beam_rifle/hitscan":"0","/obj/item/ammo_casing/energy/disabler/assault":"25","/obj/item/ammo_casing/energy/disabler/assault_p":"20","/obj/projectile/beam/laser/light_p":"5","/obj/projectile/beam/laser/heavylaser_p":"5","/obj/projectile/beam/laser/heavylaser/assault":"40","/obj/projectile/beam/weak_p":"5","/obj/projectile/beam/weak/sharplite_p":"5","/obj/projectile/beam/weaker_p":"5","/obj/projectile/beam/weak/low_range_p":"5","/obj/projectile/beam/weak/penetrator":"15","/obj/projectile/beam/practice_p":"5","/obj/projectile/beam/practice/sharplite_p":"5","/obj/projectile/beam/scatter_p":"5","/obj/projectile/beam/xray_p":"5","/obj/projectile/beam/disabler/weak_p":"20","/obj/projectile/beam/disabler/weak/negative_ap":"15","/obj/projectile/beam/disabler/weak/negative_ap/sharplite":"15","/obj/projectile/beam/pulse_p":"5","/obj/projectile/beam/pulse/shotgun_p":"5","/obj/projectile/beam/emitter_p":"5","/obj/projectile/beam/lasertag_p":"5","/obj/projectile/beam/instakill_p":"5","/obj/projectile/beam/shrink_p":"5","/obj/projectile/bullet/dart_p":"0","/obj/projectile/bullet/dnainjector_p":"0","/obj/projectile/bullet/gauss_p":"0","/obj/projectile/bullet/a40mm_p":"0","/obj/projectile/bullet/c3d_p":"0","/obj/projectile/bullet/csweet_p":"0","/obj/projectile/bullet/incendiary/fnx99_p":"0","/obj/projectile/bullet/manned_turret/hmg":"30","/obj/projectile/bullet/mm712x82/ap":"25","/obj/projectile/bullet/mm712x82/match":"25","/obj/projectile/bullet/c38/match":"20","/obj/projectile/bullet/c38/trac_p":"20","/obj/projectile/bullet/c38/force":"20","/obj/projectile/bullet/a357/match":"45","/obj/projectile/bullet/a4570_p":"0","/obj/projectile/bullet/a4570/match":"45","/obj/projectile/bullet/a44roum_p":"0","/obj/projectile/bullet/slug/stun_p":"10","/obj/projectile/bullet/slug/meteor_p":"10","/obj/projectile/bullet/slug/frag12_p":"10","/obj/projectile/bullet/pellet/buckshot_p":"15","/obj/projectile/bullet/c57x39mm/rubber_p":"10","/obj/projectile/bullet/c46x30mm/recycled_p":"10","/obj/projectile/bullet/c556mm_p":"0","/obj/projectile/bullet/p50/penetrator_p":"60","/obj/projectile/bullet/a75clip/rubber_p":"50","/obj/projectile/bullet/turret_p":"0","/obj/projectile/bullet/turret/rubber_p":"0","/obj/projectile/bullet/incendiary_p":"0","/obj/projectile/bullet_p":"0","/obj/projectile/energy/bolt_p":"0","/obj/projectile/energy/bolt/large_p":"0","/obj/projectile/energy/declone_p":"0","/obj/projectile/energy/declone/weak_p":"0","/obj/projectile/energy/dart_p":"0","/obj/projectile/energy/buster_p":"0","/obj/projectile/energy/net_p":"0","/obj/projectile/energy/nuclear_particle/proc/customize(custompower)_p":"0","/obj/projectile/energy/electrode_p":"0","/obj/projectile/energy/tesla_p":"0","/obj/projectile/energy/tesla/cannon_p":"0","/obj/projectile/energy/tesla_cannon_p":"0","/obj/projectile/energy_p":"0","/obj/projectile/bullet/reusable/arrow_p":"0","/obj/projectile/bullet/reusable/arrow/wood_p":"0","/obj/projectile/bullet/reusable/arrow/ash_p":"0","/obj/projectile/bullet/reusable/foam_dart_p":"0","/obj/projectile/curse_hand_p":"0","/obj/projectile/curse_hand/phantom_p":"0","/obj/projectile/energy/floramut_p":"0","/obj/projectile/energy/florayield_p":"0","/obj/projectile/energy/florarevolution_p":"0","/obj/projectile/gravityrepulse_p":"0","/obj/projectile/gravityattract_p":"0","/obj/projectile/gravitychaos_p":"0","/obj/projectile/hallucination_p":"0","/obj/projectile/ion_p":"0","/obj/projectile/meteor_p":"0","/obj/projectile/bullet/neurotoxin_p":"0","/obj/projectile/plasma_p":"0","/obj/projectile/plasma/adv_p":"0","/obj/projectile/plasma/adv/mech_p":"0","//Between_p":"0","/obj/projectile/bullet/gyro_p":"0","/obj/projectile/bullet/a84mm_he_p":"0","/obj/projectile/bullet/a84mm_br_p":"0","/obj/projectile/temp_p":"0","/obj/projectile/beam/wormhole_p":"5","/obj/projectile/kinetic_p":"0","/obj/projectile/kinetic/prehit_pierce(atom/target)_p":"0","/obj/projectile/beam/laser/accelerator_p":"5","/obj/projectile/beam/emitter/hitscan/clip_p":"5","/obj/projectile/beam/beam_rifle_p":"5","/obj/projectile/beam/beam_rifle/hitscan/aiming_beam_p":"5","/obj/projectile/blastwave_p":"0","/obj/projectile/bullet/pellet":"60","/obj/projectile/beam/disabler/iot_p":"20","/obj/projectile/beam/disabler/weak/smg":"15","/obj/projectile/beam/laser/light/smg":"15","/obj/projectile/beam/disabler/heavylaser_p":"20","/obj/item/ammo_casing/a4570_p":"0","/obj/item/ammo_casing/a4570/match_p":"0","/obj/item/ammo_casing/a4570/explosive_p":"0","/obj/item/ammo_casing/c38/trac_p":"20","/obj/item/ammo_casing/a44roum_p":"0","/obj/item/ammo_casing/shotgun/buckshot_p":"10","/obj/item/ammo_casing/shotgun/stunslug_p":"10","/obj/item/ammo_casing/shotgun/dart_p":"10","/obj/item/ammo_casing/shotgun/meteorslug_p":"10","/obj/item/ammo_casing/shotgun/frag12_p":"10","/obj/item/ammo_casing/shotgun/ion_p":"10","/obj/item/ammo_casing/shotgun/laserscatter_p":"10","/obj/item/ammo_casing/shotgun/pulseslug_p":"10","/obj/item/ammo_casing/c57x39mm/rubber_p":"10","/obj/item/ammo_casing/c46x30mm/recycled_p":"10","/obj/item/ammo_casing/caseless/c556mm_p":"0","/obj/item/ammo_casing/caseless/c556mm/surplus_p":"0","/obj/item/ammo_casing/p50/penetrator_p":"60","/obj/item/ammo_casing/caseless/arrow_p":"0","/obj/item/ammo_casing/caseless/arrow/wood_p":"0","/obj/item/ammo_casing/caseless/arrow/ash_p":"0","/obj/item/ammo_casing/caseless/foam_dart_p":"0","/obj/item/ammo_casing/caseless/foam_dart/riot_p":"0","/obj/item/ammo_casing/caseless/rocket_p":"0","/obj/item/ammo_casing/caseless/a75_p":"0","/obj/item/ammo_casing/energy/bolt_p":"0","/obj/item/ammo_casing/energy/bolt/halloween_p":"0","/obj/item/ammo_casing/energy/bolt/large_p":"0","/obj/item/ammo_casing/energy/gravity/repulse_p":"0","/obj/item/ammo_casing/energy/gravity/attract_p":"0","/obj/item/ammo_casing/energy/gravity/chaos_p":"0","/obj/item/ammo_casing/energy/laser/eoehoma/e50_p":"0","/obj/item/ammo_casing/energy/laser/smg_p":"5","/obj/item/ammo_casing/energy/laser/sharplite/smg_p":"5","/obj/item/ammo_casing/energy/laser/practice_p":"5","/obj/item/ammo_casing/energy/laser/practice/sharplite_p":"5","/obj/item/ammo_casing/energy/laser/scatter_p":"5","/obj/item/ammo_casing/energy/laser/heavy_p":"5","/obj/item/ammo_casing/energy/laser/pulse_p":"5","/obj/item/ammo_casing/energy/laser/bluetag_p":"5","/obj/item/ammo_casing/energy/laser/bluetag/hitscan_p":"5","/obj/item/ammo_casing/energy/laser/redtag_p":"5","/obj/item/ammo_casing/energy/laser/redtag/hitscan_p":"5","/obj/item/ammo_casing/energy/xray_p":"0","/obj/item/ammo_casing/energy/laser/minigun_p":"5","/obj/item/ammo_casing/energy/c3dbullet_p":"0","/obj/item/ammo_casing/energy/csweet_p":"0","/obj/item/ammo_casing/energy/plasma_p":"0","/obj/item/ammo_casing/energy/plasma/adv_p":"0","/obj/item/ammo_casing/energy/wormhole_p":"0","/obj/item/ammo_casing/energy/wormhole/orange_p":"0","/obj/item/ammo_casing/energy/ion_p":"0","/obj/item/ammo_casing/energy/flora/revolution_p":"0","/obj/item/ammo_casing/energy/ion/hos_p":"0","/obj/item/ammo_casing/energy/declone_p":"0","/obj/item/ammo_casing/energy/declone/weak_p":"0","/obj/item/ammo_casing/energy/flora/yield_p":"0","/obj/item/ammo_casing/energy/flora/mut_p":"0","/obj/item/ammo_casing/energy/temp_p":"0","/obj/item/ammo_casing/energy/temp/hot_p":"0","/obj/item/ammo_casing/energy/meteor_p":"0","/obj/item/ammo_casing/energy/net_p":"0","/obj/item/ammo_casing/energy/trap_p":"0","/obj/item/ammo_casing/energy/instakill_p":"0","/obj/item/ammo_casing/energy/instakill/blue_p":"0","/obj/item/ammo_casing/energy/instakill/red_p":"0","/obj/item/ammo_casing/energy/tesla_cannon_p":"0","/obj/item/ammo_casing/energy/shrink_p":"0","/obj/item/ammo_casing/energy/buster_p":"0","/obj/item/ammo_casing/energy/electrode_p":"0","/obj/item/ammo_casing/energy/disabler/scatter/ultima_p":"20","/obj/item/ammo_casing/energy/disabler/smg_p":"20","/obj/item/ammo_casing/energy/disabler/sharplite/smg_p":"20","/obj/item/ammo_casing/energy_p":"0","/obj/item/ammo_casing/caseless/gauss_p":"0","/obj/item/ammo_casing/syringegun_p":"0","/obj/item/ammo_casing/chemgun_p":"0","/obj/item/ammo_casing/dnainjector_p":"0","/obj/item/ammo_casing/a40mm_p":"0","/obj/item/ammo_casing/energy/duel_p":"0","/obj/item/ammo_casing/energy/kinetic_p":"0","/obj/item/ammo_casing/energy/laser/accelerator_p":"5","/obj/item/ammo_casing/energy/laser/eoehoma/e50/clip_p":"0","/obj/item/ammo_casing/caseless/rocket/a70mm_p":"0","/obj/item/ammo_casing/energy/beam_rifle/hitscan_p":"0"};function Z(t){const e=document.createElement("div");e.className="speen";const a=document.createElement("img");a.src=Ve,e.appendChild(a),t.appendChild(e)}async function tt(t,e,a){if(t.startsWith("$"))return J(t,a),a.classList.remove("waiting"),a;const i=document.createElement("div");i.className="wrapper";let n=e;const d=Object.assign({},qe,Je);for(const[r,s]of Object.entries(d))n=n.replace(new RegExp(`<!--${r}-->`,"g"),s),n=n.replace(new RegExp(`class="${r}">`,"g"),s);n=n.replace(/"\/wiki/gi,'"https://tgstation13.org/wiki'),n=n.replace(/"\/assets/gi,'"https://raw.githubusercontent.com/nebula-in-space/handbook/refs/heads/master/assets'),await j(),i.innerHTML=n,console.log(`${t}: загружен`);try{lt(t,i)}catch(r){console.error(`Ошибка загрузки страницы: ${t}`),console.error(r)}return a.innerHTML=i.outerHTML,J(t,a),a.classList.remove("waiting"),a}class M{constructor(e,a,i){this.sections={},this.sectionMap={},this.loading=!1,this.sectionListContainer=e,this.tabListContainer=a,this.tabContentContainer=i,M.instance=this}setLoading(e){var a;if(e){(a=document.getElementById("app"))==null||a.classList.add("waiting"),Z(this.tabContentContainer);const i=this.tabContentContainer.querySelector(".speen");i==null||i.appendChild(document.createTextNode("Загружаем страницы"))}else{document.getElementById("app").classList.remove("waiting");const i=this.tabContentContainer.querySelector(".speen");this.tabContentContainer.removeChild(i)}}createSection(e){const a=document.createElement("div");if(a.className="section",a.dataset.section=e,e===ot){const i=document.createElement("img");i.src=Ye,i.className="meta-icon",a.appendChild(i)}else a.appendChild(document.createTextNode(e));a.addEventListener("click",()=>{a.classList.contains("active")||this.showSection(e)}),this.sectionListContainer.appendChild(a),this.sections[e]={name:e,element:a,tabs:{}}}showSection(e){const a=this.sectionListContainer.querySelector(".active");a&&(a.classList.remove("active"),this.tabListContainer.querySelectorAll(`div[data-section='${a.dataset.section}']`).forEach(i=>i.classList.add("hidden"))),this.sections[e].element.classList.add("active"),this.tabListContainer.querySelectorAll(`div[data-section='${e}']`).forEach(i=>i.classList.remove("hidden"))}async openTab(e,a,{active:i}){var f,b;const n=a.page,d=a.icon,r=a.text,s=document.createElement("div");s.className="tab",s.dataset.section=e,s.dataset.tab=n,s.addEventListener("click",()=>{s.classList.contains("active")||(this.setActive(n),W(n,""))});const l=document.createElement("img");l.src=d||Ke,s.title=n.replace(/_/gi," "),s.appendChild(l);const o=r||n.substr(n.lastIndexOf("_")+1,4);if(s.appendChild(document.createTextNode(o)),this.tabListContainer.appendChild(s),n.startsWith("$")){const c=this.tabContentContainer.querySelector(`div[data-tab='${n}']`);this.sections[e].tabs[n]={tabListItem:s,tabContentItem:c},this.sectionMap[n]=e,await tt(n,((f=a.data)==null?void 0:f.text["*"])||"",c);return}const h=document.createElement("div");h.className="page waiting",h.dataset.tab=n,Z(h),this.tabContentContainer.appendChild(h),this.sections[e].tabs[n]={tabListItem:s,tabContentItem:h},this.sectionMap[n]=e,this.sections[e].element.classList.contains("active")||s.classList.add("hidden");const m=await tt(n,((b=a.data)==null?void 0:b.text["*"])||"",h);m!==h&&(this.sections[e].tabs[n].tabContentItem=m),i&&this.setActive(n)}setActive(e){const a=this.sectionMap[e];if(!(a in this.sections))throw new Error("section not found");if(!(e in this.sections[a].tabs))throw new Error("tab not found");this.tabListContainer.querySelectorAll(".active").forEach(r=>r.classList.remove("active")),this.tabContentContainer.querySelectorAll(".active").forEach(r=>r.classList.remove("active")),this.sections[a].element.classList.contains("active")||this.showSection(a);const{tabListItem:n,tabContentItem:d}=this.sections[a].tabs[e];this.sections[a].element.classList.add("active"),n.classList.add("active"),d.classList.add("active")}}var et={VITE_PATH:"/handbook",VITE_APP_REVISION:"94e82fb44a195021d7ea5ddb399c7967ec29d668",BASE_URL:"./",MODE:"production",DEV:!1,PROD:!0,SSR:!1};async function $e(){const t=document.getElementById("section-list"),e=document.getElementById("tab-list"),a=document.getElementById("tabs"),i=new M(t,e,a);i.setLoading(!0),await j();const n=Le.flatMap(d=>(i.createSection(d.name),d.tabs.map(async r=>{await i.openTab(d.name,r,{})})));Promise.all(n).then(()=>{i.setLoading(!1);const{path:d,hash:r}=pt();st(d,r)||(i.setActive("$Welcome"),i.showSection("Medical"))})}if("serviceWorker"in navigator){const t=et.VITE_SUBDIR?`${et.VITE_SUBDIR}/sw.js`:"sw.js";navigator.serviceWorker.register(t).then(e=>{console.log("Registration successful, scope is:",e.scope)}).catch(e=>{console.log("Service worker registration failed, error:",e)})}$e();document.body.appendChild(mt());var at;(at=document.getElementById("tgh-version"))==null||at.appendChild(document.createTextNode("94e82fb44a195021d7ea5ddb399c7967ec29d668"));
