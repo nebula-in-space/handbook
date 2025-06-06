@@ -8,6 +8,8 @@ import unknown from "@assets/images/tab-icons/unknown.svg";
 import metaIcon from "@assets/images/icon-meta.svg";
 import speen from "@assets/images/speen.svg";
 
+import blocksFromJson from "@json/blocks.json";
+
 function initWaiting(elem: HTMLElement) {
   // Add spinner
   const spinnerContainer = document.createElement("div");
@@ -36,6 +38,13 @@ async function loadPage(
 
   // Use prefetched non-processed HTML
   let html = originalHTML;
+
+  const blocks: BlocksMap = blocksFromJson;
+
+  for (const [blockName, blockHtml] of Object.entries(blocks)) {
+    html = html.replace(new RegExp(`<!--${blockName}-->`, 'g'), blockHtml);
+    html = html.replace(new RegExp(`class="${blockName}">`, 'g'), blockHtml);
+  }
 
   // Convert relative links to absolute
   html = html.replace(/"\/wiki/gi, '"https://tgstation13.org/wiki');
