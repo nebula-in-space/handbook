@@ -8,7 +8,8 @@ import unknown from "@assets/images/tab-icons/unknown.svg";
 import metaIcon from "@assets/images/icon-meta.svg";
 import speen from "@assets/images/speen.svg";
 
-import blocksFromJson from "@json/blocks.json";
+import tableFromJson from "@json/table.json";
+import projectileFromJson from "@json/projectile.json";
 
 function initWaiting(elem: HTMLElement) {
   // Add spinner
@@ -39,7 +40,7 @@ async function loadPage(
   // Use prefetched non-processed HTML
   let html = originalHTML;
 
-  const blocks: BlocksMap = blocksFromJson;
+  const blocks: BlocksMap = Object.assign({}, tableFromJson, projectileFromJson);
 
   for (const [blockName, blockHtml] of Object.entries(blocks)) {
     html = html.replace(new RegExp(`<!--${blockName}-->`, 'g'), blockHtml);
