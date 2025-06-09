@@ -1,11 +1,14 @@
 $sizes-icon: 64px;
 
-$widths: (
-  desktop: (10%, 8%, 8%, 10%, 6%, 8%, 10%, auto),
-  mobile: (10%, 10%, 10%, 12%, 6%, 16%, 10%, auto)
-);
+
+.wikitable {
+  display: block;
+  overflow: auto;
+}
 
 .armorytable {
+  display: block;
+  overflow: auto;
   table-layout: fixed;
 
   td, th {
@@ -28,29 +31,4 @@ $widths: (
     background-color: #1A2433;
   }
 
-  @for $i from 1 through 7 {
-    th:nth-child(#{$i}), 
-    td:nth-child(#{$i}) {
-        width: nth(map-get($widths, desktop), $i);
-    }
-  }
-
-  @media (max-width: 768px) {
-    table-layout: auto;
-
-    th, td {
-      font-size: 10px;
-    }
-
-    @for $i from 1 through 7 {
-      .armorytable th:nth-child(#{$i}), 
-      .armorytable td:nth-child(#{$i}) {
-          width: nth(map-get($widths, mobile), $i);
-      } 
-    }
-
-    img[class="image64"] {
-      height: $sizes-icon * 0.5;
-    }
-  }
 }
