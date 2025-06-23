@@ -23,11 +23,8 @@ function initWaiting(elem: HTMLElement) {
 
 async function loadPage(
   page: string,
-  originalHTML: string,
   elem: HTMLElement,
 ): Promise<HTMLElement> {
-  // Meta pages don't need loading, they are baked in.
-  // However they might have scripts we want to run.
   if (page.startsWith("$")) {
     script(page, elem);
     elem.classList.remove("waiting");
@@ -38,7 +35,7 @@ async function loadPage(
   wrapper.className = "wrapper";
 
   // Use prefetched non-processed HTML
-  let html = originalHTML;
+  let html = await fetch(`./data/html/${page}.html`).then(r => r.text());
 
   const blocks: BlocksMap = Object.assign({}, tableFromJson, projectileFromJson);
 
@@ -224,7 +221,7 @@ export default class TabManager {
       // Create tab entry
       this.sections[section].tabs[page] = { tabListItem, tabContentItem };
       this.sectionMap[page] = section;
-      await loadPage(page, tab.data?.text["*"] || "", tabContentItem);
+      await loadPage(page, tabContentItem);
       return;
     }
 
@@ -247,7 +244,6 @@ export default class TabManager {
     // Start loading page for new tab
     const elem = await loadPage(
       page,
-      tab.data?.text["*"] || "",
       tabContentItem,
     );
     // Since element can be replaced (when loading for the first time), make sure the reference is updated
