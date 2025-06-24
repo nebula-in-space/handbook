@@ -1,7 +1,0 @@
-{
-  "title": "Golosary",
-  "pageid": 0,
-  "text": {
-    "*": "<p>Потом как нибудь оформлю, да.</p>\r\n<br>\r\n<ul><p>Цвета: урона:</p>\r\n<br>\r\n<font color=\"red\">травмы</font>\r\n<br>\r\n<font color=\"orange\">ожоги</font>\r\n<br>\r\n<font color=\"green\">токсины</font>\r\n<br>\r\n<font color=\"blue\">удушье</font>\r\n<br>\r\n<font color=\"crimson\">кровотечения</font>\r\n<br>\r\n<font color=\"springgreen\">генетический</font>\r\n<br>\r\n<font color=\"springgreen\">клеточный</font>\r\n<br>\r\n<font color=\"orangered\">перегрев</font>\r\n<br>\r\n<font color=\"lightskyblue\">холод</font>\r\n<br>\r\n<font color=\"yellow\">радиация</font>\r\n<br>\r\n<font color=\"gray\">переломы</font>\r\n<br>\r\n\r\n<p>Приобретает / теряет:</p>\r\n<li>Получают на (*% больше/меньше) урона от (нейм1).</li>\r\n<li>Нету (нейм1), не могут получить (нейм2).</li>\r\n<li>Невосприимчивость (нейм1).</li>\r\n</ul>\r\n\r\nЕсть путаницца в следующих терминах:\r\n<br>\r\nхимия / реагенты / химикаты / химические вещества\r\n<br>\r\nнеобратимую / постоянную / глубого-укореневшиеся\r\n<br>\r\nГенетическая деградация / генетических нарушений / генетические модификации = Генетические мутации\r\n<br>\r\nЮнит / Унция\r\n<br>\r\nмедицинского ХУДа\r\n<br>\r\nНапитки / Коктели\r\n<br>\r\n\r\npeople = персонажам / люди / экипаж / персонал\r\n<br>\r\nfreezer = морозилка\r\n<br>\r\n<br>\r\nStasis Bed = Стазисная кровать\r\n<br>\r\nstamine = выносливости / стамина\r\n<br>\r\ndecay = разложение / разрушается / гниет\r\n<br>"
-  }
-}
