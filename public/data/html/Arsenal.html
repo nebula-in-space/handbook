@@ -1,5 +1,41 @@
 <div class="mw-parser-output"><p>Don't be so serious. ARSENAL+ - Начала положено.<br><br></p>
 
+<script>
+fetch('/data/block/json/weapons_full.json')
+  .then(r => r.json())
+  .then(weapons => {
+    document.querySelectorAll('tr[data-weapon-id]').forEach(row => {
+      const id = row.dataset.weaponId.toLowerCase();
+
+      // Найти оружие по последнему сегменту gunPath
+      const weapon = weapons.find(w =>
+        w.gunPath && w.gunPath.split('/').pop().toLowerCase() === id
+      );
+      if (!weapon) return;
+
+      // Имя
+      const nameCell = row.querySelector(`#${id}-name`);
+      if (nameCell) nameCell.textContent = id;
+
+      // Тип боеприпаса
+      const ammoTypeCell = row.querySelector('.ammo-type');
+      if (ammoTypeCell) ammoTypeCell.textContent = weapon.ammoBox?.caliber?.replace(/"/g, '') ?? '—';
+
+      // Боезапас
+      const ammoCountCell = row.querySelector('.ammo-count');
+      if (ammoCountCell) ammoCountCell.textContent = weapon.ammoBox?.max_ammo ? `${weapon.ammoBox.max_ammo} Rounds` : '—';
+
+      // Урон
+      const damageCell = row.querySelector('.damage');
+      if (damageCell) damageCell.textContent = weapon.projectile?.damage ? `${weapon.projectile.damage} Brute` : '—';
+
+      // Бронепробитие
+      const armorPenCell = row.querySelector('.armor-pen');
+      if (armorPenCell) armorPenCell.textContent = weapon.projectile?.armour_penetration ? `${weapon.projectile.armour_penetration}%` : '—';
+    });
+  });
+</script>
+
 <!-- 
     MARK: Содержание
 -->
@@ -699,6 +735,7 @@
     <td>Ordered via syndicate uplink, costs 10 telecrystals, only available to Nuclear Agents.</td>
     <td><font style="color:#e11717">Syndicate</font></td>
     <td>Think of it as a spray bot. Except each spray is three tiles wide and can travel the entire screen. Generally kept away from players due to the potential of the lubepocalypse.</td>
+</tr>
 <tr>
     <th><a href="/wiki/File:Flamethrower.png" class="image64"><img alt="Flamethrower.png" src="/wiki/images/a/ad/Flamethrower.png" decoding="async" class="image64"></a><br><span id="Flamethrower"></span>Flamethrower</th>
     <td><a href="/wiki/File:Plasma_tank.png" class="image64"><img alt="Plasma tank.png" src="/wiki/images/3/34/Plasma_tank.png" decoding="async" class="image64"></a><br>Gas of your choice</td>
@@ -811,13 +848,12 @@
 </tr>
 <tr>
     <th><img alt="skm.png" src="/assets/images/pages/arsenal/frontier/skm.png" decoding="async" class="image64"><br><span id="skm"></span>skm</th>
-    <td>Magazine.png</td>
-    <td>0 Rounds</td>
-    <td>0 Brute</td>
-    <td>-%</td>
-    <td>¯\_(ツ)_/¯</td>
-    <td>¯\_(ツ)_/¯</td>
-    <td>¯\_(ツ)_/¯</td>
+    <tr data-weapon-id="skm">
+    <th><span id="skm-name"></span></th>
+    <td class="ammo-type"></td>
+    <td class="ammo-count"></td>
+    <td class="damage"></td>
+    <td class="armor-pen"></td>
 </tr>
 <tr>
     <th><img alt="skm_pirate.png" src="/assets/images/pages/arsenal/frontier/skm_pirate.png" decoding="async" class="image64"><br><span id="skm_pirate"></span>skm_pirate</th>
