@@ -14,7 +14,7 @@ import trauma from "@assets/images/tab-icons/trauma.svg";
 //import power from "@assets/images/tab-icons/power.svg";
 //import solar from "@assets/images/tab-icons/solar.svg";
 //import supermatter from "@assets/images/tab-icons/supermatter.svg";
-//import turbine from "@assets/images/tab-icons/turbine.svg";
+import turbine from "@assets/images/tab-icons/turbine.svg";
 //import atmos from "@assets/images/tab-icons/atmos.svg";
 //import tcomm from "@assets/images/tab-icons/tcomm.svg";
 import rnd from "@assets/images/tab-icons/rnd.svg";
@@ -113,6 +113,7 @@ const sections: SectionInfo[] = [
       { page: "Guide_to_robotics", text: "Роботика", icon: robo },
       //{ page: "AI_modules", text: "Модули ИИ", icon: aimod, data: AI_modules },
       { page: "Guide_to_genetics", text: "Генетика", icon: genetics },
+      { page: "Gas_turbine", text: "Турбина", icon: turbine },
       { page: "Guide_to_food", text: "Еда", icon: food },
       { page: "Guide_to_drinks", text: "Напитки", icon: drink }
       //{ page: "Guide_to_hydroponics", text: "Гидропоника", icon: hydro, data: Guide_to_hydroponics },
