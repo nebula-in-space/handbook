@@ -21,14 +21,20 @@ $sizes-icon: 64px;
     text-align: center;
   }
 
-  img[class="image64"] {
-    width: auto;
-    height: $sizes-icon;
-    max-width: 100%;
-  }
-
   th[scope="col"] {
     background-color: #1A2433;
   }
 
+}
+
+img[class="image64"] {
+  width: auto;
+  height: $sizes-icon;
+  max-width: 100%;
+}
+
+img[class="image90"] {
+  width: auto;
+  height: 90px;
+  max-width: 100%;
 }
