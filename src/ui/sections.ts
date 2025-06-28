@@ -5,7 +5,7 @@ import medicine from "@assets/images/tab-icons/medicine.svg";
 //import grenade from "@assets/images/tab-icons/grenade.svg";
 import genetics from "@assets/images/tab-icons/genetics.svg";
 //import virus from "@assets/images/tab-icons/virus.svg";
-import surgery from "@assets/images/tab-icons/surgery.svg";
+//import surgery from "@assets/images/tab-icons/surgery.svg";
 import trauma from "@assets/images/tab-icons/trauma.svg";
 //import wound from "@assets/images/tab-icons/wound.svg";
 //import ghetto from "@assets/images/tab-icons/ghetto.svg";
@@ -76,7 +76,7 @@ const sections: SectionInfo[] = [
       //{ page: "Guide_to_Ghetto_Chemistry", text: "Гетто", icon: ghetto, data: Guide_to_Ghetto_Chemistry},
       //{ page: "Guide_to_plumbing", text: "Пламбинг", icon: plumbing, data: Guide_to_plumbing },
       //{ page: "Grenade", text: "Гранаты", icon: grenade, data: Grenade },
-      { page: "Surgery", text: "Хирургия", icon: surgery },
+      //{ page: "Surgery", text: "Хирургия", icon: surgery },
       { page: "Guide_to_Traumas", text: "Церебралки", icon: trauma },
     ],
   },
@@ -158,7 +158,7 @@ const sections: SectionInfo[] = [
     name: META,
     tabs: [
       { page: "$Welcome", text: "На главную", icon: null },
-      { page: "$Changelog", text: "Список изменений", icon: null },
+      //{ page: "$Changelog", text: "Список изменений", icon: null },
     ],
   },
 ];
