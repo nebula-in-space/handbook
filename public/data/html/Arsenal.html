@@ -1,40 +1,12 @@
 <div class="mw-parser-output"><p>Don't be so serious. ARSENAL+ - Начала положено.<br><br></p>
 
-<script>
-fetch('/data/block/json/weapons_full.json')
-  .then(r => r.json())
-  .then(weapons => {
-    document.querySelectorAll('tr[data-weapon-id]').forEach(row => {
-      const id = row.dataset.weaponId.toLowerCase();
-
-      // Найти оружие по последнему сегменту gunPath
-      const weapon = weapons.find(w =>
-        w.gunPath && w.gunPath.split('/').pop().toLowerCase() === id
-      );
-      if (!weapon) return;
-
-      // Имя
-      const nameCell = row.querySelector(`#${id}-name`);
-      if (nameCell) nameCell.textContent = id;
-
-      // Тип боеприпаса
-      const ammoTypeCell = row.querySelector('.ammo-type');
-      if (ammoTypeCell) ammoTypeCell.textContent = weapon.ammoBox?.caliber?.replace(/"/g, '') ?? '—';
-
-      // Боезапас
-      const ammoCountCell = row.querySelector('.ammo-count');
-      if (ammoCountCell) ammoCountCell.textContent = weapon.ammoBox?.max_ammo ? `${weapon.ammoBox.max_ammo} Rounds` : '—';
-
-      // Урон
-      const damageCell = row.querySelector('.damage');
-      if (damageCell) damageCell.textContent = weapon.projectile?.damage ? `${weapon.projectile.damage} Brute` : '—';
-
-      // Бронепробитие
-      const armorPenCell = row.querySelector('.armor-pen');
-      if (armorPenCell) armorPenCell.textContent = weapon.projectile?.armour_penetration ? `${weapon.projectile.armour_penetration}%` : '—';
-    });
-  });
-</script>
+<table cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #aaa; margin: 0 auto; display: block;">
+<tbody><tr>
+<td width="10px" style="background: rgb(102, 66, 0);"></td>
+<td style="padding: 0 0 0 5px;"><a href="https://tgstation13.org/wiki/File:Pen.png" class="image" target="_blank"><img alt="Pen.png" src="https://tgstation13.org/wiki/images/4/4f/Pen.png" decoding="async" width="64" height="64" data-file-width="32" data-file-height="32" loading="lazy"></a></td>
+<td style="padding: 10px;"><font size="4"><b>В разработке…</b></font><hr>
+Данная статья помечена как неоконченная. Это означает, что статья находится на доработке, поэтому может быть неверна или неактуальна. <br>
+</td></tr></tbody></table>
 
 <!-- 
     MARK: Содержание
