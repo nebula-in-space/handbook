@@ -1,11 +1,12 @@
 import path from "path";
 import { defineConfig } from "vite";
 //import { VitePWA } from "vite-plugin-pwa";
-import changelog from "./plugins/changelog.js";
+//import changelog from "./plugins/changelog.js";
 
 export default defineConfig({
+  base: "/handbook/",
   plugins: [
-    changelog(),
+    //changelog(),
     /*VitePWA({
       devOptions: {
         enabled: true,
