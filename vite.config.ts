@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 //import changelog from "./plugins/changelog.js";
 
 export default defineConfig({
-  base: "/handbook/",
   plugins: [
     //changelog(),
     /*VitePWA({
