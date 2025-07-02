@@ -1,6 +1,3 @@
-$sizes-icon: 64px;
-
-
 .wikitable {
   display: block;
   overflow: auto;
@@ -25,16 +22,4 @@ $sizes-icon: 64px;
     background-color: #1A2433;
   }
 
-}
-
-img[class="image64"] {
-  width: auto;
-  height: $sizes-icon;
-  max-width: 100%;
-}
-
-img[class="image96"] {
-  width: auto;
-  height: 96px;
-  max-width: 100%;
 }
