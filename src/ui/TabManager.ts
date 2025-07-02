@@ -35,7 +35,7 @@ async function loadPage(
   wrapper.className = "wrapper";
 
   // Use prefetched non-processed HTML
-  let html = await fetch(`./data/html/${page}.html`).then(r => r.text());
+  let html = await fetch(`./pages/${page}.html`).then(r => r.text());
 
   const blocks: BlocksMap = Object.assign({}, tableFromJson, projectileFromJson);
 
