@@ -1,3 +1,7 @@
+$widths: (
+  desktop: (10%, 8%, 10%, 10%, 6%, 8%, 10%, auto),
+);
+
 .wikitable {
   display: block;
   overflow: auto;
@@ -16,6 +20,13 @@
 
   td:nth-child(2), td:nth-child(5), td:nth-child(6), td:nth-child(7){
     text-align: center;
+  }
+
+  @for $i from 1 through 7 {
+    th:nth-child(#{$i}), 
+    td:nth-child(#{$i}) {
+        width: nth(map-get($widths, desktop), $i);
+    }
   }
 
   th[scope="col"] {
