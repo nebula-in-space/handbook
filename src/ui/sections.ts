@@ -158,7 +158,6 @@ const sections: SectionInfo[] = [
     name: META,
     tabs: [
       { page: "$Welcome", text: "На главную", icon: null },
-      //{ page: "$Changelog", text: "Список изменений", icon: null },
     ],
   },
 ];
