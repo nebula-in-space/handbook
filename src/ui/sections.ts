@@ -9,14 +9,14 @@ import genetics from "@assets/images/tab-icons/genetics.svg";
 import trauma from "@assets/images/tab-icons/trauma.svg";
 //import wound from "@assets/images/tab-icons/wound.svg";
 //import ghetto from "@assets/images/tab-icons/ghetto.svg";
-//import construction from "@assets/images/tab-icons/construction.svg";
-//import machines from "@assets/images/tab-icons/machines.svg";
-//import power from "@assets/images/tab-icons/power.svg";
-//import solar from "@assets/images/tab-icons/solar.svg";
-//import supermatter from "@assets/images/tab-icons/supermatter.svg";
+import construction from "@assets/images/tab-icons/construction.svg";
+import machines from "@assets/images/tab-icons/machines.svg";
+import power from "@assets/images/tab-icons/power.svg";
+import solar from "@assets/images/tab-icons/solar.svg";
+import supermatter from "@assets/images/tab-icons/supermatter.svg";
 import turbine from "@assets/images/tab-icons/turbine.svg";
-//import atmos from "@assets/images/tab-icons/atmos.svg";
-//import tcomm from "@assets/images/tab-icons/tcomm.svg";
+import atmos from "@assets/images/tab-icons/atmos.svg";
+import tcomm from "@assets/images/tab-icons/tcomm.svg";
 import rnd from "@assets/images/tab-icons/rnd.svg";
 //import toxins from "@assets/images/tab-icons/toxins.svg";
 //import xeno from "@assets/images/tab-icons/xeno.svg";
@@ -80,22 +80,20 @@ const sections: SectionInfo[] = [
       { page: "Guide_to_Traumas", text: "Церебралки", icon: trauma },
     ],
   },
-/*
   {
     name: "Инженерия",
     tabs: [
-      { page: "Guide_to_construction", text: "Строительство", icon: construction, data: Guide_to_construction},
-      { page: "Machines", text: "Машины", icon: machines, data: Machines },
-      { page: "Guide_to_power", text: "Энергия", icon: power, data: Guide_to_power},
-      { page: "Solars", text: "Панели", icon: solar, data: Solars },
-      { page: "Guide_to_the_Supermatter", text: "Материя", icon: supermatter, data: Guide_to_the_Supermatter },
-      { page: "Gas_turbine", text: "Турбина", icon: turbine, data: Gas_turbine },
-      { page: "Guide_to_Atmospherics", text: "Атмос", icon: atmos, data: Guide_to_Atmospherics },
-      { page: "Guide_to_disposals", text: "Трубы", icon: null, data: Guide_to_disposals }, // TODO: add icon data: Guide_to_disposals
-      { page: "Guide_to_Telecommunications", text: "Телекомы", icon: tcomm, data: Guide_to_Telecommunications },
+      { page: "Guide_to_construction", text: "Строительство", icon: construction },
+      { page: "Machines", text: "Машины", icon: machines },
+      { page: "Guide_to_power", text: "Энергия", icon: power },
+      { page: "Solars", text: "Панели", icon: solar },
+      { page: "Guide_to_the_Supermatter", text: "Материя", icon: supermatter },
+      { page: "Gas_turbine", text: "Турбина", icon: turbine },
+      { page: "Guide_to_Atmospherics", text: "Атмос", icon: atmos },
+//      { page: "Guide_to_disposals", text: "Трубы", icon: null }, // TODO: add icon data: Guide_to_disposals
+      { page: "Guide_to_Telecommunications", text: "Телекомы", icon: tcomm },
     ],
   },
-*/
 /*
   {
     name: "Наука",
@@ -113,7 +111,6 @@ const sections: SectionInfo[] = [
       { page: "Guide_to_robotics", text: "Роботика", icon: robo },
       //{ page: "AI_modules", text: "Модули ИИ", icon: aimod, data: AI_modules },
       { page: "Guide_to_genetics", text: "Генетика", icon: genetics },
-      { page: "Gas_turbine", text: "Турбина", icon: turbine },
       { page: "Guide_to_food", text: "Еда", icon: food },
       { page: "Guide_to_drinks", text: "Напитки", icon: drink }
       //{ page: "Guide_to_hydroponics", text: "Гидропоника", icon: hydro, data: Guide_to_hydroponics },
