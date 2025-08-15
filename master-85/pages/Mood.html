@@ -1,0 +1,137 @@
+<div class="mw-parser-output">
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li><a href="#Mood_&_Sanity">1 Настроение и рассудок</a></li>
+<li><a href="#Moodlets">2 Эффекты настроения</a></li>
+<li><a href="#Mood_Thresholds">3 Пороги настроения</a></li>
+<li><a href="#Sanity_Thresholds">4 Пороги рассудка</a></li>
+<li><a href="#Sanity_Effects">5 Эффекты рассудка</a></li>
+</ul></div>
+
+<h2><span class="mw-headline" id="Mood_&_Sanity">Настроение и рассудок</span></h2>
+<p><b>Настроение</b> отражает, насколько счастлив ваш персонаж на космической станции 13, и динамически изменяется в зависимости от того, что происходит с вами или вокруг вас, что реалистично влияет на него. Настроение оказывает значительное влияние на игровой процесс: плохое настроение снижает, а хорошее – повышает рассудок. <b>Рассудок</b> имеет различные эффекты в зависимости от его состояния. Здоровый рассудок оказывает такие эффекты, как снижение чувства голода и возможность быстрее выполнять определенные действия. Однако при низком уровне рассудка у вас могут возникнуть проблемы с концентрацией внимания, вы будете медленнее выполнять действия и даже ходить шаркающей походкой.</p>
+<p>Вы можете увидеть текущее состояние своего персонажа, нажав на значок на экране, который напоминает лицо.</p>
+<p><img alt="MoodEcstatic.png" src="./img/mood/MoodExplained.png" decoding="async" width="50%"></p>
+<h2><span class="mw-headline" id="Moodlets">Эффекты настроения (Moodlets)</span></h2>
+<p>События, влияющие на настроения, называются <i>эффектами настроения</i>. Проще говоря, ваше общее настроение напрямую связано с имеющимися у вас эффекты настроения. У каждого эффекта есть модификатор и иногда время; модификаторы — это "очки" настроения, которое событие добавит или уберет, и оно будет делать это до тех пор, пока не истечет его время или не закончится событие. Например, если у эффекта настроения есть модификатор +1 на 3 минуты, у вас будет небольшой прирост настроения в течение трех минут, но после того, как это время закончится, уже не будет, или если вы войдете в некрасивую комнату, вы получите плохое эффект настроения, пока не выйдете из комнаты.
+</p><p>Многие действия и факторы влияют на различные эффекты настроения, от такого простого, как поглаживание корги, до более сложного, например, насколько грязно вокруг вас. Как правило, забота о себе и хорошее отношение к своему телу делают вас счастливее, в то время как пренебрежение такими потребностями, как голод и сильная боль, делают вас грустным.
+</p><p>Некоторые черты также изменяют настроение. Веселье и депрессия сделают вас случайным образом счастливее или грустнее без всякой причины, а апатия снизит все воздействия на настроение на 20%.
+</p>
+<h2></span><span class="mw-headline" id="Mood_Thresholds">Пороги настроения</span></h2>
+<p>Индикатор настроения (Mood) имеет девять различных уровней, которые позволяют видеть ваше общее моральное состояние в виде иконки на HUD:
+</p>
+<table class="wikitable" style="max-width:50%;" border="3" cellspacing="0" cellpadding="5">
+<tbody><tr>
+<th style="background-color:#DDDDDD;" width="32px">Иконка</th>
+<th style="background-color:#DDDDDD;" width="80px">Наименование</th>
+<th style="background-color:#DDDDDD;" width="140px">Порог</th>
+<th style="background-color:#DDDDDD;" width="100px">Изменение рассудка/тик</th></tr>
+<tr>
+<th><img alt="MoodEcstatic.png" src="./img/mood/MoodEcstatic.png" decoding="async" class="image32"></a>
+</th>
+    <td>Экстаз</td>
+    <td>&gt;=15</td>
+    <td>0.4</td>
+</tr>
+<tr>
+<th><img alt="MoodVeryHappy.png" src="./img/mood/MoodVeryHappy.png" decoding="async" class="image32"></a>
+</th>
+    <td>Очень счастлив</td>
+    <td>10 до 15</td>
+    <td>0.25</td>
+</tr>
+<tr>
+<th><img alt="MoodPleased.png" src="./img/mood/MoodPleased.png" decoding="async" class="image32"></a>
+</th>
+    <td>Счастлив</td>
+    <td>6 до 10</td>
+    <td>0.2</td>
+</tr>
+<tr>
+<th><img alt="MoodHappy.png" src="./img/mood/MoodHappy.png" decoding="async" class="image32"></a>
+</th>
+    <td>Удовлетворенность</td>
+    <td>2 до 6</td>
+    <td>0.15</td>
+</tr>
+<tr>
+<th><img alt="MoodNeutral.png" src="./img/mood/MoodNeutral.png" decoding="async" class="image32"></a>
+</th>
+    <td>Нейтральный</td>
+    <td>-3 до 2</td>
+    <td>0.1</td>
+</tr>
+<tr>
+<th><img alt="MoodMeh.png" src="./img/mood/MoodMeh.png" decoding="async" class="image32"></a>
+</th>
+    <td>Недовольство</td>
+    <td>-10 до -3</td>
+    <td>-0.05</td>
+</tr>
+<tr>
+<th><img alt="MoodSad.png" src="./img/mood/MoodSad.png" decoding="async" class="image32"></a>
+</th>
+    <td>Грустный</td>
+    <td>-15 до -10</td>
+    <td>-0.15</td>
+</tr>
+<tr>
+<th><img alt="MoodVerySad.png" src="./img/mood/MoodVerySad.png" decoding="async" class="image32"></a>
+</th>
+    <td>Очень грустный</td>
+    <td>-20 до -15</td>
+    <td>-0.25</td>
+</tr>
+<tr>
+<th><img alt="MoodDepressed.png" src="./img/mood/MoodDepressed.png" decoding="async" class="image32"></a>
+</th>
+    <td>В депрессии</td>
+    <td>&lt;=-20</td>
+    <td>-0.4</td>
+</tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Sanity_Thresholds">Пороги рассудка</span></h2>
+<p>Как и настроение, рассудок имеет 6 порогов, которые могут быть достигнуты.</p>
+<table class="wikitable" style="max-width:50%;" border="3" cellspacing="0" cellpadding="5">
+<tbody><tr>
+<th style="background-color:#DDDDDD;" width="40x">Наименование</th>
+<th style="background-color:#DDDDDD;" width="80px">Порог</th>
+<th style="background-color:#DDDDDD;" width="140px">Описание в игре</th></tr>
+<tr style="text-align: center;">
+    <td>Отлично</td>
+    <td>125&gt;</td>
+    <td>Мой разум словно храм!</td>
+</tr>
+<tr style="text-align: center;">
+    <td>Нейтрально</td>
+    <td>100 до 125</td>
+    <td>В последнее время я чувствую себя прекрасно!</td>
+</tr>
+<tr style="text-align: center;">
+    <td>Тревожно</td>
+    <td>75 до 100</td>
+    <td>В последнее время я чувствую себя вполне прилично.</td>
+</tr>
+<tr style="text-align: center;">
+    <td>Нестабильно</td>
+    <td>50 до 75</td>
+    <td>Я чувствую себя немного не в себе...</td>
+</tr>
+<tr style="text-align: center;">
+    <td>Сумасшествие</td>
+    <td>25 до 50</td>
+    <td>Я вне себя!!</td>
+</tr>
+<tr style="text-align: center;">
+    <td>Безумие</td>
+    <td>&lt;25</td>
+    <td>АХАХАХАХАХАХАХА!!</td>
+</tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Sanity_Effects">Эффекты рассудка</span></h2>
+<p>Рассудок оказывает заметное влияние на вашего персонажа:</p>
+<ul><li>Очень грустные персонажи будут двигаться медленнее.</li>
+<li>Экран будет становиться все более размытым по мере того, как вы будете становиться все более грустным, чтобы показать неспособность сосредоточиться.</li>
+<li>Скорость действий зависит от настроения, максимум -25% скорости для сильно подавленных людей и +10% скорости для очень счастливых.</li>
+<li>Уровень голода пропорционален настроению. Депрессия побуждает вас есть больше, в то время как удовлетворенность заставляет вас есть меньше.</li></ul>
+</div>
