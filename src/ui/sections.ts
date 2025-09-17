@@ -149,6 +149,7 @@ const sections: SectionInfo[] = [
       { page: "Golosary", text: "Голосарий", icon: sop },
       { page: "Guide_to_Combat", text: "Боевка", icon: combat },
       { page: "Armor", text: "Броня", icon: armor },
+      { page: "FAQ", text: "КАК ЗАДАВАТЬ ВОПРОСЫ", icon: null },
     ],
   },
   {
